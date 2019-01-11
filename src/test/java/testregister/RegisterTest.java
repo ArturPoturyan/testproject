@@ -23,5 +23,6 @@ public class RegisterTest extends DesiredCapsManager {
         registerSteps.register();
         registerSteps.register();
         registerSteps.register();
+        registerSteps.register();
     }
 }
