@@ -20,5 +20,8 @@ public class RegisterTest extends DesiredCapsManager {
     @Test
     public void verifyFunctionalityOfRegister() throws InterruptedException {
         registerSteps.register();
+        registerSteps.register();
+        registerSteps.register();
+        registerSteps.register();
     }
 }
