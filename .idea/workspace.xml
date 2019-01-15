@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9962f0e-18a3-420b-abbb-afc3a92afaa8" name="Default Changelist" comment="add">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/DesiredCapsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/DesiredCapsManager.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -38,7 +33,7 @@
           <entry key="class" value="1" />
           <entry key="dummy" value="88" />
           <entry key="gitignore" value="5" />
-          <entry key="java" value="7222" />
+          <entry key="java" value="7223" />
           <entry key="txt" value="47" />
           <entry key="xml" value="15" />
         </counts>
@@ -47,7 +42,7 @@
         <counts>
           <entry key="CLASS" value="1" />
           <entry key="Git file" value="5" />
-          <entry key="JAVA" value="7222" />
+          <entry key="JAVA" value="7223" />
           <entry key="PLAIN_TEXT" value="135" />
           <entry key="XML" value="15" />
         </counts>
@@ -116,8 +111,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/utils/DesiredCapsManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+            <state relative-caret-position="443">
+              <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#594#595#0" expanded="true" />
@@ -856,8 +851,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/utils/DesiredCapsManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+        <state relative-caret-position="443">
+          <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#594#595#0" expanded="true" />
