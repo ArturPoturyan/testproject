@@ -38,7 +38,6 @@ public class DesiredCapsManager {
             driver = new AndroidDriver<>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
         } catch (MalformedURLException e) {
             e.printStackTrace();
-            e.printStackTrace();
         }
 
     }
