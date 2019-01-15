@@ -9,5 +9,8 @@
         <module name="TestPicsArt" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="TestPicsArt" target="7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
