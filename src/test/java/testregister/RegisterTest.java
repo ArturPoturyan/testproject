@@ -12,7 +12,7 @@ public class RegisterTest extends DesiredCapsManager {
 
     @BeforeClass
     public void setup() {
-        registerSteps = new RegisterSteps();
+        registerSteps = new RegisterSteps(driver);
 
     }
 

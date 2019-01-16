@@ -2,7 +2,6 @@ package teststeps;
 
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
-import org.testng.annotations.BeforeClass;
 import screens.Login;
 
 public class LoginSteps{

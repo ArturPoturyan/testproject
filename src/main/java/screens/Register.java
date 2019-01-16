@@ -1,10 +1,17 @@
 package screens;
 
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
-import utils.DesiredCapsManager;
 import utils.Utils;
 
-public class Register extends DesiredCapsManager {
+public class Register {
+
+    private AndroidDriver driver;
+
+    public Register(AndroidDriver androidDriver) {
+        this.driver = androidDriver;
+    }
+
     private static By CREATE_ACCOUNT_BUTTON = By.id("com.picsart.studio:id/picsart_button_text");
     private static By NEXT_BUTTON = CREATE_ACCOUNT_BUTTON;
     private static By MAYBE_LATER = By.id("com.picsart.studio:id/btn_negative");

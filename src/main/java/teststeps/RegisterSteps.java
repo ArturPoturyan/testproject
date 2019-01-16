@@ -1,32 +1,38 @@
 package teststeps;
 
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import screens.Register;
-import utils.DesiredCapsManager;
 
-public class RegisterSteps extends DesiredCapsManager {
-    Register register = new Register();
+public class RegisterSteps {
+
+    AndroidDriver driver;
+    Register registerScreen;
+
+    public RegisterSteps(AndroidDriver androidDriver) {
+        this.driver = androidDriver;
+        registerScreen = new Register(driver);
+    }
 
     public void register() throws InterruptedException {
 
-        register.createAccountButton();
-        register.userInfoEmailText();
+        registerScreen.createAccountButton();
+        registerScreen.userInfoEmailText();
         Thread.sleep(2000);
-        register.nextButton();
-        register.userInfoFullNameText();
-        register.nextButton();
-        register.userInfoUsernameText();
+        registerScreen.nextButton();
+        registerScreen.userInfoFullNameText();
+        registerScreen.nextButton();
+        registerScreen.userInfoUsernameText();
         Thread.sleep(2000);
-        register.nextButton();
-        register.nextButton();
+        registerScreen.nextButton();
+        registerScreen.nextButton();
         Thread.sleep(2000);
         if (driver.findElements(By.id("com.picsart.studio:id/pop_up_layout")).size() > 0) {
-            register.maybeLater();
+            registerScreen.maybeLater();
         }
-        register.birthdaySkipButton();
+        registerScreen.birthdaySkipButton();
         if (driver.findElements(By.id("com.picsart.studio:id/subscription_payment_button_1")).size() > 0) {
-            register.subscriptionOfferCloseButton();
+            registerScreen.subscriptionOfferCloseButton();
         }
-        Thread.sleep(2000);
     }
 }

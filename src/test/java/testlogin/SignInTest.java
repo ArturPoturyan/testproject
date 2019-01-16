@@ -7,12 +7,13 @@ import utils.DesiredCapsManager;
 
 public class SignInTest extends DesiredCapsManager {
 
+
     private LoginSteps loginSteps;
+
     @BeforeClass
-    public void setup(){
+    public void setup() {
         loginSteps = new LoginSteps(driver);
     }
-
 
 
     @Test

@@ -4,11 +4,11 @@ import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import utils.Utils;
 
-public class Login{
+public class Login {
 
-    AndroidDriver driver;
+    private AndroidDriver driver;
 
-    public Login(AndroidDriver androidDriver){
+    public Login(AndroidDriver androidDriver) {
         this.driver = androidDriver;
     }
 
