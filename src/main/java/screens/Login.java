@@ -1,10 +1,16 @@
 package screens;
 
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
-import utils.DesiredCapsManager;
 import utils.Utils;
 
-public class Login extends DesiredCapsManager {
+public class Login{
+
+    AndroidDriver driver;
+
+    public Login(AndroidDriver androidDriver){
+        this.driver = androidDriver;
+    }
 
     private static By REGISTER_BUTTON_CLICK = By.id("com.picsart.studio:id/register_step_sign_in");
     private static By POPUP_CANCEL_BUTTON = By.id("com.google.android.gms:id/cancel");

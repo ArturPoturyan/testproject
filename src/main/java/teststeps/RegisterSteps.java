@@ -19,6 +19,7 @@ public class RegisterSteps extends DesiredCapsManager {
         Thread.sleep(2000);
         register.nextButton();
         register.nextButton();
+        Thread.sleep(2000);
         if (driver.findElements(By.id("com.picsart.studio:id/pop_up_layout")).size() > 0) {
             register.maybeLater();
         }

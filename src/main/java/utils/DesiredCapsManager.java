@@ -5,24 +5,27 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 public class DesiredCapsManager {
     protected AndroidDriver<MobileElement> driver;
 
-    public DesiredCapsManager() {
+    @BeforeSuite
+    public void init() {
         setUp();
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
     }
+    //todo nenc anel vor server sarqi u run lini
 
-    @BeforeClass
     public void setUp() {
-
-        String apk = "/Users/arturpoturyan/Downloads/picsart-11.4-unsigned-15-signed.apk";
         DesiredCapabilities capabilities = new DesiredCapabilities();
+
+        String apk = "/Users/arturpoturyan/Downloads/picsart-11.4-unsigned-15-signed.apk";//todo nenc grel vor sagh komperi vra ashxati
         capabilities.setCapability(MobileCapabilityType.UDID, "b15ffa8f");
         capabilities.setCapability("deviceName", "A7");
         capabilities.setCapability("platformName", "Android");
@@ -43,9 +46,9 @@ public class DesiredCapsManager {
     }
 
 
-    @AfterClass(alwaysRun = true)
+    @AfterSuite(alwaysRun = true)
     public void tearDown() {
-        driver.quit();
+        driver.quit();//todo kardal inchna quit anum u sergin asel
 
     }
 }

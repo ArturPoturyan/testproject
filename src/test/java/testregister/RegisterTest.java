@@ -8,7 +8,7 @@ import utils.DesiredCapsManager;
 public class RegisterTest extends DesiredCapsManager {
 
 
-    RegisterSteps registerSteps;
+    private RegisterSteps registerSteps;
 
     @BeforeClass
     public void setup() {
@@ -19,9 +19,6 @@ public class RegisterTest extends DesiredCapsManager {
     @Test
     public void verifyFunctionalityOfRegister() throws InterruptedException {
         registerSteps.register();
-        registerSteps.register();
-        registerSteps.register();
-        registerSteps.register();
-        registerSteps.register();
+
     }
 }
