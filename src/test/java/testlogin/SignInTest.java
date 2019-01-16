@@ -1,14 +1,14 @@
 package testlogin;
 
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import teststeps.LoginSteps;
 import utils.DesiredCapsManager;
-import org.testng.annotations.BeforeMethod;
 
 public class SignInTest extends DesiredCapsManager {
 
     LoginSteps loginSteps;
-    @BeforeMethod
+    @BeforeClass
     public void setup(){
         loginSteps = new LoginSteps();
     }
