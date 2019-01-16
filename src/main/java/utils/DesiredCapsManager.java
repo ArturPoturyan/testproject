@@ -21,12 +21,12 @@ public class DesiredCapsManager {
     @BeforeClass
     public void setUp() {
 
-        String apk = "/Users/arturpoturyan/Downloads/11.3_ON.apk";
+        String apk = "/Users/arturpoturyan/Downloads/picsart-11.4-unsigned-15-signed.apk";
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability(MobileCapabilityType.UDID, "a8e4926b");
-        capabilities.setCapability("deviceName", "S4");
+        capabilities.setCapability(MobileCapabilityType.UDID, "b15ffa8f");
+        capabilities.setCapability("deviceName", "A7");
         capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("platformVersion", "5.0.1");
+        capabilities.setCapability("platformVersion", "6.0.1");
         capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
         capabilities.setCapability("app", apk);
         capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE,
