@@ -4,16 +4,15 @@ import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import screens.Login;
 
-public class LoginSteps{
+public class LoginSteps {
 
     AndroidDriver driver;
     Login loginScreen;
 
-    public LoginSteps(AndroidDriver androidDriver){
+    public LoginSteps(AndroidDriver androidDriver) {
         this.driver = androidDriver;
         loginScreen = new Login(driver);
     }
-
 
 
     public void signIn() throws InterruptedException {
