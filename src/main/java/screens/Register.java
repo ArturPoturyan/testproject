@@ -1,16 +1,10 @@
 package screens;
 
-import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import utils.Utils;
 
 public class Register {
 
-    private AndroidDriver driver;
-
-    public Register(AndroidDriver androidDriver) {
-        this.driver = androidDriver;
-    }
 
     private static By CREATE_ACCOUNT_BUTTON = By.id("com.picsart.studio:id/picsart_button_text");
     private static By NEXT_BUTTON = CREATE_ACCOUNT_BUTTON;
@@ -24,42 +18,42 @@ public class Register {
 
     public void createAccountButton() {
 
-        Utils.clickIdButton(driver, CREATE_ACCOUNT_BUTTON);
+        Utils.clickIdButton(CREATE_ACCOUNT_BUTTON);
 
 
     }
 
     public void nextButton() {
-        Utils.clickIdButton(driver, NEXT_BUTTON);
+        Utils.clickIdButton(NEXT_BUTTON);
 
     }
 
     public void maybeLater() {
-        Utils.clickIdButton(driver, MAYBE_LATER);
+        Utils.clickIdButton(MAYBE_LATER);
 
     }
 
     public void birthdaySkipButton() {
-        Utils.clickIdButton(driver, BIRTHDAY_SKIP_BUTTON);
+        Utils.clickIdButton(BIRTHDAY_SKIP_BUTTON);
 
     }
 
     public void subscriptionOfferCloseButton() {
 
-        Utils.clickIdButton(driver, SUBSCRIPTION_OFFER_CLOSE_BUTTON);
+        Utils.clickIdButton(SUBSCRIPTION_OFFER_CLOSE_BUTTON);
 
     }
 
     public void userInfoEmailText() {
-        Utils.userEmailKey(driver, USER_INFO_EMAIL_TEXT, "asd@gmail.com");
+        Utils.userEmailKey(USER_INFO_EMAIL_TEXT, "asd@gmail.com");
 
     }
 
     public void userInfoFullNameText() {
-        Utils.registerFullNameKey(driver, USER_INFO_FULL_NAME_TEXT, "asdasdad");
+        Utils.registerFullNameKey(USER_INFO_FULL_NAME_TEXT, "asdasdad");
     }
 
     public void userInfoUsernameText() {
-        Utils.registerUsernameKey(driver, USER_INFO_USERNAME_TEXT, "hagsdhj");
+        Utils.registerUsernameKey(USER_INFO_USERNAME_TEXT, "hagsdhj");
     }
 }

@@ -1,6 +1,5 @@
 package testlogin;
 
-import io.appium.java_client.android.AndroidDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import teststeps.LoginSteps;
@@ -8,22 +7,20 @@ import utils.DesiredCapsManager;
 
 public class SignInTest {
 
-
     private LoginSteps loginSteps;
-    AndroidDriver driver;
-
 
     @BeforeClass
     public void setup() {
-
-        driver = DesiredCapsManager.setUp();
-        loginSteps = new LoginSteps(driver);
+        DesiredCapsManager.setUp();
     }
 
 
     @Test
     public void verifyFunctionalityOfSignIn() throws InterruptedException {
+        loginSteps = new LoginSteps();
         loginSteps.signIn();
-        driver.resetApp();
+//        Reporter.log("Login with valid credentials is successful", true);
+        DesiredCapsManager.driver.resetApp();
+
     }
 }
