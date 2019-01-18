@@ -1,38 +1,47 @@
 package utils;
 
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 
 
 public class Utils {
 
-    public static void clickIdButton(By buttonId) {
-        DesiredCapsManager.driver.findElement(buttonId).click();
+    private AndroidDriver driver;
+
+    public Utils(AndroidDriver driver) {
+        this.driver = driver;
+
+
     }
 
-    public static void signInUserNameKey(By signInUserNameTextKey, String sendSignInUsername) {
-        DesiredCapsManager.driver.findElement(signInUserNameTextKey).sendKeys(sendSignInUsername);
+    public void clickIdButton(By buttonId) {
+        driver.findElement(buttonId).click();
+    }
+
+    public void signInUserNameKey(By signInUserNameTextKey, String sendSignInUsername) {
+        driver.findElement(signInUserNameTextKey).sendKeys(sendSignInUsername);
 
     }
 
-    public static void signInUserPasswordKey(By userNamePasswordKey, String sendSignInPasswordKey) {
+    public void signInUserPasswordKey(By userNamePasswordKey, String sendSignInPasswordKey) {
 
-        DesiredCapsManager.driver.findElement(userNamePasswordKey).sendKeys(sendSignInPasswordKey);
+        driver.findElement(userNamePasswordKey).sendKeys(sendSignInPasswordKey);
     }
 
-    public static void userEmailKey(By userNameEmailKey, String emailKey) {
-        DesiredCapsManager.driver.findElement(userNameEmailKey).
+    public void userEmailKey(By userNameEmailKey, String emailKey) {
+        driver.findElement(userNameEmailKey).
                 sendKeys(RandomGeneratingNumbers.randomNumber() + emailKey);
 
     }
 
-    public static void registerFullNameKey(By registerFullNameKey, String sendRegisterFullNameKey) {
-        DesiredCapsManager.driver.findElement(registerFullNameKey).sendKeys(sendRegisterFullNameKey);
+    public void registerFullNameKey(By registerFullNameKey, String sendRegisterFullNameKey) {
+        driver.findElement(registerFullNameKey).sendKeys(sendRegisterFullNameKey);
 
 
     }
 
-    public static void registerUsernameKey(By registerUsernameKey, String sendRegisterUsernameKey) {
-        DesiredCapsManager.driver.findElement(registerUsernameKey).sendKeys(sendRegisterUsernameKey);
+    public void registerUsernameKey(By registerUsernameKey, String sendRegisterUsernameKey) {
+        driver.findElement(registerUsernameKey).sendKeys(sendRegisterUsernameKey);
     }
 
 }

@@ -1,59 +1,66 @@
 package screens;
 
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import utils.Utils;
 
 public class Register {
+    private AndroidDriver driver;
+    private Utils utils;
 
+    public Register(AndroidDriver driver) {
+        this.driver = driver;
+        utils = new Utils(this.driver);
+    }
 
-    private static By CREATE_ACCOUNT_BUTTON = By.id("com.picsart.studio:id/picsart_button_text");
-    private static By NEXT_BUTTON = CREATE_ACCOUNT_BUTTON;
-    private static By MAYBE_LATER = By.id("com.picsart.studio:id/btn_negative");
-    private static By BIRTHDAY_SKIP_BUTTON = By.id("com.picsart.studio:id/skip_button");
-    private static By SUBSCRIPTION_OFFER_CLOSE_BUTTON = By.className("android.widget.ImageButton");
-    private static By USER_INFO_EMAIL_TEXT = By.id("com.picsart.studio:id/user_info_edit_text");
-    private static By USER_INFO_FULL_NAME_TEXT = By.id("com.picsart.studio:id/user_info_edit_text");
-    private static By USER_INFO_USERNAME_TEXT = By.id("com.picsart.studio:id/user_info_edit_text");
+    private By CREATE_ACCOUNT_BUTTON = By.id("com.picsart.studio:id/picsart_button_text");
+    private By NEXT_BUTTON = CREATE_ACCOUNT_BUTTON;
+    private By MAYBE_LATER = By.id("com.picsart.studio:id/btn_negative");
+    private By BIRTHDAY_SKIP_BUTTON = By.id("com.picsart.studio:id/skip_button");
+    private By SUBSCRIPTION_OFFER_CLOSE_BUTTON = By.className("android.widget.ImageButton");
+    private By USER_INFO_EMAIL_TEXT = By.id("com.picsart.studio:id/user_info_edit_text");
+    private By USER_INFO_FULL_NAME_TEXT = By.id("com.picsart.studio:id/user_info_edit_text");
+    private By USER_INFO_USERNAME_TEXT = By.id("com.picsart.studio:id/user_info_edit_text");
 
 
     public void createAccountButton() {
 
-        Utils.clickIdButton(CREATE_ACCOUNT_BUTTON);
+        utils.clickIdButton(CREATE_ACCOUNT_BUTTON);
 
 
     }
 
     public void nextButton() {
-        Utils.clickIdButton(NEXT_BUTTON);
+        utils.clickIdButton(NEXT_BUTTON);
 
     }
 
     public void maybeLater() {
-        Utils.clickIdButton(MAYBE_LATER);
+        utils.clickIdButton(MAYBE_LATER);
 
     }
 
     public void birthdaySkipButton() {
-        Utils.clickIdButton(BIRTHDAY_SKIP_BUTTON);
+        utils.clickIdButton(BIRTHDAY_SKIP_BUTTON);
 
     }
 
     public void subscriptionOfferCloseButton() {
 
-        Utils.clickIdButton(SUBSCRIPTION_OFFER_CLOSE_BUTTON);
+        utils.clickIdButton(SUBSCRIPTION_OFFER_CLOSE_BUTTON);
 
     }
 
     public void userInfoEmailText() {
-        Utils.userEmailKey(USER_INFO_EMAIL_TEXT, "asd@gmail.com");
+        utils.userEmailKey(USER_INFO_EMAIL_TEXT, "asd@gmail.com");
 
     }
 
     public void userInfoFullNameText() {
-        Utils.registerFullNameKey(USER_INFO_FULL_NAME_TEXT, "asdasdad");
+        utils.registerFullNameKey(USER_INFO_FULL_NAME_TEXT, "asdasdad");
     }
 
     public void userInfoUsernameText() {
-        Utils.registerUsernameKey(USER_INFO_USERNAME_TEXT, "hagsdhj");
+        utils.registerUsernameKey(USER_INFO_USERNAME_TEXT, "hagsdhj");
     }
 }

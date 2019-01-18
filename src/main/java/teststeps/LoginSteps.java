@@ -1,18 +1,23 @@
 package teststeps;
 
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import screens.Login;
-import utils.DesiredCapsManager;
 
 public class LoginSteps {
 
-    private Login loginScreen;
+    AndroidDriver driver;
+    Login loginScreen;
+
+    public LoginSteps(AndroidDriver androidDriver){
+        this.driver = androidDriver;
+        loginScreen = new Login(driver);
+    }
 
 
     public void signIn() throws InterruptedException {
-        loginScreen = new Login();
         loginScreen.clickRegister();
-        if (DesiredCapsManager.driver.findElements(By.id("com.google.android.gms:id/credential_picker_layout")).size() > 0) {
+        if (driver.findElements(By.id("com.google.android.gms:id/credential_picker_layout")).size() > 0) {
 
             loginScreen.popUpCancelButton();
         }

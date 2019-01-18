@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9962f0e-18a3-420b-abbb-afc3a92afaa8" name="Default Changelist" comment="addasda">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/screens/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/screens/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/Register.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/teststeps/LoginSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teststeps/LoginSteps.java" afterDir="false" />
@@ -47,7 +46,7 @@
           <entry key="class" value="1" />
           <entry key="dummy" value="88" />
           <entry key="gitignore" value="5" />
-          <entry key="java" value="9658" />
+          <entry key="java" value="9957" />
           <entry key="txt" value="51" />
           <entry key="xml" value="15" />
         </counts>
@@ -56,7 +55,7 @@
         <counts>
           <entry key="CLASS" value="1" />
           <entry key="Git file" value="5" />
-          <entry key="JAVA" value="9658" />
+          <entry key="JAVA" value="9957" />
           <entry key="PLAIN_TEXT" value="141" />
           <entry key="XML" value="15" />
         </counts>
@@ -67,7 +66,7 @@
           <entry key="asdad" value="1" />
           <entry key="class" value="24" />
           <entry key="gitignore" value="2" />
-          <entry key="java" value="198" />
+          <entry key="java" value="201" />
           <entry key="xml" value="5" />
         </counts>
       </usages-collector>
@@ -75,7 +74,7 @@
         <counts>
           <entry key="CLASS" value="24" />
           <entry key="Git file" value="1" />
-          <entry key="JAVA" value="198" />
+          <entry key="JAVA" value="201" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="XML" value="5" />
         </counts>
@@ -95,8 +94,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/teststeps/LoginSteps.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="227">
+              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -108,9 +107,13 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/screens/Register.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+              <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1510#1511#0" expanded="true" />
+                <element signature="e#1589#1590#0" expanded="true" />
+                <element signature="e#1631#1632#0" expanded="true" />
+                <element signature="e#1708#1709#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -119,12 +122,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/testlogin/SignInTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+            <state relative-caret-position="225">
+              <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#348#349#0" expanded="true" />
-                <element signature="e#389#390#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -133,11 +134,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/utils/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+            <state relative-caret-position="120">
+              <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#121#122#0" expanded="true" />
-                <element signature="e#192#193#0" expanded="true" />
+                <element signature="e#174#175#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -146,8 +148,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/utils/DesiredCapsManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="45" column="37" lean-forward="true" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
+            <state relative-caret-position="-281">
+              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -156,10 +158,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-api/3.12.0/selenium-api-3.12.0-sources.jar!/org/openqa/selenium/MutableCapabilities.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="307">
+              <caret line="81" column="14" selection-start-line="81" selection-start-column="14" selection-end-line="81" selection-end-column="14" />
+              <folding>
+                <element signature="e#2491#2492#0" expanded="true" />
+                <element signature="e#2546#2547#0" expanded="true" />
+                <element signature="e#2614#2615#0" expanded="true" />
+                <element signature="e#2669#2670#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/utils/AppiumServerJava.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+            <state relative-caret-position="146">
+              <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -170,8 +187,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/testregister/RegisterTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+            <state relative-caret-position="225">
+              <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -180,21 +197,26 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/utils/RandomGeneratingNumbers.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/teststeps/RegisterSteps.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+            <state relative-caret-position="179">
+              <caret line="21" column="43" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/teststeps/RegisterSteps.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/screens/Login.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+            <state relative-caret-position="120">
+              <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#985#986#0" expanded="true" />
+                <element signature="e#1043#1044#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -214,9 +236,11 @@
       <find>platform</find>
       <find>com.picsart.studio:id/register_step_sign_in</find>
       <find>driver</find>
+      <find>Utils</find>
     </findStrings>
     <replaceStrings>
       <replace />
+      <replace>utils</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -252,14 +276,14 @@
         <option value="$PROJECT_DIR$/src/main/java/utils/RandomGeneratingNumbers.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/java/utils/AppiumServerJava.java" />
-        <option value="$PROJECT_DIR$/src/main/java/utils/Utils.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testlogin/SignInTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testregister/RegisterTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/teststeps/RegisterSteps.java" />
-        <option value="$PROJECT_DIR$/src/main/java/teststeps/LoginSteps.java" />
-        <option value="$PROJECT_DIR$/src/main/java/screens/Login.java" />
-        <option value="$PROJECT_DIR$/src/main/java/screens/Register.java" />
         <option value="$PROJECT_DIR$/src/main/resources/Apk/11.4" />
+        <option value="$PROJECT_DIR$/src/test/java/testlogin/SignInTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/utils/Utils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/screens/Login.java" />
+        <option value="$PROJECT_DIR$/src/main/java/teststeps/LoginSteps.java" />
+        <option value="$PROJECT_DIR$/src/main/java/teststeps/RegisterSteps.java" />
+        <option value="$PROJECT_DIR$/src/main/java/screens/Register.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testregister/RegisterTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/utils/DesiredCapsManager.java" />
       </list>
     </option>
@@ -394,7 +418,7 @@
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="rand&#9;FILE&#9;file:///Users/arturpoturyan/IdeaProjects/TestPicsArt/src/main/java/utils/RandomGeneratingNumbers.java&#10;register&#9;FILE&#9;file:///Users/arturpoturyan/IdeaProjects/TestPicsArt/src/main/java/teststeps/RegisterSteps.java&#10;Des&#9;FILE&#9;jar:///Users/arturpoturyan/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/3.12.0/selenium-remote-driver-3.12.0-sources.jar!/org/openqa/selenium/remote/DesiredCapabilities.java&#10;driver&#9;FILE&#9;jar:///Users/arturpoturyan/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/3.12.0/selenium-remote-driver-3.12.0.jar!/org/openqa/selenium/remote/RemoteWebDriver.class&#10;Login&#9;FILE&#9;file:///Users/arturpoturyan/IdeaProjects/TestPicsArt/src/test/java/testlogin/LoginTest.java" />
     <property name="add_unversioned_files" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547797871002" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547820663755" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -412,7 +436,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.RegisterTest.verifyFunctionalityOfRegister">
+  <component name="RunManager" selected="TestNG.SignInTest.verifyFunctionalityOfSignIn">
     <configuration name="AppiumServerJava" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="utils.AppiumServerJava" />
       <module name="TestPicsArt" />
@@ -503,8 +527,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.RegisterTest.verifyFunctionalityOfRegister" />
         <item itemvalue="TestNG.SignInTest.verifyFunctionalityOfSignIn" />
+        <item itemvalue="TestNG.RegisterTest.verifyFunctionalityOfRegister" />
         <item itemvalue="TestNG.SignInTest" />
         <item itemvalue="Application.AppiumServerJava" />
         <item itemvalue="TestNG.RegisterTest" />
@@ -554,35 +578,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SignInTest_verifyFunctionalityOfSignIn - 2019.01.17 at 21h 40m 38s.xml">
-      <configuration name="SignInTest.verifyFunctionalityOfSignIn" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SignInTest_verifyFunctionalityOfSignIn - 2019.01.17 at 21h 45m 33s.xml">
-      <configuration name="SignInTest.verifyFunctionalityOfSignIn" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="RegisterTest_verifyFunctionalityOfRegister - 2019.01.17 at 21h 47m 00s.xml">
-      <configuration name="RegisterTest.verifyFunctionalityOfRegister" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SignInTest_verifyFunctionalityOfSignIn - 2019.01.17 at 21h 57m 06s.xml">
-      <configuration name="SignInTest.verifyFunctionalityOfSignIn" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SignInTest_verifyFunctionalityOfSignIn - 2019.01.17 at 22h 40m 01s.xml">
-      <configuration name="SignInTest.verifyFunctionalityOfSignIn" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SignInTest_verifyFunctionalityOfSignIn - 2019.01.17 at 23h 01m 47s.xml">
-      <configuration name="SignInTest.verifyFunctionalityOfSignIn" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SignInTest_verifyFunctionalityOfSignIn - 2019.01.17 at 23h 54m 03s.xml">
-      <configuration name="SignInTest.verifyFunctionalityOfSignIn" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SignInTest_verifyFunctionalityOfSignIn - 2019.01.17 at 23h 55m 57s.xml">
-      <configuration name="SignInTest.verifyFunctionalityOfSignIn" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="RegisterTest_verifyFunctionalityOfRegister - 2019.01.17 at 23h 56m 23s.xml">
-      <configuration name="RegisterTest.verifyFunctionalityOfRegister" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="RegisterTest_verifyFunctionalityOfRegister - 2019.01.17 at 23h 58m 30s.xml">
       <configuration name="RegisterTest.verifyFunctionalityOfRegister" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="RegisterTest_verifyFunctionalityOfRegister - 2019.01.18 at 18h 00m 39s.xml">
+      <configuration name="RegisterTest.verifyFunctionalityOfRegister" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="RegisterTest_verifyFunctionalityOfRegister - 2019.01.18 at 18h 01m 05s.xml">
+      <configuration name="RegisterTest.verifyFunctionalityOfRegister" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SignInTest_verifyFunctionalityOfSignIn - 2019.01.18 at 18h 01m 59s.xml">
+      <configuration name="SignInTest.verifyFunctionalityOfSignIn" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SignInTest_verifyFunctionalityOfSignIn - 2019.01.18 at 18h 02m 39s.xml">
+      <configuration name="SignInTest.verifyFunctionalityOfSignIn" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SignInTest_verifyFunctionalityOfSignIn - 2019.01.18 at 18h 03m 44s.xml">
+      <configuration name="SignInTest.verifyFunctionalityOfSignIn" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SignInTest_verifyFunctionalityOfSignIn - 2019.01.18 at 18h 04m 15s.xml">
+      <configuration name="SignInTest.verifyFunctionalityOfSignIn" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SignInTest_verifyFunctionalityOfSignIn - 2019.01.18 at 18h 05m 18s.xml">
+      <configuration name="SignInTest.verifyFunctionalityOfSignIn" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SignInTest_verifyFunctionalityOfSignIn - 2019.01.18 at 18h 06m 29s.xml">
+      <configuration name="SignInTest.verifyFunctionalityOfSignIn" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SignInTest_verifyFunctionalityOfSignIn - 2019.01.18 at 18h 07m 16s.xml">
+      <configuration name="SignInTest.verifyFunctionalityOfSignIn" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="TodoView" selected-index="1">
@@ -605,17 +629,17 @@
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" sideWeight="0.5011136" side_tool="true" weight="0.27059773" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.32739726" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.32673267" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32876712" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.21232876" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.29844412" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.42279792" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32876712" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3849315" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3847242" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.12446959" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -653,6 +677,32 @@
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.32956383" />
     </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -936,18 +986,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-api/3.12.0/selenium-api-3.12.0-sources.jar!/org/openqa/selenium/MutableCapabilities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="78" selection-start-line="78" selection-end-line="78" />
-          <folding>
-            <element signature="e#2546#2547#0" expanded="true" />
-            <element signature="e#2614#2615#0" expanded="true" />
-            <element signature="e#2669#2670#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/io/appium/java-client/6.1.0/java-client-6.1.0-sources.jar!/io/appium/java_client/android/AndroidDriver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -987,10 +1025,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/screens/Login.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/asdad">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Apk/11.4">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/RandomGeneratingNumbers.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" column="20" lean-forward="true" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-api/3.12.0/selenium-api-3.12.0-sources.jar!/org/openqa/selenium/MutableCapabilities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="81" column="14" selection-start-line="81" selection-start-column="14" selection-end-line="81" selection-end-column="14" />
+          <folding>
+            <element signature="e#2491#2492#0" expanded="true" />
+            <element signature="e#2546#2547#0" expanded="true" />
+            <element signature="e#2614#2615#0" expanded="true" />
+            <element signature="e#2669#2670#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/AppiumServerJava.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#121#122#0" expanded="true" />
+            <element signature="e#174#175#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/screens/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#985#986#0" expanded="true" />
+            <element signature="e#1043#1044#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/teststeps/LoginSteps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/teststeps/RegisterSteps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="21" column="43" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1000,93 +1108,41 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/screens/Register.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/teststeps/LoginSteps.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/teststeps/RegisterSteps.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utils/AppiumServerJava.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utils/RandomGeneratingNumbers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testlogin/SignInTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#348#349#0" expanded="true" />
-            <element signature="e#389#390#0" expanded="true" />
+            <element signature="e#1510#1511#0" expanded="true" />
+            <element signature="e#1589#1590#0" expanded="true" />
+            <element signature="e#1631#1632#0" expanded="true" />
+            <element signature="e#1708#1709#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/testregister/RegisterTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+        <state relative-caret-position="225">
+          <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utils/Utils.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/testlogin/SignInTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+        <state relative-caret-position="225">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
           <folding>
-            <element signature="e#121#122#0" expanded="true" />
-            <element signature="e#192#193#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/asdad">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Apk/11.4">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/utils/DesiredCapsManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="45" column="37" lean-forward="true" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
+        <state relative-caret-position="-281">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

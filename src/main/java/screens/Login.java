@@ -1,53 +1,62 @@
 package screens;
 
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import utils.Utils;
 
 public class Login {
+    private AndroidDriver driver;
+    private Utils utils;
+    
 
+    public Login(AndroidDriver driver) {
+        this.driver = driver;
+        utils = new Utils(this.driver);
+    }
 
-    private static By REGISTER_BUTTON_CLICK = By.id("com.picsart.studio:id/register_step_sign_in");
-    private static By POPUP_CANCEL_BUTTON = By.id("com.google.android.gms:id/cancel");
-    private static By USERNAME_FIELD = By.id("com.picsart.studio:id/sign_in_username");
-    private static By PASSWORD_FIELD = By.id("com.picsart.studio:id/sign_in_password");
-    private static By FINAL_SIGN_IN_BUTTON = By.id("com.picsart.studio:id/picsart_button_text");
-    private static By SIGN_IN_USERNAME = By.id("com.picsart.studio:id/sign_in_username");
-    private static By SIGN_IN_PASSWORD = By.id("com.picsart.studio:id/sign_in_password");
+    private  By REGISTER_BUTTON_CLICK = By.id("com.picsart.studio:id/register_step_sign_in");
+    private  By POPUP_CANCEL_BUTTON = By.id("com.google.android.gms:id/cancel");
+    private  By USERNAME_FIELD = By.id("com.picsart.studio:id/sign_in_username");
+    private  By PASSWORD_FIELD = By.id("com.picsart.studio:id/sign_in_password");
+    private  By FINAL_SIGN_IN_BUTTON = By.id("com.picsart.studio:id/picsart_button_text");
+    private  By SIGN_IN_USERNAME = By.id("com.picsart.studio:id/sign_in_username");
+    private  By SIGN_IN_PASSWORD = By.id("com.picsart.studio:id/sign_in_password");
+
 
 
     public void clickRegister() {
-        Utils.clickIdButton(REGISTER_BUTTON_CLICK);
+        utils.clickIdButton(REGISTER_BUTTON_CLICK);
     }
 
     public void popUpCancelButton() {
-        Utils.clickIdButton(POPUP_CANCEL_BUTTON);
+        utils.clickIdButton(POPUP_CANCEL_BUTTON);
 
     }
 
     public void userNameField() {
-        Utils.clickIdButton(USERNAME_FIELD);
+        utils.clickIdButton(USERNAME_FIELD);
 
     }
 
     public void passwordField() {
-        Utils.clickIdButton(PASSWORD_FIELD);
+        utils.clickIdButton(PASSWORD_FIELD);
 
     }
 
     public void finalSignInButton() {
-        Utils.clickIdButton(FINAL_SIGN_IN_BUTTON);
+        utils.clickIdButton(FINAL_SIGN_IN_BUTTON);
 
     }
 
     public void signInUsername() {
-        Utils.signInUserNameKey(SIGN_IN_USERNAME, "kakao60");
+        utils.signInUserNameKey(SIGN_IN_USERNAME, "kakao60");
 
 
     }
 
     public void signInPassword() {
 
-        Utils.signInUserPasswordKey(SIGN_IN_PASSWORD, "qwertya");
+        utils.signInUserPasswordKey(SIGN_IN_PASSWORD, "qwertya");
     }
 }
 

@@ -6,15 +6,14 @@ import teststeps.RegisterSteps;
 import utils.DesiredCapsManager;
 
 
-public class RegisterTest {
+public class RegisterTest extends DesiredCapsManager {
 
 
     private RegisterSteps registerSteps;
 
     @BeforeClass
     public void setup() {
-        DesiredCapsManager.setUp();
-        registerSteps = new RegisterSteps();
+        registerSteps = new RegisterSteps(driver);
 
     }
 
