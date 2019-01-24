@@ -1,9 +1,8 @@
-package teststeps;
+package steps;
 
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import screens.Register;
-import utils.DesiredCapsManager;
 
 public class RegisterSteps {
 

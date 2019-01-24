@@ -2,7 +2,7 @@ package testregister;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import teststeps.RegisterSteps;
+import steps.RegisterSteps;
 import utils.DesiredCapsManager;
 
 
@@ -20,5 +20,6 @@ public class RegisterTest extends DesiredCapsManager {
     @Test
     public void verifyFunctionalityOfRegister() throws InterruptedException {
         registerSteps.register();
+
     }
 }

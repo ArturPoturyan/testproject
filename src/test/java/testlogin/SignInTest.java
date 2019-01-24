@@ -1,11 +1,11 @@
 package testlogin;
 
-import io.appium.java_client.android.AndroidDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import teststeps.LoginSteps;
+import steps.LoginSteps;
 import utils.DesiredCapsManager;
-
+import static org.testng.AssertJUnit.assertTrue;
+import static org.testng.AssertJUnit.assertFalse;
 public class SignInTest extends DesiredCapsManager {
 
     private LoginSteps loginSteps;
@@ -17,10 +17,12 @@ public class SignInTest extends DesiredCapsManager {
 
     }
 
-
+    //todo priorityner@ harcnel
     @Test
     public void verifyFunctionalityOfSignIn() throws InterruptedException {
         loginSteps.signIn();
-//        Reporter.log("Login with valid credentials is successful", true);
+        driver.resetApp();
+        //assertTrue("offer screen is not present on the screen",isOfferPresent());
+
     }
 }

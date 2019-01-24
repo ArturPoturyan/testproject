@@ -43,5 +43,4 @@ public class Utils {
     public void registerUsernameKey(By registerUsernameKey, String sendRegisterUsernameKey) {
         driver.findElement(registerUsernameKey).sendKeys(sendRegisterUsernameKey);
     }
-
 }

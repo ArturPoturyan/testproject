@@ -10,20 +10,21 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
+
 
 public class DesiredCapsManager {
     public AndroidDriver<MobileElement> driver;
     private AppiumDriverLocalService service;
 
 
-
     @BeforeSuite
+
     public void setUp() {
-        //DesiredCapabilities desiredCapabilities = initDesiredCapability();
-        //String appiumServiceUrl = initService();
         initDriver(initService(), initDesiredCapability());
     }
 
@@ -35,18 +36,18 @@ public class DesiredCapsManager {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-
     }
 
     private DesiredCapabilities initDesiredCapability() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        String apk = "/Users/arturpoturyan/Downloads/picsart-11.4-unsigned-15-signed.apk";//todo nenc grel vor sagh komperi vra ashxati
+        ClassLoader classLoader = getClass().getClassLoader();
+        File file = new File(Objects.requireNonNull(classLoader.getResource("apk/11.4(50-build).apk")).getFile());
+        capabilities.setCapability("app", file);
         capabilities.setCapability(MobileCapabilityType.UDID, "b15ffa8f");
         capabilities.setCapability("deviceName", "A7");
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("platformVersion", "6.0.1");
         capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
-        capabilities.setCapability("app", apk);
         capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE,
                 "com.picsart.studio");
         capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,
