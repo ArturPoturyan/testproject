@@ -4,18 +4,18 @@ import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import utils.Utils;
 
-public class Login {
+public class LoginScreen {
     private AndroidDriver driver;
     private Utils utils;
 
 
-    public Login(AndroidDriver driver) {
+    public LoginScreen(AndroidDriver driver) {
         this.driver = driver;
         utils = new Utils(this.driver);
     }
 
+    //Buttons
     private By REGISTER_BUTTON_CLICK = By.id("com.picsart.studio:id/register_step_sign_in");
-    private By POPUP_CANCEL_BUTTON = By.id("com.google.android.gms:id/cancel");
     private By USERNAME_FIELD = By.id("com.picsart.studio:id/sign_in_username");
     private By PASSWORD_FIELD = By.id("com.picsart.studio:id/sign_in_password");
     private By FINAL_SIGN_IN_BUTTON = By.id("com.picsart.studio:id/picsart_button_text");
@@ -23,40 +23,48 @@ public class Login {
     private By SIGN_IN_PASSWORD = By.id("com.picsart.studio:id/sign_in_password");
 
 
-    public void clickRegister() {
-//        driver.findElement(REGISTER_BUTTON_CLICK).click();
+    //PopupViews
+    private By POPUP_CANCEL_BUTTON = By.id("com.google.android.gms:id/cancel");
+    private By CONTINUE_WITH_EMAIL_POPUP = By.id("com.google.android.gms:id/credential_picker_layout");
+
+
+    public void clickRegisterButton() {
         utils.clickIdButton(REGISTER_BUTTON_CLICK);
     }
 
-    public void popUpCancelButton() {
+    public void clickPopUpCancelButton() {
         utils.clickIdButton(POPUP_CANCEL_BUTTON);
 
     }
 
-    public void userNameField() {
+    public void clickUserNameField() {
         utils.clickIdButton(USERNAME_FIELD);
 
     }
 
-    public void passwordField() {
+    public void clickPasswordField() {
         utils.clickIdButton(PASSWORD_FIELD);
 
     }
 
-    public void finalSignInButton() {
+    public void clickFinalSignInButton() {
         utils.clickIdButton(FINAL_SIGN_IN_BUTTON);
 
     }
 
-    public void signInUsername() {
-        utils.signInUserNameKey(SIGN_IN_USERNAME, "kakao60");
+    public void typeSignInUsername() {
+        utils.typeText(SIGN_IN_USERNAME, "kakao60");
 
 
     }
 
-    public void signInPassword() {
+    public void typeSignInPassword() {
+        utils.typeText(SIGN_IN_PASSWORD,"qwertya");
 
-        utils.signInUserPasswordKey(SIGN_IN_PASSWORD, "qwertya");
+    }
+
+    public boolean isContinueWithEmailPopupPresent() {
+        return utils.isElementPresent(CONTINUE_WITH_EMAIL_POPUP);
     }
 }
 

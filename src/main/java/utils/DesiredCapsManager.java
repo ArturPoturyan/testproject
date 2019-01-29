@@ -9,7 +9,6 @@ import io.appium.java_client.service.local.AppiumServerHasNotBeenStartedLocallyE
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -38,6 +37,7 @@ public class DesiredCapsManager {
         }
     }
 
+
     private DesiredCapabilities initDesiredCapability() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         ClassLoader classLoader = getClass().getClassLoader();
@@ -59,7 +59,7 @@ public class DesiredCapsManager {
         service = AppiumDriverLocalService.buildDefaultService();
         if (service == null) {
             throw new AppiumServerHasNotBeenStartedLocallyException("An appium server node is not started!");
-        }//todo imanal inca u asel
+        }
         service.start();
         String appiumServiceUrl = service.getUrl().toString();
         System.out.println("Appium Service Address : - " + appiumServiceUrl);
@@ -69,8 +69,8 @@ public class DesiredCapsManager {
 
     @AfterSuite
     public void tearDown() {
-        driver.quit();//todo imanal inca u asel
-        service.stop();//todo imanal inca u asel
+        driver.quit();
+        service.stop();
 
     }
 }

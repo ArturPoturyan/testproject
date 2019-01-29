@@ -1,32 +1,28 @@
 package steps;
 
 import io.appium.java_client.android.AndroidDriver;
-import org.openqa.selenium.By;
-import screens.Login;
+import screens.LoginScreen;
 
 public class LoginSteps {
 
-    AndroidDriver driver;
-    Login loginScreen;
+    private AndroidDriver driver;
+    private LoginScreen loginScreen;
 
-    public LoginSteps(AndroidDriver androidDriver){
+    public LoginSteps(AndroidDriver androidDriver) {
         this.driver = androidDriver;
-        loginScreen = new Login(driver);
+        loginScreen = new LoginScreen(driver);
     }
-
 
     public void signIn() throws InterruptedException {
-        loginScreen.clickRegister();
-        if (driver.findElements(By.id("com.google.android.gms:id/credential_picker_layout")).size() > 0) {
-
-            loginScreen.popUpCancelButton();
+        loginScreen.clickRegisterButton();
+        if (loginScreen.isContinueWithEmailPopupPresent()) {
+            loginScreen.clickPopUpCancelButton();
         }
-        loginScreen.userNameField();
-        loginScreen.signInUsername();
-        loginScreen.passwordField();
-        loginScreen.signInPassword();
-        loginScreen.finalSignInButton();
+        loginScreen.clickUserNameField();
+        loginScreen.typeSignInUsername();
+        loginScreen.clickPasswordField();
+        loginScreen.typeSignInPassword();
+        loginScreen.clickFinalSignInButton();
         Thread.sleep(5000);
     }
-
 }

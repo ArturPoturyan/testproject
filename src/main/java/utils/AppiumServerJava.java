@@ -14,7 +14,7 @@ public class AppiumServerJava {
     private DesiredCapabilities cap;
 
 
-    public void startServer() {
+    private void startServer() {
         cap = new DesiredCapabilities();
         cap.setCapability("noReset", "false");
         builder = new AppiumServiceBuilder();
