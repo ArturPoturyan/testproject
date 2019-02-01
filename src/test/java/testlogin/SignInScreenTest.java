@@ -9,7 +9,7 @@ import utils.DesiredCapsManager;
 import static org.testng.AssertJUnit.assertTrue;
 import static org.testng.AssertJUnit.assertFalse;
 
-public class SignInTest extends DesiredCapsManager {
+public class SignInScreenTest extends DesiredCapsManager {
 
     private LoginSteps loginSteps;
     private LoginScreen loginScreen;

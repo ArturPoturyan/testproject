@@ -1,14 +1,15 @@
 package steps;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import screens.LoginScreen;
 
 public class LoginSteps {
 
-    private AndroidDriver driver;
+    private AppiumDriver driver;
     private LoginScreen loginScreen;
 
-    public LoginSteps(AndroidDriver androidDriver) {
+    public LoginSteps(AppiumDriver androidDriver) {
         this.driver = androidDriver;
         loginScreen = new LoginScreen(driver);
     }
@@ -18,9 +19,7 @@ public class LoginSteps {
         if (loginScreen.isContinueWithEmailPopupPresent()) {
             loginScreen.clickPopUpCancelButton();
         }
-        loginScreen.clickUserNameField();
         loginScreen.typeSignInUsername();
-        loginScreen.clickPasswordField();
         loginScreen.typeSignInPassword();
         loginScreen.clickFinalSignInButton();
         Thread.sleep(5000);

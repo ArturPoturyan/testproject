@@ -1,26 +1,24 @@
 package screens;
 
-import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 import utils.Utils;
 
 public class LoginScreen {
-    private AndroidDriver driver;
+    private AppiumDriver driver;
     private Utils utils;
 
 
-    public LoginScreen(AndroidDriver driver) {
+    public LoginScreen(AppiumDriver driver) {
         this.driver = driver;
         utils = new Utils(this.driver);
     }
 
     //Buttons
-    private By REGISTER_BUTTON_CLICK = By.id("com.picsart.studio:id/register_step_sign_in");
+    private By REGISTER_BUTTON = By.id("com.picsart.studio:id/register_step_sign_in");//todo
     private By USERNAME_FIELD = By.id("com.picsart.studio:id/sign_in_username");
     private By PASSWORD_FIELD = By.id("com.picsart.studio:id/sign_in_password");
-    private By FINAL_SIGN_IN_BUTTON = By.id("com.picsart.studio:id/picsart_button_text");
-    private By SIGN_IN_USERNAME = By.id("com.picsart.studio:id/sign_in_username");
-    private By SIGN_IN_PASSWORD = By.id("com.picsart.studio:id/sign_in_password");
+    private By FINAL_SIGN_IN_BUTTON = By.id("com.picsart.studio:id/picsart_button_text");//todo
 
 
     //PopupViews
@@ -29,21 +27,11 @@ public class LoginScreen {
 
 
     public void clickRegisterButton() {
-        utils.clickIdButton(REGISTER_BUTTON_CLICK);
+        utils.clickIdButton(REGISTER_BUTTON);
     }
 
     public void clickPopUpCancelButton() {
         utils.clickIdButton(POPUP_CANCEL_BUTTON);
-
-    }
-
-    public void clickUserNameField() {
-        utils.clickIdButton(USERNAME_FIELD);
-
-    }
-
-    public void clickPasswordField() {
-        utils.clickIdButton(PASSWORD_FIELD);
 
     }
 
@@ -53,13 +41,13 @@ public class LoginScreen {
     }
 
     public void typeSignInUsername() {
-        utils.typeText(SIGN_IN_USERNAME, "kakao60");
+        utils.typeText(USERNAME_FIELD, "kakao60");
 
 
     }
 
     public void typeSignInPassword() {
-        utils.typeText(SIGN_IN_PASSWORD,"qwertya");
+        utils.typeText(PASSWORD_FIELD, "qwertya");
 
     }
 

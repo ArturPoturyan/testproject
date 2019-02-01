@@ -7,8 +7,8 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServerHasNotBeenStartedLocallyException;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.*;
+
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -22,9 +22,25 @@ public class DesiredCapsManager {
 
 
     @BeforeSuite
-
     public void setUp() {
         initDriver(initService(), initDesiredCapability());
+    }
+
+//    @BeforeMethod
+//    public void beforeMethodSetUp() {
+//
+//    }
+//
+//    @AfterMethod
+//    public void afterMethodSetUp() {
+//
+//    }
+
+    @AfterSuite
+    public void tearDown() {
+        driver.quit();
+        service.stop();
+
     }
 
     private void initDriver(String appiumServiceUrl, DesiredCapabilities desiredCapabilities) {
@@ -67,10 +83,4 @@ public class DesiredCapsManager {
         return appiumServiceUrl;
     }
 
-    @AfterSuite
-    public void tearDown() {
-        driver.quit();
-        service.stop();
-
-    }
 }
