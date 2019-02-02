@@ -14,26 +14,30 @@ public class RegisterSteps {
         registerScreen = new RegisterScreen(driver);
     }
 
-    public void registerNewUser() throws InterruptedException {
+    public void registerNewUser() {
 
-        registerScreen.clickCreateAccountButton();
+        registerScreen.clickNextButton();
         registerScreen.typeUserInfoEmailText();
-        Thread.sleep(2000);
-        registerScreen.clickNextButton();
-        registerScreen.typeUserInfoFullNameText();
-        registerScreen.clickNextButton();
-        registerScreen.typeUserInfoUsernameText();
-        Thread.sleep(2000);
-        registerScreen.clickNextButton();
-        registerScreen.clickNextButton();
-        Thread.sleep(2000);
-        if (registerScreen.isForgotToAddProfilePhotoPopupPresent()) {
-            registerScreen.clickMaybeLaterButton();
+        if (registerScreen.isNextButtonEnabled()) {
+            registerScreen.clickNextButton();
         }
-        registerScreen.clickBirthdaySkipButton();
-        if (registerScreen.isPaymentButton1Present()) {
-            registerScreen.clickSubscriptionOfferCloseButton();
+//        registerScreen.typeUserInfoFullNameText();
+        registerScreen.typePassword();
+        if (registerScreen.isNextButtonEnabled()) {
+            registerScreen.clickNextButton();
+//        registerScreen.typeUserInfoUsernameText();
+//        Thread.sleep(2000);
+            if (registerScreen.isNextButtonEnabled()) {
+                registerScreen.clickNextButton();
+            }
+//        Thread.sleep(2000);
+            if (registerScreen.isForgotToAddProfilePhotoPopupPresent()) {
+                registerScreen.clickMaybeLaterButton();
+            }
+//        registerScreen.clickBirthdaySkipButton();
+            if (registerScreen.isPaymentButton1Present()) {
+                registerScreen.clickSubscriptionOfferCloseButton();
+            }
         }
     }
-
 }

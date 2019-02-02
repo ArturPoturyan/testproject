@@ -21,15 +21,10 @@ public class RegisterScreen {
     private By SUBSCRIPTION_PAYMENT_BUTTON_1 = By.id("com.picsart.studio:id/subscription_payment_button_1");
     private By NEGATIVE_BUTTON = By.id("com.picsart.studio:id/btn_negative");
 
+
     //PopupViews
     private By FORGOT_PROFILE_PHOTO_POPUP = By.id("com.picsart.studio:id/pop_up_layout");
 
-    public void clickCreateAccountButton() {
-
-        utils.clickIdButton(NEXT_BUTTON);
-
-
-    }
 
     public void clickNextButton() {
         utils.clickIdButton(NEXT_BUTTON);
@@ -65,11 +60,19 @@ public class RegisterScreen {
         utils.typeText(REGISTER_INPUT_FIELD, "asdafasds");
     }
 
+    public void typePassword() {
+        utils.typeText(REGISTER_INPUT_FIELD, "asdasdasd");
+    }
+
     public boolean isForgotToAddProfilePhotoPopupPresent() {
         return utils.isElementPresent(FORGOT_PROFILE_PHOTO_POPUP);
     }
 
     public boolean isPaymentButton1Present() {
         return utils.isElementPresent(SUBSCRIPTION_PAYMENT_BUTTON_1);
+    }
+
+    public boolean isNextButtonEnabled() {
+        return utils.isElementEnabled(NEXT_BUTTON);
     }
 }

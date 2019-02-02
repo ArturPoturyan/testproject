@@ -3,15 +3,10 @@ package utils;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
-
-
-import io.appium.java_client.MultiTouchAction;
 import io.appium.java_client.TouchAction;
-import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import org.openqa.selenium.Dimension;
 
-import java.time.Duration;
 import java.util.Random;
 
 import static io.appium.java_client.touch.TapOptions.tapOptions;
@@ -103,6 +98,10 @@ public class Utils {
         driver.findElement(view).sendKeys(text);
 
 
+    }
+
+    public boolean isElementEnabled(By by) {
+        return driver.findElement(by).isEnabled();
     }
 
     public boolean isElementPresent(By by) {

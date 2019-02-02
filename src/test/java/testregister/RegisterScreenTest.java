@@ -25,7 +25,7 @@ public class RegisterScreenTest extends DesiredCapsManager {
 
     @Test
     public void verifyFunctionalityOfRegister() throws InterruptedException {
-        registerScreen.clickCreateAccountButton();
+        registerScreen.clickNextButton();
         registerScreen.typeUserInfoEmailText();
         Thread.sleep(2000);
         registerScreen.clickNextButton();

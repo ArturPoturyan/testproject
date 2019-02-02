@@ -26,15 +26,17 @@ public class DesiredCapsManager {
         initDriver(initService(), initDesiredCapability());
     }
 
-//    @BeforeMethod
-//    public void beforeMethodSetUp() {
-//
-//    }
-//
-//    @AfterMethod
-//    public void afterMethodSetUp() {
-//
-//    }
+    @BeforeMethod
+    public void beforeMethodSetUp() {
+        driver.launchApp();
+
+    }
+
+    @AfterMethod
+    public void afterMethodSetUp() {
+        driver.closeApp();
+
+    }
 
     @AfterSuite
     public void tearDown() {

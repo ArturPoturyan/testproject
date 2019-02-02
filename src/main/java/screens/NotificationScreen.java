@@ -21,7 +21,7 @@ public class NotificationScreen {
     private By NOTIFICATION_BUTTON = By.id("com.picsart.studio:id/menu_main_notification");
     private By POSITIVE_BUTTON = By.id("com.picsart.studio:id/btn_positive");
     private By PERMISSION_ALLOW_BUTTON = By.id("com.android.packageinstaller:id/permission_allow_button");
-    private By CLOSE_CREATE_FLOW_SCREEN = new By.ByClassName("android.widget.ImageButton");
+    private By BACK_IMAGE_BUTTON = new By.ByClassName("android.widget.ImageButton");
     private By PRIMARY_BUTTON = By.id("com.picsart.studio:id/btn_primary");
     private By GRID_IMAGE_LIST_ITEM = By.id("com.picsart.studio:id/grid_image");
     private By NOTIFICATIONS_TAB_BAR = By.className("android.support.v7.app.ActionBar$Tab");
@@ -34,7 +34,12 @@ public class NotificationScreen {
     private By PROFILE_TAB_BUTTON = By.id("com.picsart.studio:id/tab_profile_id");
     private By MY_NETWORK_BUTTON = By.id("com.picsart.studio:id/tab_my_network_id");
     private By DISCOVER_ARTISTS_TITLE = new By.ByClassName("android.widget.TextView");
-    private By FAB_BUTTON = By.id("com.picsart.studio:id/center_button_create_id");
+    private By PROFILE_MORE_BUTTON = By.id("com.picsart.studio:id/profile_menu_icon_top");
+    private By PROFILE_LOGOUT_BUTTON = By.id("com.picsart.studio:id/profile_menu_logout");
+    private By DIALOG_OK_BUTTON = By.id("com.picsart.studio:id/dialog_ok_btn");
+    private By PROFILE_FOLLOWINGS_BUTTON = By.id("com.picsart.studio:id/tv_followings");
+    private By DISPLAY_NAME = By.id("com.picsart.studio:id/display_name");
+    private By FOLLOW_BUTTON = By.id("com.picsart.studio:id/btn_follow");
 
 
     //Views
@@ -43,6 +48,34 @@ public class NotificationScreen {
     private By CREATE_FLOW_SCREEN = By.id("com.picsart.studio:id/recycler_view");
     private By TRY_GOLD_FOR_FREE = By.id("com.picsart.studio:id/main_content");
 
+    public void clickFollowButton() {
+        utils.clickIdButton(FOLLOW_BUTTON);
+
+    }
+
+    public boolean isPicsArtUserPresent() {
+        return utils.getText(DISPLAY_NAME).equals("PicsArt");
+    }
+
+    public void clickFollowingsButton() {
+        utils.clickIdButton(PROFILE_FOLLOWINGS_BUTTON);
+    }
+
+    public void clickDialogOkButton() {
+        utils.clickIdButton(DIALOG_OK_BUTTON);
+    }
+
+    public void clickProfileLogoutButton() {
+        utils.clickIdButton(PROFILE_LOGOUT_BUTTON);
+    }
+
+    public void clickProfileMoreButton() {
+        utils.clickIdButton(PROFILE_MORE_BUTTON);
+    }
+
+    public boolean isMyNetworkPresent() {
+        return utils.isElementPresent(MY_NETWORK_BUTTON);
+    }
 
     public void verticalSwipe(double startYPercentage, double endYPercentage, double startXPercentage) {
         utils.verticalSwipeByPercentages(startYPercentage, endYPercentage, startXPercentage);
@@ -101,8 +134,8 @@ public class NotificationScreen {
         utils.clickIdButton(PERMISSION_ALLOW_BUTTON);
     }
 
-    public void clickCloseCreateFlowButton() {
-        utils.clickIdButton(CLOSE_CREATE_FLOW_SCREEN);
+    public void clickBackImageButton() {
+        utils.clickIdButton(BACK_IMAGE_BUTTON);
     }
 
     public void clickUploadImageButton() {
@@ -156,6 +189,10 @@ public class NotificationScreen {
 
     public boolean isYouHaveNoActivityTextPresent() {
         return utils.getText(EMPTY_STATE_TEXT).equals("You have no activity : (");
+    }
+
+    public boolean isNoResultTextPresent() {
+        return utils.getText(EMPTY_STATE_TEXT).equals("No Result");
     }
 
 }

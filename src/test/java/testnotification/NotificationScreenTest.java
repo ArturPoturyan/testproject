@@ -2,7 +2,9 @@ package testnotification;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import screens.LoginScreen;
 import screens.NotificationScreen;
+import steps.LoginSteps;
 import steps.NotificationSteps;
 import steps.RegisterSteps;
 import utils.DesiredCapsManager;
@@ -16,14 +18,22 @@ public class NotificationScreenTest extends DesiredCapsManager {
     private RegisterSteps registerSteps;
     private NotificationScreen notificationScreen;
     private NotificationSteps notificationSteps;
+    private LoginScreen loginScreen;
+    private LoginSteps loginSteps;
 
 
     @BeforeClass
-    public void setup() {
+    public void setup() throws InterruptedException {
 
         registerSteps = new RegisterSteps(driver);
         notificationScreen = new NotificationScreen(driver);
         notificationSteps = new NotificationSteps(driver);
+        loginScreen = new LoginScreen(driver);
+        loginSteps = new LoginSteps(driver);
+        if (loginScreen.isSignInButtonPresent()) {
+            loginSteps.signIn();
+        }
+
 
         //todo ete sign in exac chi, sign in linel
     }
@@ -33,17 +43,46 @@ public class NotificationScreenTest extends DesiredCapsManager {
     //todo avelacnel afterMethodum kill app
 
 
+    //    //TODO PIA-53631
+    //[InApp_Notifications] Verify the appearance of  "Empty State" if there is no notification in Following tab
+    @Test(groups = "empty state")
+    public void verifyAppearanceOfEmptyStateInFollowingTab() throws InterruptedException {
+        if (notificationScreen.isMyNetworkPresent()) {
+            notificationScreen.clickProfileTab();
+            notificationScreen.clickProfileMoreButton();
+            notificationScreen.clickProfileLogoutButton();
+            notificationScreen.clickDialogOkButton();
+        }
+        //todo ete sing in eghac a, sign out lini
+        registerSteps.registerNewUser();
+        notificationSteps.accessPhotoPermission();
+        if (notificationScreen.isMyNetworkPresent()) {
+            notificationScreen.clickProfileTab();
+        }
+        notificationScreen.clickFollowingsButton();
+        if (notificationScreen.isPicsArtUserPresent()) {
+            notificationScreen.clickFollowButton();
+        }
+        notificationScreen.clickBackImageButton();
+        notificationScreen.clickMyNetworkTab();
+        notificationScreen.clickNotificationButton();
+        notificationScreen.clickOnFollowingTab();
+        assertTrue("No Result is not present on the notification Following tab"
+                , notificationScreen.isNoResultTextPresent());
+
+    }
     //TODO PIA-53635
 
     // [InApp_Notifications] Verify the appearance of "Empty State" in "Me" tab in case there is no notification available && has no post
     @Test(groups = "UI test")
-    public void verifyAppearanceOfUploadImageButton() throws InterruptedException {
+    public void verifyAppearanceOfUploadImageButton() {
         //todo ete sing in eghac a, sign out lini
-        registerSteps.registerNewUser();
-        notificationSteps.accessPhotoPermission();
-        notificationScreen.clickNotificationButton();
+        if (notificationScreen.isMyNetworkPresent()) {
+            notificationScreen.clickNotificationButton();
+        }
         notificationScreen.clickOnMeTab();
-        assertTrue("You have no activity :( is not present on the notification me tab screen", notificationScreen.isYouHaveNoActivityTextPresent());
+        assertTrue("You have no activity :( is not present on the notification me tab"
+                , notificationScreen.isYouHaveNoActivityTextPresent());
 
     }
 
@@ -52,6 +91,10 @@ public class NotificationScreenTest extends DesiredCapsManager {
     @Test(groups = "empty state", dependsOnMethods = {"verifyAppearanceOfUploadImageButton"})
     public void verifyFunctionalityOfUploadImageButton() {
         //todo steper avelacnel
+        if (notificationScreen.isMyNetworkPresent()) {
+            notificationScreen.clickNotificationButton();
+        }
+        notificationScreen.clickOnMeTab();
         notificationScreen.clickUploadImageButton();
         assertTrue("Photo chooser is not present on the screen",
                 notificationScreen.isPhotoChooserImageListPresent());
@@ -64,6 +107,9 @@ public class NotificationScreenTest extends DesiredCapsManager {
     public void verifyAppearanceOfLetIsStartButton() {
         //todo steper avelacnel
 
+        notificationScreen.clickNotificationButton();
+        notificationScreen.clickOnMeTab();
+        notificationScreen.clickUploadImageButton();
         notificationScreen.clickOnPhoto();
         notificationSteps.skipGoldPopup();
         notificationScreen.clickEditorNextButton();
@@ -83,18 +129,16 @@ public class NotificationScreenTest extends DesiredCapsManager {
     @Test(groups = "empty state", dependsOnMethods = {"verifyAppearanceOfLetIsStartButton"})
     public void verifyFunctionalityOfLetIsStartButton() {
         //todo steper avelacnel
-
+        if (notificationScreen.isMyNetworkPresent()) {
+            notificationScreen.clickNotificationButton();
+        }
+        notificationScreen.clickOnMeTab();
         notificationScreen.clickLetIsStartButton();
         assertTrue("Discover Artists title is not present on the discover screen"
                 , notificationScreen.isDiscoverArtistsPresent());
     }
 
     //todo mihat test, aranc dependsi, vor swipe ani nkarner@ aj u dzax. erku hat swipe i method Utilsum.
-
-//    //TODO PIA-53631
-//    //[InApp_Notifications] Verify the appearance of  "Empty State" if there is no notification in Following tab
-//    @Test(groups = "empty state",dependsOnMethods = )
-
 
 
 }

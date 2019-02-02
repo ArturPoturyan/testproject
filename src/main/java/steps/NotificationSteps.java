@@ -21,7 +21,7 @@ public class NotificationSteps {
             notificationScreen.clickPermissionAllowButton();
         }
         if (notificationScreen.isCreateFlowScreenPresent()) {
-            notificationScreen.clickCloseCreateFlowButton();
+            notificationScreen.clickBackImageButton();
         }
     }
 
