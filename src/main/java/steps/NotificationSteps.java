@@ -30,4 +30,14 @@ public class NotificationSteps {
             notificationScreen.clickGoldPopupSkipButton();
         }
     }
+
+    public void logOutFromPicsArt() {
+
+        if (notificationScreen.isProfileTabPresent()) {//todo change payman
+            notificationScreen.clickProfileTab();
+            notificationScreen.clickProfileMoreButton();
+            notificationScreen.clickProfileLogoutButton();
+            notificationScreen.clickDialogOkButton();
+        }
+    }
 }

@@ -27,9 +27,9 @@ public class RegisterSteps {
             registerScreen.clickNextButton();
 //        registerScreen.typeUserInfoUsernameText();
 //        Thread.sleep(2000);
-            if (registerScreen.isNextButtonEnabled()) {
-                registerScreen.clickNextButton();
-            }
+//            if (registerScreen.isNextButtonEnabled()) {
+            registerScreen.clickNextButton();
+//        }
 //        Thread.sleep(2000);
             if (registerScreen.isForgotToAddProfilePhotoPopupPresent()) {
                 registerScreen.clickMaybeLaterButton();

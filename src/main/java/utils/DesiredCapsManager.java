@@ -15,6 +15,9 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
+import static utils.CommonValues.APP_ACTIVITY_NAME;
+import static utils.CommonValues.APP_PACKAGE_NAME;
+
 
 public class DesiredCapsManager {
     public AndroidDriver<MobileElement> driver;
@@ -59,17 +62,18 @@ public class DesiredCapsManager {
     private DesiredCapabilities initDesiredCapability() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(Objects.requireNonNull(classLoader.getResource("apk/11.4(50-build).apk")).getFile());
+        File file = new File(Objects.requireNonNull(classLoader.getResource("apk/release_11.5-build46.apk")).getFile());
         capabilities.setCapability("app", file);
-        capabilities.setCapability(MobileCapabilityType.UDID, "b15ffa8f");
-        capabilities.setCapability("deviceName", "A7");
+//        capabilities.setCapability(MobileCapabilityType.UDID, "b15ffa8f");
+        capabilities.setCapability(MobileCapabilityType.UDID, "410042ad44709101");
+//        capabilities.setCapability("deviceName", "A7");
+        capabilities.setCapability("deviceName", "Galaxy Note4");
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("platformVersion", "6.0.1");
         capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
-        capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE,
-                "com.picsart.studio");
-        capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,
-                "com.socialin.android.photo.picsinphoto.MainPagerActivity");
+//        capabilities.setCapability("autoGrantPermissions", true);
+        capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, APP_PACKAGE_NAME);
+        capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, APP_ACTIVITY_NAME);
         return capabilities;
     }
 

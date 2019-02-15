@@ -10,7 +10,6 @@ import steps.RegisterSteps;
 import utils.DesiredCapsManager;
 
 import static org.testng.AssertJUnit.assertTrue;
-import static org.testng.AssertJUnit.assertFalse;
 
 public class NotificationScreenTest extends DesiredCapsManager {
 
@@ -30,43 +29,27 @@ public class NotificationScreenTest extends DesiredCapsManager {
         notificationSteps = new NotificationSteps(driver);
         loginScreen = new LoginScreen(driver);
         loginSteps = new LoginSteps(driver);
-        if (loginScreen.isSignInButtonPresent()) {
-            loginSteps.signIn();
-        }
 
-
-        //todo ete sign in exac chi, sign in linel
+//        if (loginScreen.isSignInButtonPresent()) {
+//            loginSteps.signIn();
+//        }
     }
-
-    //todo imanal inchi hamar en gruper@
-    //todo avelacnel beforeMethodum start app
-    //todo avelacnel afterMethodum kill app
-
 
     //    //TODO PIA-53631
     //[InApp_Notifications] Verify the appearance of  "Empty State" if there is no notification in Following tab
-    @Test(groups = "empty state")
-    public void verifyAppearanceOfEmptyStateInFollowingTab() throws InterruptedException {
-        if (notificationScreen.isMyNetworkPresent()) {
-            notificationScreen.clickProfileTab();
-            notificationScreen.clickProfileMoreButton();
-            notificationScreen.clickProfileLogoutButton();
-            notificationScreen.clickDialogOkButton();
-        }
-        //todo ete sing in eghac a, sign out lini
+    @Test
+    public void verifyAppearanceOfEmptyStateInFollowingTab() {
+        notificationSteps.logOutFromPicsArt();
         registerSteps.registerNewUser();
         notificationSteps.accessPhotoPermission();
-        if (notificationScreen.isMyNetworkPresent()) {
-            notificationScreen.clickProfileTab();
-        }
+        notificationScreen.clickProfileTab();
         notificationScreen.clickFollowingsButton();
-        if (notificationScreen.isPicsArtUserPresent()) {
-            notificationScreen.clickFollowButton();
-        }
+        notificationScreen.clickFollowButton();
         notificationScreen.clickBackImageButton();
-        notificationScreen.clickMyNetworkTab();
+        notificationScreen.clickFeedsTab();
         notificationScreen.clickNotificationButton();
         notificationScreen.clickOnFollowingTab();
+
         assertTrue("No Result is not present on the notification Following tab"
                 , notificationScreen.isNoResultTextPresent());
 
@@ -74,12 +57,10 @@ public class NotificationScreenTest extends DesiredCapsManager {
     //TODO PIA-53635
 
     // [InApp_Notifications] Verify the appearance of "Empty State" in "Me" tab in case there is no notification available && has no post
-    @Test(groups = "UI test")
+    @Test
     public void verifyAppearanceOfUploadImageButton() {
-        //todo ete sing in eghac a, sign out lini
-        if (notificationScreen.isMyNetworkPresent()) {
-            notificationScreen.clickNotificationButton();
-        }
+        notificationScreen.clickFeedsTab();
+        notificationScreen.clickNotificationButton();
         notificationScreen.clickOnMeTab();
         assertTrue("You have no activity :( is not present on the notification me tab"
                 , notificationScreen.isYouHaveNoActivityTextPresent());
@@ -88,12 +69,10 @@ public class NotificationScreenTest extends DesiredCapsManager {
 
     //TODO PIA-53641
     //[InApp_Notifications] Verify the functionality of taping "Upload image" button in case there is no notification available && has no post
-    @Test(groups = "empty state", dependsOnMethods = {"verifyAppearanceOfUploadImageButton"})
+    @Test(dependsOnMethods = {"verifyAppearanceOfUploadImageButton"})
     public void verifyFunctionalityOfUploadImageButton() {
-        //todo steper avelacnel
-        if (notificationScreen.isMyNetworkPresent()) {
-            notificationScreen.clickNotificationButton();
-        }
+        notificationScreen.clickFeedsTab();
+        notificationScreen.clickNotificationButton();
         notificationScreen.clickOnMeTab();
         notificationScreen.clickUploadImageButton();
         assertTrue("Photo chooser is not present on the screen",
@@ -103,10 +82,8 @@ public class NotificationScreenTest extends DesiredCapsManager {
 
     //TODO PIA-53614
     //[InApp_Notifications] Verify the appearance of Empty State in "Me" tab in case there is "no notification available && has posts"
-    @Test(groups = "empty state", dependsOnMethods = {"verifyFunctionalityOfUploadImageButton"})
+    @Test(dependsOnMethods = {"verifyFunctionalityOfUploadImageButton"})
     public void verifyAppearanceOfLetIsStartButton() {
-        //todo steper avelacnel
-
         notificationScreen.clickNotificationButton();
         notificationScreen.clickOnMeTab();
         notificationScreen.clickUploadImageButton();
@@ -117,7 +94,7 @@ public class NotificationScreenTest extends DesiredCapsManager {
         notificationScreen.clickUploadDoneButton();
         notificationScreen.clickProfileTab();
         notificationScreen.verticalSwipe(0.3, 0.9, 0.5);
-        notificationScreen.clickMyNetworkTab();
+        notificationScreen.clickFeedsTab();
         notificationScreen.clickNotificationButton();
         notificationScreen.clickOnMeTab();
         assertTrue("Find People to Follow text is not present on the notification Me tab",
@@ -126,19 +103,77 @@ public class NotificationScreenTest extends DesiredCapsManager {
 
     //TODO PIA-53620
     //[InApp_Notifications] Verify the functionality of Taping "Let's Start" button in empty state in case there is no "notification available && has posts"
-    @Test(groups = "empty state", dependsOnMethods = {"verifyAppearanceOfLetIsStartButton"})
+    @Test(dependsOnMethods = {"verifyAppearanceOfLetIsStartButton"})
     public void verifyFunctionalityOfLetIsStartButton() {
-        //todo steper avelacnel
-        if (notificationScreen.isMyNetworkPresent()) {
-            notificationScreen.clickNotificationButton();
-        }
+        notificationScreen.clickFeedsTab();
+        notificationScreen.clickNotificationButton();
         notificationScreen.clickOnMeTab();
         notificationScreen.clickLetIsStartButton();
         assertTrue("Discover Artists title is not present on the discover screen"
                 , notificationScreen.isDiscoverArtistsPresent());
+
     }
 
-    //todo mihat test, aranc dependsi, vor swipe ani nkarner@ aj u dzax. erku hat swipe i method Utilsum.
+
+    //TODO PIA-56760
+    //[Notifications_Settings] Verify the appearance of "Contact Support" button in about section from App settings
+    @Test
+    public void verifyAppearanceOfContactSupportButton() {
+        notificationScreen.clickProfileTab();
+        notificationScreen.clickProfileMoreButton();
+        notificationScreen.clickSettingsButton();
+        int k = 0;
+        while (!notificationScreen.isContactSupportTextPresent() && k < 10) {
+            notificationScreen.verticalSwipe(0.4, 0.2, 0.5);
+            k++;
+        }
+        assertTrue("Contact Support title is not present on the settings page", notificationScreen.isContactSupportTextPresent());
+    }
 
 
+    //TODO PIA-56762
+    //[Notifications_Settings] Verify the functionality of taping on the "Contact Support" button form app settings
+    @Test
+    public void verifyFunctionalityOfContactSupportButton() {
+        notificationScreen.clickProfileTab();
+        notificationScreen.clickProfileMoreButton();
+        notificationScreen.clickSettingsButton();
+        int k = 0;
+        while (!notificationScreen.isContactSupportTextPresent() && k < 10) {
+            notificationScreen.verticalSwipe(0.5, 0.045, 0.5);
+            k++;
+        }
+        assertTrue("Contact Support button is not present on settings screen",
+                notificationScreen.isContactSupportTextPresent());
+        notificationScreen.clickContactSupportButton();
+        assertTrue("Choose Email Client is not present ", notificationScreen.isChooseEmailClientTextPresent());
+    }
+
+
+    @Test
+    public void swipeLeftAndRight() {
+        notificationScreen.clickFeedsTab();
+        int tryes = 10;
+        while (!notificationScreen.isZoomableItemPresent() && tryes > 0) {
+            notificationScreen.verticalSwipe(0.9, 0.7, 0.5);
+            tryes--;
+        }
+        notificationScreen.clickImageMyNetworkTab();
+        assertTrue("actions panel is not present ", notificationScreen.isUserAvatarIconPresent());
+        for (int i = 0; i < 5; i++) {
+            notificationScreen.horizontalSwipeFromCenterToLeft();
+        }
+        for (int i = 0; i < 5; i++) {
+            notificationScreen.horizontalSwipe(0.5, 0.7, 0.5);
+        }
+        int swipeTryes = 10;
+        while (!notificationScreen.isGalleryCommentButtonPresent() && swipeTryes > 0) {
+            notificationScreen.horizontalSwipe(0.5, 0.3, 0.5);
+            swipeTryes--;
+        }
+        notificationScreen.clickGalleryCommentButton();
+        notificationScreen.clickCommentInputField();
+        notificationScreen.typeCommentText();
+        assertTrue("Send button is not enabled ", notificationScreen.isSendButtonEnabled());
+    }
 }

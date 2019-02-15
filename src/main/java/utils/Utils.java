@@ -2,19 +2,16 @@ package utils;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import org.openqa.selenium.By;
 import io.appium.java_client.TouchAction;
-import io.appium.java_client.android.AndroidElement;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 
+import java.time.Duration;
+import java.util.List;
 import java.util.Random;
 
-import static io.appium.java_client.touch.TapOptions.tapOptions;
 import static io.appium.java_client.touch.WaitOptions.waitOptions;
-import static io.appium.java_client.touch.offset.ElementOption.element;
 import static io.appium.java_client.touch.offset.PointOption.point;
-import static java.time.Duration.ofMillis;
-import static java.time.Duration.ofSeconds;
 
 public class Utils {
 
@@ -22,58 +19,24 @@ public class Utils {
 
     public Utils(AppiumDriver driver) {
         this.driver = driver;
-
-
     }
 
-    //Tap to an element for 250 milliseconds
-    public void tapByElementMills(AndroidElement androidElement) {
-        new TouchAction(driver)
-                .tap(tapOptions().withElement(element(androidElement)))
-                .waitAction().perform();
-    }
-
-    //Tap by coordinates
-    public void tapByCoordinates(int x, int y) {
-        new TouchAction(driver)
-                .tap(point(x, y))
-                .waitAction().perform();
-    }
-
-
-    //Press by element
-    public void pressByElement(AndroidElement element, long seconds) {
-        new TouchAction(driver)
-                .press(element(element))
-                .waitAction(waitOptions(ofSeconds(seconds)))
-                .release()
-                .perform();
-    }
-
-
-    //Press by coordinates
-    public void pressByCoordinates(int x, int y, long seconds) {
-        new TouchAction(driver)
-                .press(point(x, y))
-                .waitAction(waitOptions(ofSeconds(seconds)))
-                .release()
-                .perform();
-    }
 
     //Horizontal Swipe by percentages
-    public void horizontalSwipeByPercentage(double startPercentage, double endPercentage, double anchorPercentage) {
+    public void horizontalSwipeByPercentage(double x_startPercentage, double x_endPercentage, double startYPercentage) {
         Dimension size = driver.manage().window().getSize();
-        int anchor = (int) (size.height * anchorPercentage);
-        int startPoint = (int) (size.width * startPercentage);
-        int endPoint = (int) (size.width * endPercentage);
+//        Dimension scrollup = driver.findElement((by)).getSize();
+        int x_width = (int) (size.width * x_endPercentage);
+        int x_startPoint = (int) (size.width * x_startPercentage);
+        int y_height = (int) (size.height * startYPercentage);
 
-
-        new TouchAction(driver)
-                .press(point(startPoint, anchor))
-                .waitAction(waitOptions(ofMillis(1000)))
-                .moveTo(point(endPoint, anchor))
+        TouchAction touchAction = new TouchAction(driver);
+        touchAction.press(point(x_startPoint, y_height))
+                .waitAction()
+                .moveTo(point(x_width, y_height))
                 .release().perform();
     }
+
 
     //Vertical Swipe by percentages
     public void verticalSwipeByPercentages(double y_startPercentage, double y_endPercentage, double startXPercentage) {
@@ -84,7 +47,6 @@ public class Utils {
 
         TouchAction touchAction = new TouchAction(driver);
         touchAction.press(point(x_width, y_startPoint))
-                .waitAction(waitOptions(ofMillis(1000)))
                 .moveTo(point(x_width, y_height))
                 .release().perform();
     }
@@ -97,7 +59,10 @@ public class Utils {
     public void typeText(By view, String text) {
         driver.findElement(view).sendKeys(text);
 
+    }
 
+    public void clearTextField(By by) {
+        driver.findElement(by).clear();
     }
 
     public boolean isElementEnabled(By by) {
@@ -125,9 +90,40 @@ public class Utils {
         Random random = new Random();
         return random.nextInt(10000);
 
-
     }
 
+    public boolean findElementByText(By by, String text) {
+        List<MobileElement> list = driver.findElements(by);
+        for (MobileElement el : list) {
+            if (el.getText().equals(text)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public void clickElementByText(By by, String text) {
+        List<MobileElement> list = driver.findElements(by);
+        for (MobileElement el : list) {
+            if (el.getText().equals(text)) {
+                el.click();
+            }
+        }
+    }
+
+    public void horizontalSwipeFromCenterToLeft(By by) {
+        MobileElement element = driver.findElement(by);
+        int width = element.getSize().getWidth() / 2;
+        int height = element.getSize().getHeight() / 2;
+        int widthEnd = element.getLocation().getX() + 10;
+
+        TouchAction swipe = new TouchAction(driver);
+        swipe.press(point(width, height))
+                .waitAction(waitOptions(Duration.ofSeconds(1)))
+                .moveTo(point(widthEnd, height))
+                .release().perform();
+    }
 
     public void resetData() {
         driver.resetApp();

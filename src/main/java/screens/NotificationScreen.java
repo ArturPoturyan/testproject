@@ -6,6 +6,8 @@ import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import utils.Utils;
 
+import static utils.CommonValues.APP_PACKAGE_NAME;
+
 public class NotificationScreen {
 
     private AppiumDriver<MobileElement> driver;
@@ -18,39 +20,87 @@ public class NotificationScreen {
     }
 
     //Buttons
-    private By NOTIFICATION_BUTTON = By.id("com.picsart.studio:id/menu_main_notification");
-    private By POSITIVE_BUTTON = By.id("com.picsart.studio:id/btn_positive");
-    private By PERMISSION_ALLOW_BUTTON = By.id("com.android.packageinstaller:id/permission_allow_button");
-    private By BACK_IMAGE_BUTTON = new By.ByClassName("android.widget.ImageButton");
-    private By PRIMARY_BUTTON = By.id("com.picsart.studio:id/btn_primary");
-    private By GRID_IMAGE_LIST_ITEM = By.id("com.picsart.studio:id/grid_image");
+    private By NOTIFICATION_BUTTON = By.id(APP_PACKAGE_NAME + ":id/menu_main_notification");
+    private By POSITIVE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_positive");
+    private By PERMISSION_ALLOW_BUTTON = By.id(APP_PACKAGE_NAME + ":id/permission_allow_button");
+    private By BACK_IMAGE_BUTTON = By.className("android.widget.ImageButton");
+    private By PRIMARY_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_primary");
+    private By GRID_IMAGE_LIST_ITEM = By.id(APP_PACKAGE_NAME + ":id/grid_image");
     private By NOTIFICATIONS_TAB_BAR = By.className("android.support.v7.app.ActionBar$Tab");
-    private By NOTIFICATIONS_SCREEN_BACK_BUTTON = By.id("com.picsart.studio:id/pa_upload_btn_back");
-    private By NEGATIVE_BUTTON = By.id("com.picsart.studio:id/btn_negative");
-    private By EDITOR_NEXT_BUTTON = By.id("com.picsart.studio:id/btn_share");
-    private By UPLOAD_SHARE_BUTTON = By.id("com.picsart.studio:id/share_in_bottom");
-    private By UPLOAD_DONE_BUTTON = By.id("com.picsart.studio:id/btn_done");
-    private By EMPTY_STATE_TEXT = By.id("com.picsart.studio:id/tv_title");
-    private By PROFILE_TAB_BUTTON = By.id("com.picsart.studio:id/tab_profile_id");
-    private By MY_NETWORK_BUTTON = By.id("com.picsart.studio:id/tab_my_network_id");
-    private By DISCOVER_ARTISTS_TITLE = new By.ByClassName("android.widget.TextView");
-    private By PROFILE_MORE_BUTTON = By.id("com.picsart.studio:id/profile_menu_icon_top");
-    private By PROFILE_LOGOUT_BUTTON = By.id("com.picsart.studio:id/profile_menu_logout");
-    private By DIALOG_OK_BUTTON = By.id("com.picsart.studio:id/dialog_ok_btn");
-    private By PROFILE_FOLLOWINGS_BUTTON = By.id("com.picsart.studio:id/tv_followings");
-    private By DISPLAY_NAME = By.id("com.picsart.studio:id/display_name");
-    private By FOLLOW_BUTTON = By.id("com.picsart.studio:id/btn_follow");
-
+    private By NOTIFICATIONS_SCREEN_BACK_BUTTON = By.id(APP_PACKAGE_NAME + ":id/pa_upload_btn_back");
+    private By NEGATIVE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_negative");
+    private By EDITOR_NEXT_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_share");
+    private By UPLOAD_SHARE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/share_in_bottom");
+    private By UPLOAD_DONE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_done");
+    private By EMPTY_STATE_TEXT = By.id(APP_PACKAGE_NAME + ":id/tv_title");
+    private By PROFILE_TAB_BUTTON = By.id(APP_PACKAGE_NAME + ":id/tab_profile_id");
+    private By MY_NETWORK_BUTTON = By.id(APP_PACKAGE_NAME + ":id/tab_my_network_id");
+    private By DISCOVER_ARTISTS_TITLE = By.className("android.widget.TextView");
+    private By PROFILE_MORE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/profile_menu_icon_top");
+    private By PROFILE_LOGOUT_BUTTON = By.id(APP_PACKAGE_NAME + ":id/profile_menu_logout");
+    private By DIALOG_OK_BUTTON = By.id(APP_PACKAGE_NAME + ":id/dialog_ok_btn");
+    private By PROFILE_FOLLOWINGS_BUTTON = By.id(APP_PACKAGE_NAME + ":id/tv_followings");
+    private By DISPLAY_NAME = By.id(APP_PACKAGE_NAME + ":id/display_name");
+    private By FOLLOW_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_follow");
+    private By ZOOMABLE_ITEM = By.id(APP_PACKAGE_NAME + ":id/zoomable_item_id");
+    private By MAIN_VIEW_PAGER = By.id(APP_PACKAGE_NAME + ":id/main_viewpager");
+    private By PROFILE_MENU_SETTINGS = By.id(APP_PACKAGE_NAME + ":id/profile_menu_settings");
+    private By SETTINGS_TEXT = By.id("android:id/title");
+    private By GALLERY_COMMENT_BUTTON = By.id(APP_PACKAGE_NAME + ":id/gallery_item_comment_button");
+    private By COMMENT_INPUT_FIELD = By.id(APP_PACKAGE_NAME + ":id/message_edit_text");
+    private By SEND_BUTTON = By.id(APP_PACKAGE_NAME + ":id/send_btn");
+    private By CHOOSE_EMAIL_CLIENT = By.id("android:id/title_default");
 
     //Views
-    private By STORAGE_PERMISSION_POPUP = By.id("com.picsart.studio:id/pop_up_layout");
+    private By STORAGE_PERMISSION_POPUP = By.id(APP_PACKAGE_NAME + ":id/pop_up_layout");
     private By PHOTO_ACCESS_PERMISSION_POPUP = By.id("com.android.packageinstaller:id/dialog_container");
-    private By CREATE_FLOW_SCREEN = By.id("com.picsart.studio:id/recycler_view");
-    private By TRY_GOLD_FOR_FREE = By.id("com.picsart.studio:id/main_content");
+    private By CREATE_FLOW_SCREEN = By.id(APP_PACKAGE_NAME + ":id/recycler_view");
+    private By TRY_GOLD_FOR_FREE = By.id(APP_PACKAGE_NAME + ":id/main_content");
+    private By AVATAR_ICON = By.id(APP_PACKAGE_NAME + ":id/action_bar_avatar");
+
 
     public void clickFollowButton() {
         utils.clickIdButton(FOLLOW_BUTTON);
+    }
 
+
+    public boolean isSendButtonEnabled() {
+        return utils.isElementEnabled(SEND_BUTTON);
+
+    }
+
+
+    public void clickContactSupportButton() {
+        utils.clickElementByText(SETTINGS_TEXT, "Contact Support");
+    }
+
+    public boolean isUserAvatarIconPresent() {
+        return utils.isElementPresent(AVATAR_ICON);
+    }
+
+
+    public void typeCommentText() {
+        utils.typeText(COMMENT_INPUT_FIELD, "I LOVE YOU!!!!!");
+    }
+
+    public void clearCommentField() {
+        utils.clearTextField(COMMENT_INPUT_FIELD);
+    }
+
+    public void clickGalleryCommentButton() {
+        utils.clickIdButton(GALLERY_COMMENT_BUTTON);
+    }
+
+    public void clickCommentInputField() {
+        utils.clickIdButton(COMMENT_INPUT_FIELD);
+    }
+
+    public void clickSettingsButton() {
+        utils.clickIdButton(PROFILE_MENU_SETTINGS);
+    }
+
+    public boolean isZoomableItemPresent() {
+        return utils.isElementPresent(ZOOMABLE_ITEM);
     }
 
     public boolean isPicsArtUserPresent() {
@@ -77,8 +127,24 @@ public class NotificationScreen {
         return utils.isElementPresent(MY_NETWORK_BUTTON);
     }
 
+    public boolean isProfileTabPresent() {
+        return utils.isElementPresent(PROFILE_TAB_BUTTON);
+    }
+
+
     public void verticalSwipe(double startYPercentage, double endYPercentage, double startXPercentage) {
         utils.verticalSwipeByPercentages(startYPercentage, endYPercentage, startXPercentage);
+
+    }
+
+
+    public void horizontalSwipe(double x_startPercentage, double x_endPercentage, double startYPercentage) {
+        utils.horizontalSwipeByPercentage(x_startPercentage, x_endPercentage, startYPercentage);
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -86,7 +152,7 @@ public class NotificationScreen {
         utils.clickIdButton(PRIMARY_BUTTON);
     }
 
-    public void clickMyNetworkTab() {
+    public void clickFeedsTab() {
         utils.clickIdButton(MY_NETWORK_BUTTON);
 
     }
@@ -108,9 +174,19 @@ public class NotificationScreen {
 
     }
 
+    public void clickImageMyNetworkTab() {
+        utils.clickByIndex(ZOOMABLE_ITEM, 0);
+
+    }
+
+    public void horizontalSwipeFromCenterToLeft() {
+        utils.horizontalSwipeFromCenterToLeft(MAIN_VIEW_PAGER);
+
+    }
+
     public void clickOnPhoto() {
 
-        utils.clickByIndex(GRID_IMAGE_LIST_ITEM, 8);
+        utils.clickByIndex(GRID_IMAGE_LIST_ITEM, 4);
     }
 
     public void clickNotificationBackButton() {
@@ -183,13 +259,27 @@ public class NotificationScreen {
         return utils.getText(DISCOVER_ARTISTS_TITLE).equals("Discover Artists");
     }
 
+    public boolean isChooseEmailClientTextPresent() {
+        return utils.getText(CHOOSE_EMAIL_CLIENT).equals("Choose Email Client");
+    }
+
+
     public boolean isFindPeopleToFollowTextPresent() {
         return utils.getText(EMPTY_STATE_TEXT).equals("Find People to Follow");
+    }
+
+    public boolean isGalleryCommentButtonPresent() {
+        return utils.isElementPresent(GALLERY_COMMENT_BUTTON);
     }
 
     public boolean isYouHaveNoActivityTextPresent() {
         return utils.getText(EMPTY_STATE_TEXT).equals("You have no activity : (");
     }
+
+    public boolean isContactSupportTextPresent() {
+        return utils.findElementByText(SETTINGS_TEXT, "Contact Support");
+    }
+
 
     public boolean isNoResultTextPresent() {
         return utils.getText(EMPTY_STATE_TEXT).equals("No Result");

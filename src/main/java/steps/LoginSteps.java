@@ -1,7 +1,6 @@
 package steps;
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.android.AndroidDriver;
 import screens.LoginScreen;
 
 public class LoginSteps {
@@ -15,13 +14,13 @@ public class LoginSteps {
     }
 
     public void signIn() throws InterruptedException {
-        loginScreen.clickRegisterButton();
+        loginScreen.registerStepSignInButton();
         if (loginScreen.isContinueWithEmailPopupPresent()) {
             loginScreen.clickPopUpCancelButton();
+            loginScreen.typeSignInUsername();
+            loginScreen.typeSignInPassword();
+            loginScreen.clickFinalSignInButton();
+            Thread.sleep(5000);
         }
-        loginScreen.typeSignInUsername();
-        loginScreen.typeSignInPassword();
-        loginScreen.clickFinalSignInButton();
-        Thread.sleep(5000);
     }
 }
