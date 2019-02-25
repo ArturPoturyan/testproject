@@ -35,8 +35,8 @@ public class LoginScreenPageObjectFactory {
     @AndroidFindBy(id = APP_PACKAGE_NAME + ":id/sign_in_button")
     private AndroidElement signInButton;
 
-    @AndroidFindBy(id = "com.google.android.gms:id/credential_picker_layout")
-    private AndroidElement continueWithEmailPopup;
+    @AndroidFindBy(id = "com.google.android.gms:id/cancel")
+    private AndroidElement continueWithEmailPopupCancelButton;
 
     @AndroidFindBy(id = "com.google.android.gms:id/cancel")
     private AndroidElement popupCancelButton;
@@ -44,10 +44,6 @@ public class LoginScreenPageObjectFactory {
     private void clickPopUpCancelButton() {
         popupCancelButton.click();
     }
-
-//    private void popupPresent() {
-//        continueWithEmailPopup.isDisplayed();
-//    }
 
     private void clickFirstSignInButton() {
         firstSignInButton.click();
@@ -71,7 +67,7 @@ public class LoginScreenPageObjectFactory {
     }
 
     public boolean isElementPresent() {
-        return continueWithEmailPopup.isDisplayed();
+        return continueWithEmailPopupCancelButton.isDisplayed();
     }
 
 
@@ -79,10 +75,10 @@ public class LoginScreenPageObjectFactory {
         clickFirstSignInButton();
         if (isElementPresent()) {
             clickPopUpCancelButton();
-            typeUserName(username);
-            typePassword(password);
-            isElementEnabled();
-            clickSignInButton();
         }
+        typeUserName(username);
+        typePassword(password);
+        isElementEnabled();
+        clickSignInButton();
     }
 }

@@ -24,7 +24,7 @@ public class DesiredCapsManager {
     private AppiumDriverLocalService service;
 
 
-    @BeforeSuite
+    @BeforeClass
     public void setUp() {
         initDriver(initService(), initDesiredCapability());
     }
@@ -41,7 +41,7 @@ public class DesiredCapsManager {
 
     }
 
-    @AfterSuite
+    @AfterClass
     public void tearDown() {
         driver.quit();
         service.stop();

@@ -43,7 +43,8 @@ public class NotificationScreen {
     private By DISPLAY_NAME = By.id(APP_PACKAGE_NAME + ":id/display_name");
     private By FOLLOW_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_follow");
     private By ZOOMABLE_ITEM = By.id(APP_PACKAGE_NAME + ":id/zoomable_item_id");
-    private By MAIN_VIEW_PAGER = By.id(APP_PACKAGE_NAME + ":id/main_viewpager");
+    private By IMAGE_BROWSER_MAIN_IMAGE = By.id(APP_PACKAGE_NAME + ":id/image_browser_main_image");
+
     private By PROFILE_MENU_SETTINGS = By.id(APP_PACKAGE_NAME + ":id/profile_menu_settings");
     private By SETTINGS_TEXT = By.id("android:id/title");
     private By GALLERY_COMMENT_BUTTON = By.id(APP_PACKAGE_NAME + ":id/gallery_item_comment_button");
@@ -57,6 +58,8 @@ public class NotificationScreen {
     private By CREATE_FLOW_SCREEN = By.id(APP_PACKAGE_NAME + ":id/recycler_view");
     private By TRY_GOLD_FOR_FREE = By.id(APP_PACKAGE_NAME + ":id/main_content");
     private By AVATAR_ICON = By.id(APP_PACKAGE_NAME + ":id/action_bar_avatar");
+    private By HOME_PAGING_RECYCLER_VIEW = By.id(APP_PACKAGE_NAME + ":id/paging_recycler_view_id");
+    private By SETTINGS_LIST = By.id("android:id/list");
 
 
     public void clickFollowButton() {
@@ -146,6 +149,7 @@ public class NotificationScreen {
             e.printStackTrace();
         }
 
+
     }
 
     public void clickLetIsStartButton() {
@@ -179,9 +183,25 @@ public class NotificationScreen {
 
     }
 
-    public void horizontalSwipeFromCenterToLeft() {
-        utils.horizontalSwipeFromCenterToLeft(MAIN_VIEW_PAGER);
+    public void swipeHomeImageToLeft() {
+        utils.horizontalSwipeFromCenterToLeft(IMAGE_BROWSER_MAIN_IMAGE, 0);
 
+    }
+
+    public void swipeHomeImageToRight() {
+        utils.horizontalSwipeFromCenterToRight(IMAGE_BROWSER_MAIN_IMAGE, 0);
+    }
+
+    public void scrollHomeToUp() {
+        utils.scrollVerticalFromCenterToUp(HOME_PAGING_RECYCLER_VIEW);
+    }
+
+    public void scrollSettingsToUp() {
+        utils.scrollVerticalFromCenterToUp(SETTINGS_LIST);
+    }
+
+    public void scrollHomeToDown() {
+        utils.scrollVerticalFromCenterToDown(HOME_PAGING_RECYCLER_VIEW);
     }
 
     public void clickOnPhoto() {

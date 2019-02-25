@@ -3,6 +3,7 @@ package steps;
 import io.appium.java_client.AppiumDriver;
 import screens.LoginScreen;
 
+
 public class LoginSteps {
 
     private AppiumDriver driver;
@@ -13,14 +14,14 @@ public class LoginSteps {
         loginScreen = new LoginScreen(driver);
     }
 
-    public void signIn() throws InterruptedException {
+    public void signIn(){
+
         loginScreen.registerStepSignInButton();
         if (loginScreen.isContinueWithEmailPopupPresent()) {
             loginScreen.clickPopUpCancelButton();
-            loginScreen.typeSignInUsername();
-            loginScreen.typeSignInPassword();
-            loginScreen.clickFinalSignInButton();
-            Thread.sleep(5000);
         }
+        loginScreen.typeSignInUsername();
+        loginScreen.typeSignInPassword();
+        loginScreen.clickFinalSignInButton();
     }
 }

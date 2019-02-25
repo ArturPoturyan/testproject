@@ -19,7 +19,7 @@ public class RegisterScreen {
     private By BIRTHDAY_SKIP_BUTTON = By.id(APP_PACKAGE_NAME + ":id/skip_button");
     private By SUBSCRIPTION_OFFER_CLOSE_BUTTON = By.className("android.widget.ImageButton");
     private By REGISTER_INPUT_FIELD = By.id(APP_PACKAGE_NAME + ":id/user_info_edit_text");
-    private By SUBSCRIPTION_PAYMENT_BUTTON_1 = By.id(APP_PACKAGE_NAME + ":id/subscription_payment_button_1");
+    private By SUBSCRIPTION_BANNER = By.id(APP_PACKAGE_NAME + ":id/shop_subscription_banner_container");
     private By NEGATIVE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_negative");
 
 
@@ -69,8 +69,8 @@ public class RegisterScreen {
         return utils.isElementPresent(FORGOT_PROFILE_PHOTO_POPUP);
     }
 
-    public boolean isPaymentButton1Present() {
-        return utils.isElementPresent(SUBSCRIPTION_PAYMENT_BUTTON_1);
+    public boolean isSubscriptionBannerPresent() {
+        return utils.isElementPresent(SUBSCRIPTION_BANNER);
     }
 
     public boolean isNextButtonEnabled() {

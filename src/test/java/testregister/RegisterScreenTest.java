@@ -7,7 +7,6 @@ import steps.RegisterSteps;
 import utils.DesiredCapsManager;
 
 import static org.testng.AssertJUnit.assertTrue;
-import static org.testng.AssertJUnit.assertFalse;
 
 
 public class RegisterScreenTest extends DesiredCapsManager {
@@ -27,19 +26,21 @@ public class RegisterScreenTest extends DesiredCapsManager {
     public void verifyFunctionalityOfRegister() throws InterruptedException {
         registerScreen.clickNextButton();
         registerScreen.typeUserInfoEmailText();
+        assertTrue("User info email next button in not enable "
+                , registerScreen.isNextButtonEnabled());
+        registerScreen.clickNextButton();
+        registerScreen.typePassword();
+        assertTrue("password next button is not enable "
+                , registerScreen.isNextButtonEnabled());
+        registerScreen.clickNextButton();
         Thread.sleep(2000);
         registerScreen.clickNextButton();
-        registerScreen.typeUserInfoFullNameText();
-        registerScreen.clickNextButton();
-        registerScreen.typeUserInfoUsernameText();
-        Thread.sleep(2000);
-        registerScreen.clickNextButton();
-        registerScreen.clickNextButton();
-        Thread.sleep(2000);
+
         if (registerScreen.isForgotToAddProfilePhotoPopupPresent()) {
             registerScreen.clickMaybeLaterButton();
         }
-        registerScreen.clickBirthdaySkipButton();
-        assertTrue("offer screen is not present on the screen", registerScreen.isPaymentButton1Present());
+        assertTrue("payment button offer screen is not present on the screen"
+                , registerScreen.isSubscriptionBannerPresent());
+        registerScreen.clickSubscriptionOfferCloseButton();
     }
 }

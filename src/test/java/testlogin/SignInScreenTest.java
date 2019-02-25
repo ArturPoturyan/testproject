@@ -6,9 +6,6 @@ import screens.LoginScreen;
 import steps.LoginSteps;
 import utils.DesiredCapsManager;
 
-import static org.testng.AssertJUnit.assertTrue;
-import static org.testng.AssertJUnit.assertFalse;
-
 public class SignInScreenTest extends DesiredCapsManager {
 
     private LoginSteps loginSteps;
@@ -22,9 +19,14 @@ public class SignInScreenTest extends DesiredCapsManager {
 
     }
 
-    //todo priorityner@ harcnel
     @Test
-    public void verifyFunctionalityOfSignIn() throws InterruptedException {
-        loginSteps.signIn();
+    public void verifyFunctionalityOfSignIn() {
+        loginScreen.registerStepSignInButton();
+        if (loginScreen.isContinueWithEmailPopupPresent()) {
+            loginScreen.clickPopUpCancelButton();
+        }
+        loginScreen.typeSignInUsername();
+        loginScreen.typeSignInPassword();
+        loginScreen.clickFinalSignInButton();
     }
 }

@@ -3,6 +3,8 @@ package steps;
 import io.appium.java_client.android.AndroidDriver;
 import screens.RegisterScreen;
 
+import static org.testng.AssertJUnit.assertTrue;
+
 public class RegisterSteps {
 
 
@@ -14,30 +16,30 @@ public class RegisterSteps {
         registerScreen = new RegisterScreen(driver);
     }
 
-    public void registerNewUser() {
+    public void registerNewUser() throws InterruptedException {
 
         registerScreen.clickNextButton();
         registerScreen.typeUserInfoEmailText();
-        if (registerScreen.isNextButtonEnabled()) {
-            registerScreen.clickNextButton();
-        }
+        assertTrue("User info email next button in not enable "
+                , registerScreen.isNextButtonEnabled());
+        registerScreen.clickNextButton();
 //        registerScreen.typeUserInfoFullNameText();
         registerScreen.typePassword();
-        if (registerScreen.isNextButtonEnabled()) {
-            registerScreen.clickNextButton();
+        assertTrue("password next button is not enable "
+                , registerScreen.isNextButtonEnabled());
+        registerScreen.clickNextButton();
+        Thread.sleep(2000);
 //        registerScreen.typeUserInfoUsernameText();
 //        Thread.sleep(2000);
 //            if (registerScreen.isNextButtonEnabled()) {
-            registerScreen.clickNextButton();
+        registerScreen.clickNextButton();
 //        }
-//        Thread.sleep(2000);
-            if (registerScreen.isForgotToAddProfilePhotoPopupPresent()) {
-                registerScreen.clickMaybeLaterButton();
-            }
-//        registerScreen.clickBirthdaySkipButton();
-            if (registerScreen.isPaymentButton1Present()) {
-                registerScreen.clickSubscriptionOfferCloseButton();
-            }
+        if (registerScreen.isForgotToAddProfilePhotoPopupPresent()) {
+            registerScreen.clickMaybeLaterButton();
         }
+        assertTrue("payment button offer screen is not present on the screen"
+                , registerScreen.isSubscriptionBannerPresent());
+//        registerScreen.clickBirthdaySkipButton();
+        registerScreen.clickSubscriptionOfferCloseButton();
     }
 }

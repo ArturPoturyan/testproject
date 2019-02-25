@@ -3,6 +3,8 @@ package steps;
 import io.appium.java_client.android.AndroidDriver;
 import screens.NotificationScreen;
 
+import static org.testng.AssertJUnit.assertTrue;
+
 public class NotificationSteps {
 
     private NotificationScreen notificationScreen;
@@ -32,12 +34,10 @@ public class NotificationSteps {
     }
 
     public void logOutFromPicsArt() {
-
-        if (notificationScreen.isProfileTabPresent()) {//todo change payman
-            notificationScreen.clickProfileTab();
-            notificationScreen.clickProfileMoreButton();
-            notificationScreen.clickProfileLogoutButton();
-            notificationScreen.clickDialogOkButton();
-        }
+        assertTrue("profile tab is not present", notificationScreen.isProfileTabPresent());
+        notificationScreen.clickProfileTab();
+        notificationScreen.clickProfileMoreButton();
+        notificationScreen.clickProfileLogoutButton();
+        notificationScreen.clickDialogOkButton();
     }
 }

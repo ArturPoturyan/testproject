@@ -22,23 +22,22 @@ public class NotificationScreenTest extends DesiredCapsManager {
 
 
     @BeforeClass
-    public void setup() throws InterruptedException {
+    public void setup() {
 
         registerSteps = new RegisterSteps(driver);
         notificationScreen = new NotificationScreen(driver);
         notificationSteps = new NotificationSteps(driver);
         loginScreen = new LoginScreen(driver);
         loginSteps = new LoginSteps(driver);
-
-//        if (loginScreen.isSignInButtonPresent()) {
-//            loginSteps.signIn();
-//        }
+        if (loginScreen.isSignInButtonPresent()) {
+            loginSteps.signIn();
+        }
     }
 
     //    //TODO PIA-53631
     //[InApp_Notifications] Verify the appearance of  "Empty State" if there is no notification in Following tab
     @Test
-    public void verifyAppearanceOfEmptyStateInFollowingTab() {
+    public void verifyAppearanceOfEmptyStateInFollowingTab() throws InterruptedException {
         notificationSteps.logOutFromPicsArt();
         registerSteps.registerNewUser();
         notificationSteps.accessPhotoPermission();
@@ -49,7 +48,6 @@ public class NotificationScreenTest extends DesiredCapsManager {
         notificationScreen.clickFeedsTab();
         notificationScreen.clickNotificationButton();
         notificationScreen.clickOnFollowingTab();
-
         assertTrue("No Result is not present on the notification Following tab"
                 , notificationScreen.isNoResultTextPresent());
 
@@ -140,7 +138,7 @@ public class NotificationScreenTest extends DesiredCapsManager {
         notificationScreen.clickSettingsButton();
         int k = 0;
         while (!notificationScreen.isContactSupportTextPresent() && k < 10) {
-            notificationScreen.verticalSwipe(0.5, 0.045, 0.5);
+            notificationScreen.scrollSettingsToUp();
             k++;
         }
         assertTrue("Contact Support button is not present on settings screen",
@@ -153,22 +151,22 @@ public class NotificationScreenTest extends DesiredCapsManager {
     @Test
     public void swipeLeftAndRight() {
         notificationScreen.clickFeedsTab();
-        int tryes = 10;
-        while (!notificationScreen.isZoomableItemPresent() && tryes > 0) {
-            notificationScreen.verticalSwipe(0.9, 0.7, 0.5);
-            tryes--;
+        int repeat = 10;
+        while (!notificationScreen.isZoomableItemPresent() && repeat > 0) {
+            notificationScreen.scrollHomeToUp();
+            repeat--;
         }
         notificationScreen.clickImageMyNetworkTab();
         assertTrue("actions panel is not present ", notificationScreen.isUserAvatarIconPresent());
         for (int i = 0; i < 5; i++) {
-            notificationScreen.horizontalSwipeFromCenterToLeft();
+            notificationScreen.swipeHomeImageToLeft();
         }
         for (int i = 0; i < 5; i++) {
-            notificationScreen.horizontalSwipe(0.5, 0.7, 0.5);
+            notificationScreen.swipeHomeImageToRight();
         }
         int swipeTryes = 10;
         while (!notificationScreen.isGalleryCommentButtonPresent() && swipeTryes > 0) {
-            notificationScreen.horizontalSwipe(0.5, 0.3, 0.5);
+            notificationScreen.swipeHomeImageToLeft();
             swipeTryes--;
         }
         notificationScreen.clickGalleryCommentButton();
