@@ -25,7 +25,7 @@ public class NotificationScreen {
     private By PERMISSION_ALLOW_BUTTON = By.id(APP_PACKAGE_NAME + ":id/permission_allow_button");
     private By BACK_IMAGE_BUTTON = By.className("android.widget.ImageButton");
     private By PRIMARY_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_primary");
-    private By GRID_IMAGE_LIST_ITEM = By.id(APP_PACKAGE_NAME + ":id/grid_image");
+    private By GRID_IMAGE_ITEM = By.id(APP_PACKAGE_NAME + ":id/grid_image");
     private By NOTIFICATIONS_TAB_BAR = By.className("android.support.v7.app.ActionBar$Tab");
     private By NOTIFICATIONS_SCREEN_BACK_BUTTON = By.id(APP_PACKAGE_NAME + ":id/pa_upload_btn_back");
     private By NEGATIVE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_negative");
@@ -135,20 +135,8 @@ public class NotificationScreen {
     }
 
 
-    public void verticalSwipe(double startYPercentage, double endYPercentage, double startXPercentage) {
-        utils.verticalSwipeByPercentages(startYPercentage, endYPercentage, startXPercentage);
-
-    }
-
-
-    public void horizontalSwipe(double x_startPercentage, double x_endPercentage, double startYPercentage) {
-        utils.horizontalSwipeByPercentage(x_startPercentage, x_endPercentage, startYPercentage);
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
+    public void verticalScrollToUpSettingsScreen() {
+        utils.scrollVerticalFromCenterToUp(SETTINGS_LIST);
 
     }
 
@@ -205,8 +193,7 @@ public class NotificationScreen {
     }
 
     public void clickOnPhoto() {
-
-        utils.clickByIndex(GRID_IMAGE_LIST_ITEM, 4);
+        utils.clickByIndex(GRID_IMAGE_ITEM, 4);
     }
 
     public void clickNotificationBackButton() {
@@ -268,7 +255,7 @@ public class NotificationScreen {
     }
 
     public boolean isPhotoChooserImageListPresent() {
-        return utils.isElementPresent(GRID_IMAGE_LIST_ITEM);
+        return utils.isElementPresent(GRID_IMAGE_ITEM);
     }
 
     public boolean isPicsArtGoldPopupPresent() {

@@ -91,7 +91,8 @@ public class NotificationScreenTest extends DesiredCapsManager {
         notificationScreen.clickUploadShareButton();
         notificationScreen.clickUploadDoneButton();
         notificationScreen.clickProfileTab();
-        notificationScreen.verticalSwipe(0.3, 0.9, 0.5);
+        notificationScreen.verticalScrollToUpSettingsScreen();//todo refresh
+
         notificationScreen.clickFeedsTab();
         notificationScreen.clickNotificationButton();
         notificationScreen.clickOnMeTab();
@@ -122,7 +123,7 @@ public class NotificationScreenTest extends DesiredCapsManager {
         notificationScreen.clickSettingsButton();
         int k = 0;
         while (!notificationScreen.isContactSupportTextPresent() && k < 10) {
-            notificationScreen.verticalSwipe(0.4, 0.2, 0.5);
+            notificationScreen.verticalScrollToUpSettingsScreen();
             k++;
         }
         assertTrue("Contact Support title is not present on the settings page", notificationScreen.isContactSupportTextPresent());
@@ -147,31 +148,31 @@ public class NotificationScreenTest extends DesiredCapsManager {
         assertTrue("Choose Email Client is not present ", notificationScreen.isChooseEmailClientTextPresent());
     }
 
-
-    @Test
-    public void swipeLeftAndRight() {
-        notificationScreen.clickFeedsTab();
-        int repeat = 10;
-        while (!notificationScreen.isZoomableItemPresent() && repeat > 0) {
-            notificationScreen.scrollHomeToUp();
-            repeat--;
-        }
-        notificationScreen.clickImageMyNetworkTab();
-        assertTrue("actions panel is not present ", notificationScreen.isUserAvatarIconPresent());
-        for (int i = 0; i < 5; i++) {
-            notificationScreen.swipeHomeImageToLeft();
-        }
-        for (int i = 0; i < 5; i++) {
-            notificationScreen.swipeHomeImageToRight();
-        }
-        int swipeTryes = 10;
-        while (!notificationScreen.isGalleryCommentButtonPresent() && swipeTryes > 0) {
-            notificationScreen.swipeHomeImageToLeft();
-            swipeTryes--;
-        }
-        notificationScreen.clickGalleryCommentButton();
-        notificationScreen.clickCommentInputField();
-        notificationScreen.typeCommentText();
-        assertTrue("Send button is not enabled ", notificationScreen.isSendButtonEnabled());
-    }
+//
+//    @Test
+//    public void swipeLeftAndRight() {
+//        notificationScreen.clickFeedsTab();
+//        int repeat = 10;
+//        while (!notificationScreen.isZoomableItemPresent() && repeat > 0) {
+//            notificationScreen.scrollHomeToUp();
+//            repeat--;
+//        }
+//        notificationScreen.clickImageMyNetworkTab();
+//        assertTrue("actions panel is not present ", notificationScreen.isUserAvatarIconPresent());
+//        for (int i = 0; i < 5; i++) {
+//            notificationScreen.swipeHomeImageToLeft();
+//        }
+//        for (int i = 0; i < 5; i++) {
+//            notificationScreen.swipeHomeImageToRight();
+//        }
+//        int swipeTryes = 10;
+//        while (!notificationScreen.isGalleryCommentButtonPresent() && swipeTryes > 0) {
+//            notificationScreen.swipeHomeImageToLeft();
+//            swipeTryes--;
+//        }
+//        notificationScreen.clickGalleryCommentButton();
+//        notificationScreen.clickCommentInputField();
+//        notificationScreen.typeCommentText();
+//        assertTrue("Send button is not enabled ", notificationScreen.isSendButtonEnabled());
+//    }
 }

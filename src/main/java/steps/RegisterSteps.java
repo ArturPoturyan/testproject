@@ -37,9 +37,13 @@ public class RegisterSteps {
         if (registerScreen.isForgotToAddProfilePhotoPopupPresent()) {
             registerScreen.clickMaybeLaterButton();
         }
-        assertTrue("payment button offer screen is not present on the screen"
-                , registerScreen.isSubscriptionBannerPresent());
+        if (registerScreen.isSubscriptionBannerPresent()) {
+            registerScreen.clickSubscriptionOfferCloseButton();
+
+        }
+//        assertTrue("payment button offer screen is not present on the screen"
+//                , registerScreen.isSubscriptionBannerPresent());
 //        registerScreen.clickBirthdaySkipButton();
-        registerScreen.clickSubscriptionOfferCloseButton();
+//        registerScreen.clickSubscriptionOfferCloseButton();
     }
 }

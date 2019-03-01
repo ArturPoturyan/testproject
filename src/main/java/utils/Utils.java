@@ -5,7 +5,6 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
-import org.openqa.selenium.Rectangle;
 
 import java.time.Duration;
 import java.util.List;
@@ -70,9 +69,14 @@ public class Utils {
         return driver.findElement(by).isEnabled();
     }
 
-    public boolean isElementTextSelected(By by, String text) {
+    public boolean isElementSelected(By by) {
         return driver.findElement(by).isSelected();
     }
+
+    public boolean isElementSelectedByIndex(By by, int index) {
+        return driver.findElements(by).get(index).isSelected();
+    }
+
 
     public boolean isElementPresent(By by) {
 
@@ -113,46 +117,16 @@ public class Utils {
         for (MobileElement el : list) {
             if (el.getText().equals(text)) {
                 el.click();
+                break;
             }
         }
     }
 
-//
-//    public void horizontalSwipeFromCenterToRight(By by) {
-//        MobileElement element = driver.findElement(by);
-//
-//        int widhtX = element.getLocation().getX();
-//        int heightY = element.getLocation().getY();
-//        int width = widhtX + element.getSize().getWidth() / 2;
-//        int height = heightY + element.getSize().getHeight() / 2;
-//        int widthEnd = element.getSize().getWidth() - 2;
-//        TouchAction swipe = new TouchAction(driver);
-//        swipe.press(point(width, height))
-//                .waitAction(waitOptions(Duration.ofSeconds(1)))
-//                .moveTo(point(widthEnd, height)).release().perform();
-//    }
-//
-//    public void horizontalSwipeFromCenterToLeft(By by) {
-//        MobileElement element = driver.findElement(by);
-//
-//        int widhtX = element.getLocation().getX();
-//        int heightY = element.getLocation().getY();
-//        int width = widhtX + element.getSize().getWidth() / 2;
-//        int height = heightY + element.getSize().getHeight() / 2;
-//        int widthEnd = element.getLocation().getX() + 2;
-//
-//        TouchAction swipe = new TouchAction(driver);
-//        swipe.press(point(width, height))
-//                .waitAction(waitOptions(Duration.ofSeconds(1)))
-//                .moveTo(point(widthEnd, height))
-//                .release().perform();
-//    }
-
-    public void horizontalSwipeFromCenterToLeft(By by, int number) {
-        MobileElement element = driver.findElements(by).get(number);
-        int widhtX = element.getLocation().getX();
+    public void horizontalSwipeFromCenterToLeft(By by) {
+        MobileElement element = driver.findElement(by);
+        int widthX = element.getLocation().getX();
         int heightY = element.getLocation().getY();
-        int width = widhtX + element.getSize().getWidth() / 2;
+        int width = widthX + element.getSize().getWidth() / 2;
         int height = heightY + element.getSize().getHeight() / 2;
         int widthEnd = element.getLocation().getX() + 2;
         TouchAction swipe = new TouchAction(driver);
@@ -160,6 +134,38 @@ public class Utils {
                 .waitAction(waitOptions(Duration.ofSeconds(1)))
                 .moveTo(point(widthEnd, height))
                 .release().perform();
+    }
+
+    public void horizontalSwipeFromCenterToLeft(By by, int number) {
+        MobileElement element = driver.findElements(by).get(number);
+        int widthX = element.getLocation().getX();
+        int heightY = element.getLocation().getY();
+        int width = widthX + element.getSize().getWidth() / 2;
+        int height = heightY + element.getSize().getHeight() / 2;
+        int widthEnd = element.getLocation().getX() + 2;
+        TouchAction swipe = new TouchAction(driver);
+        swipe.press(point(width, height))
+                .waitAction(waitOptions(Duration.ofSeconds(1)))
+                .moveTo(point(widthEnd, height))
+                .release().perform();
+    }
+
+    public void horizontalSwipeFromCenterToRight(By by) {
+        MobileElement element = driver.findElement(by);
+        int widthX = element.getLocation().getX();
+        int heightY = element.getLocation().getY();
+        int width = widthX + element.getSize().getWidth() / 2;
+        int height = heightY + element.getSize().getHeight() / 2;
+        int widthEnd = element.getSize().getWidth() - 2;
+
+
+        TouchAction swipe = new TouchAction(driver);
+        swipe.press(point(width, height))
+                .waitAction(waitOptions(Duration.ofSeconds(1)))
+                .moveTo(point(widthEnd, height))
+                .release().perform();
+
+
     }
 
     public void horizontalSwipeFromCenterToRight(By by, int number) {
@@ -176,58 +182,90 @@ public class Utils {
                 .waitAction(waitOptions(Duration.ofSeconds(1)))
                 .moveTo(point(widthEnd, height))
                 .release().perform();
-//        int start = element.getLocation().getX();
-//        System.out.println("Startpoint - " + start);
-//
-//        //get location of seekbar from top
-//        int y = element.getLocation().getY();
-//        System.out.println("Yaxis - " + y);
-//
-//        //Get total width of seekbar
-//        int end = start + element.getSize().getWidth();
-//        System.out.println("End point - " + end);
-//
-//        TouchAction swipe = new TouchAction(driver);
-//
-//        //move slider to 70% of width
-//        int moveTo = (int) (end * ((float) perc / 100));
-//
-//        swipe.longPress(PointOption.point(start, y))
-//                .moveTo(PointOption.point(moveTo, y))
-//                .release().perform();
-
-
     }
 
 
     public void scrollVerticalFromCenterToUp(By by) {
         MobileElement element = driver.findElement(by);
-        Rectangle positionRect = element.getRect();
-        int width = positionRect.x + positionRect.width / 2;
-        int height = positionRect.y + positionRect.height / 2;
-        int heightEnd = positionRect.y + 20;
+        int widthX = element.getLocation().getX();
+        int heightY = element.getLocation().getY();
+        int width = widthX + element.getSize().getWidth() / 2;
+        int height = heightY + element.getSize().getHeight() / 2;
+        int heightEnd = element.getLocation().getY();
+
+
         TouchAction scrollDown = new TouchAction(driver);
         scrollDown.press(point(width, height))
                 .waitAction(waitOptions(Duration.ofSeconds(1)))
                 .moveTo(point(width, heightEnd)).release().perform();
 
+//todo poxel
 
+    }
+
+    public void scrollVerticalFromCenterToUp(By by, int number) {
+        MobileElement element = driver.findElements(by).get(number);
+        int widthX = element.getLocation().getX();
+        int heightY = element.getLocation().getY();
+        int width = widthX + element.getSize().getWidth() / 2;
+        int height = heightY + element.getSize().getHeight() / 2;
+        int heightEnd = element.getLocation().getY();
+
+
+        TouchAction scrollDown = new TouchAction(driver);
+        scrollDown.press(point(width, height))
+                .waitAction(waitOptions(Duration.ofSeconds(1)))
+                .moveTo(point(width, heightEnd)).release().perform();
     }
 
     public void scrollVerticalFromCenterToDown(By by) {
         MobileElement element = driver.findElement(by);
-        Rectangle positionRect = element.getRect();
-        int width = positionRect.x + positionRect.width / 2;
-        int height = positionRect.y + positionRect.height / 2;
-        int heightEnd = positionRect.y + positionRect.height - 20;
+        int widthX = element.getLocation().getX();
+        int heightY = element.getLocation().getY();
+        int width = widthX + element.getSize().getWidth() / 2;
+        int height = heightY + element.getSize().getHeight() / 2;
+        int heightEnd = heightY + element.getSize().getHeight() - 1;
         TouchAction scrollDown = new TouchAction(driver);
         scrollDown.press(point(width, height))
                 .waitAction(waitOptions(Duration.ofSeconds(1)))
                 .moveTo(point(width, heightEnd)).release().perform();
 
-
+//todo poxel
     }
 
+    public void scrollVerticalFromCenterToDown(By by, int number) {
+        MobileElement element = driver.findElements(by).get(number);
+        int widthX = element.getLocation().getX();
+        int heightY = element.getLocation().getY();
+        int width = widthX + element.getSize().getWidth() / 2;
+        int height = heightY + element.getSize().getHeight() / 2;
+        int heightEnd = heightY + element.getSize().getHeight() - 1;
+        TouchAction scrollDown = new TouchAction(driver);
+        scrollDown.press(point(width, height))
+                .waitAction(waitOptions(Duration.ofSeconds(1)))
+                .moveTo(point(width, heightEnd)).release().perform();
+
+//todo poxel
+    }
+
+//    public void scrollVerticalFromCenterToDownMardavari(By by) {
+//        MobileElement element = driver.findElement(by);
+//        int originX = element.getLocation().getX();
+//        int originY = element.getLocation().getY();
+//        int elementCenterX = originX + element.getSize().getWidth() / 2;
+//        int elementCenterY = originY + element.getSize().getHeight() / 2;
+//        int destinationPointY = originY + element.getSize().getHeight() - 1;
+//        TouchAction scrollDown = new TouchAction(driver);
+//        scrollDown.press(point(elementCenterX, elementCenterY))
+//                .waitAction(waitOptions(Duration.ofSeconds(1)))
+//                .moveTo(point(elementCenterX, destinationPointY)).release().perform();
+//
+////todo poxel
+//    }
+
+//    public void refreshPage(){
+//        driver
+//    }
 
     public void resetData() {
         driver.resetApp();

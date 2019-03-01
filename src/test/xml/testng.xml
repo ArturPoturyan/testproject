@@ -5,7 +5,7 @@
 
         <classes>
             <class name="testnotification.NotificationScreenTest"/>
-            <class name="testlogin.SignInScreenTest"/>
+            <class name="logintests.SignInScreenTest"/>
         </classes>
 
     </test>

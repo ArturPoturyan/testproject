@@ -18,8 +18,9 @@ import java.util.concurrent.TimeUnit;
 import static utils.CommonValues.APP_ACTIVITY_NAME;
 import static utils.CommonValues.APP_PACKAGE_NAME;
 
+//harc inch a anum es class@
 
-public class DesiredCapsManager {
+public class DesiredCapsManager {//todo rename
     public AndroidDriver<MobileElement> driver;
     private AppiumDriverLocalService service;
 

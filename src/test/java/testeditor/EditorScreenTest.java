@@ -25,54 +25,52 @@ public class EditorScreenTest extends DesiredCapsManager {
     //image shared successfully
     @Test
     public void verifyFunctionalityOfImageSharedSuccessfully() {
-        editorSteps.openFreeToEditPhotoInEditor();
-        editorSteps.skipGoldPopup();
+        editorSteps.goToEditorScreenFromRecentImage();
         assertTrue(editorScreen.isEditorScreenPresent(), "Editor screen is not present");
         int repeat = 5;
-        while (!editorScreen.isEffectsCategoryPresent() && repeat > 0) {
+        while (!editorScreen.isEffectsButtonPresent() && repeat > 0) {
             editorScreen.swipeEditorPanelToLeft();
             repeat--;
         }
-        editorScreen.clickEffectsCategoryButton();
-        editorScreen.clickBlurEffectsCategory();
-        editorScreen.clickBlurCategoryItem();
-        editorScreen.clickBlurCategoryItem();
+        editorScreen.clickEffectsButton();
+        editorScreen.chooseBlurCategoryByName();
+        editorScreen.clickBlurEffect();
+        editorScreen.clickBlurEffect();
         editorScreen.swipeSeekBarToRight();
         editorScreen.clickApplyDoneButton();
         editorScreen.clickEditorNextButton();
-        editorScreen.clickUploadShareButton();
-        editorScreen.clickUploadDoneButton();
-        //stugi share exela photon te che
-
+        assertTrue(editorScreen.isUploadShareButtonPresent(),
+                "Upload share button is not present ");
     }
 
 
-    //TODO Test Case 3 By Serg
+    //TODO Test Case 2 By Serg
     @Test
-    public void verifyFunctionalityArtisticAndBlurCategory() {
-        editorSteps.openFreeToEditPhotoInEditor();
-        editorScreen.clickEffectsCategoryButton();
-        editorScreen.clickArtisticEffectsCategory();
-        assertTrue(editorScreen.isArtisticButtonSelected(), "not present");
+    public void verifyFunctionalityArtisticAndBlurCategory() throws InterruptedException {
+        editorSteps.openEditorWithFreeToEditImage();
+        editorScreen.clickEffectsButton();
+        editorScreen.chooseArtisticCategoryByName();
+        assertTrue(editorScreen.isOilPaintingEffectsNamePresent(), "Artistic effects category is not present");
+        editorSteps.applyAllArtisticEffects();
+        editorScreen.chooseBlurCategoryByName();
+        assertTrue(editorScreen.isBlurEffectNamePresent(), "Blur effect name is not present");
+        editorSteps.applyAllBlurEffects();
 
-//        assertTrue(editorScreen.isOilPaintingEffectsNamePresent()
-//                , "Artistic effects category is not present");
+    }
 
+    @Test
+    public void verifyDrawFunctionality() throws InterruptedException {
 
-        editorScreen.clickOilPaintingArtisticEffect();
-        editorScreen.clickPolygonArtisticEffect();
-        editorScreen.clickPosterArtisticEffect();
-        editorScreen.swipeArtisticCategoryToLeft();
-        editorScreen.clickHalfToneDotsArtisticEffect();
-        editorScreen.clickMotionArtisticEffect();
-        editorScreen.clickShearArtisticEffect();
-        editorScreen.clickPastedArtisticEffect();
-        editorScreen.clickComicArtisticEffect();
-        editorScreen.clickGouacheArtisticEffect();
-        editorScreen.clickOldPaperArtisticEffect();
-        editorScreen.clickNeonArtisticEffect();
-
-
-
+        editorSteps.goToDrawScreenFromCreateFlow();
+        assertTrue(editorScreen.isBrushButtonPresent(), "Draw brush mode is not present");
+        for (int i = 0; i < 5; i++) {
+            editorScreen.drawWithBrush();
+            Thread.sleep(2000);
+            assertTrue(editorScreen.isUndoButtonEnabled(), "Undo button is not enabled");
+            editorScreen.clickUndoButton();
+            editorScreen.clickDrawBrashMode();
+            editorScreen.clickDrawingBrushItem(i);
+            editorScreen.clickSetButton();
+        }
     }
 }
