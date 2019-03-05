@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f9962f0e-18a3-420b-abbb-afc3a92afaa8" name="Default Changelist" comment="last 3 test cases by Serg">
+    <list default="true" id="f9962f0e-18a3-420b-abbb-afc3a92afaa8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/screens/EditorScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/EditorScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/screens/NotificationScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/NotificationScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/steps/EditorSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/steps/EditorSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/steps/RegisterSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/steps/RegisterSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/DesiredCapsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/DesiredCapsManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/DesiredCapsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/AppiumServerStartSession.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/logintests/SignInScreenTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/logintests/SignInScreenTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjectfactorylogintest/LoginTestPageObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageobjectfactorylogintest/LoginTestPageObjectFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testeditor/EditorScreenTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testeditor/EditorScreenTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testlogin/SignInScreenTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/logintests/SignInScreenTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testnotification/NotificationScreenTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testnotification/NotificationScreenTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/xml/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testregister/RegisterScreenTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testregister/RegisterScreenTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -42,7 +42,7 @@
           <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.14" value="4" />
-          <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.15" value="2" />
           <entry key="project.open.time.17" value="2" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.2" value="3" />
@@ -54,7 +54,7 @@
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="34" />
+          <entry key="project.opened" value="35" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -63,8 +63,8 @@
           <entry key="class" value="1" />
           <entry key="dummy" value="161" />
           <entry key="gitignore" value="5" />
-          <entry key="java" value="39070" />
-          <entry key="txt" value="156" />
+          <entry key="java" value="40276" />
+          <entry key="txt" value="192" />
           <entry key="xml" value="151" />
         </counts>
       </usages-collector>
@@ -72,8 +72,8 @@
         <counts>
           <entry key="CLASS" value="1" />
           <entry key="Git file" value="5" />
-          <entry key="JAVA" value="39070" />
-          <entry key="PLAIN_TEXT" value="319" />
+          <entry key="JAVA" value="40276" />
+          <entry key="PLAIN_TEXT" value="355" />
           <entry key="XML" value="151" />
         </counts>
       </usages-collector>
@@ -83,7 +83,7 @@
           <entry key="asdad" value="1" />
           <entry key="class" value="34" />
           <entry key="gitignore" value="2" />
-          <entry key="java" value="847" />
+          <entry key="java" value="863" />
           <entry key="xml" value="29" />
         </counts>
       </usages-collector>
@@ -91,7 +91,7 @@
         <counts>
           <entry key="CLASS" value="34" />
           <entry key="Git file" value="1" />
-          <entry key="JAVA" value="847" />
+          <entry key="JAVA" value="863" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="XML" value="29" />
         </counts>
@@ -111,8 +111,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/testeditor/EditorScreenTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="647">
-              <caret line="63" column="41" lean-forward="true" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
+            <state relative-caret-position="600">
+              <caret line="40" column="45" lean-forward="true" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -121,44 +121,88 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/testnotification/NotificationScreenTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/screens/EditorScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="94" selection-start-line="94" selection-end-line="94" />
+            <state relative-caret-position="390">
+              <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2946#2947#0" expanded="true" />
+                <element signature="e#3008#3009#0" expanded="true" />
+                <element signature="e#3203#3204#0" expanded="true" />
+                <element signature="e#3275#3276#0" expanded="true" />
+                <element signature="e#3318#3319#0" expanded="true" />
+                <element signature="e#3389#3390#0" expanded="true" />
+                <element signature="e#3539#3540#0" expanded="true" />
+                <element signature="e#3580#3581#0" expanded="true" />
+                <element signature="e#3632#3633#0" expanded="true" />
+                <element signature="e#3698#3699#0" expanded="true" />
+                <element signature="e#3828#3829#0" expanded="true" />
+                <element signature="e#3886#3887#0" expanded="true" />
+                <element signature="e#3922#3923#0" expanded="true" />
+                <element signature="e#3968#3969#0" expanded="true" />
+                <element signature="e#4110#4111#0" expanded="true" />
+                <element signature="e#4174#4175#0" expanded="true" />
+                <element signature="e#4221#4222#0" expanded="true" />
+                <element signature="e#4281#4282#0" expanded="true" />
+                <element signature="e#4323#4324#0" expanded="true" />
+                <element signature="e#4389#4390#0" expanded="true" />
+                <element signature="e#4531#4532#0" expanded="true" />
+                <element signature="e#4585#4586#0" expanded="true" />
+                <element signature="e#5053#5054#0" expanded="true" />
+                <element signature="e#5094#5095#0" expanded="true" />
+                <element signature="e#5151#5152#0" expanded="true" />
+                <element signature="e#5229#5230#0" expanded="true" />
+                <element signature="e#5277#5278#0" expanded="true" />
+                <element signature="e#5348#5349#0" expanded="true" />
+                <element signature="e#5908#5909#0" expanded="true" />
+                <element signature="e#5989#5990#0" expanded="true" />
+                <element signature="e#6035#6036#0" expanded="true" />
+                <element signature="e#6112#6113#0" expanded="true" />
+                <element signature="e#6153#6154#0" expanded="true" />
+                <element signature="e#6220#6221#0" expanded="true" />
+                <element signature="e#6261#6262#0" expanded="true" />
+                <element signature="e#6313#6314#0" expanded="true" />
+                <element signature="e#6367#6368#0" expanded="true" />
+                <element signature="e#6429#6430#0" expanded="true" />
+                <element signature="e#7056#7057#0" expanded="true" />
+                <element signature="e#7113#7114#0" expanded="true" />
+                <element signature="e#7159#7160#0" expanded="true" />
+                <element signature="e#7211#7212#0" expanded="true" />
+                <element signature="e#7261#7262#0" expanded="true" />
+                <element signature="e#7323#7324#0" expanded="true" />
+                <element signature="e#7380#7381#0" expanded="true" />
+                <element signature="e#7454#7455#0" expanded="true" />
+                <element signature="e#7612#7613#0" expanded="true" />
+                <element signature="e#7672#7673#0" expanded="true" />
+                <element signature="e#7710#7711#0" expanded="true" />
+                <element signature="e#7759#7760#0" expanded="true" />
+                <element signature="e#7802#7803#0" expanded="true" />
+                <element signature="e#7852#7853#0" expanded="true" />
+                <element signature="e#7886#7887#0" expanded="true" />
+                <element signature="e#7940#7941#0" expanded="true" />
+                <element signature="e#7986#7987#0" expanded="true" />
+                <element signature="e#8065#8066#0" expanded="true" />
+                <element signature="e#8112#8113#0" expanded="true" />
+                <element signature="e#8173#8174#0" expanded="true" />
+                <element signature="e#8219#8220#0" expanded="true" />
+                <element signature="e#8286#8287#0" expanded="true" />
+                <element signature="e#8452#8453#0" expanded="true" />
+                <element signature="e#8538#8539#0" expanded="true" />
+                <element signature="e#8590#8591#0" expanded="true" />
+                <element signature="e#8651#8652#0" expanded="true" />
+                <element signature="e#8687#8688#0" expanded="true" />
+                <element signature="e#8766#8767#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/utils/Utils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="183" column="37" selection-start-line="183" selection-start-column="37" selection-end-line="183" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/steps/RegisterSteps.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/screens/LoginScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="40" column="44" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/screens/RegisterScreen.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="71" column="19" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
-              <folding>
-                <element signature="e#2100#2101#0" expanded="true" />
-                <element signature="e#2166#2167#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-377">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -166,8 +210,88 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/screens/NotificationScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="137" column="16" selection-start-line="137" selection-start-column="16" selection-end-line="137" selection-end-column="16" />
+            <state relative-caret-position="240">
+              <caret line="236" selection-start-line="236" selection-end-line="236" />
+              <folding>
+                <element signature="e#4178#4179#0" expanded="true" />
+                <element signature="e#4245#4246#0" expanded="true" />
+                <element signature="e#8003#8004#0" expanded="true" />
+                <element signature="e#8242#8243#0" expanded="true" />
+                <element signature="e#8275#8276#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/utils/CommonValues.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/testnotification/NotificationScreenTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-598">
+              <caret line="38" column="23" lean-forward="true" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/utils/AppiumServerStartSession.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-326">
+              <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#940#941#0" expanded="true" />
+                <element signature="e#1006#1007#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/steps/EditorSteps.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="51" column="16" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/utils/Utils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="54" selection-start-line="54" selection-end-line="54" />
+              <folding>
+                <element signature="e#2010#2011#0" expanded="true" />
+                <element signature="e#9162#9163#0" expanded="true" />
+                <element signature="e#9195#9196#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/steps/NotificationSteps.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -185,10 +309,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>panel</find>
-      <find>android.widget.ImageView</find>
-      <find>galler</find>
-      <find>true</find>
       <find>id/send_btn</find>
       <find>hori</find>
       <find>android.widget.ListView</find>
@@ -215,6 +335,10 @@
       <find>dialog_container</find>
       <find>swipe</find>
       <find>android:id/list</find>
+      <find>profile_menu_icon_top</find>
+      <find>recycler_view</find>
+      <find>effect</find>
+      <find>g</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -230,7 +354,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/screens/RegisterPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/utils/ClickButton.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/resources/Apk/11.4" />
@@ -272,15 +395,16 @@
         <option value="$PROJECT_DIR$/testng.xml" />
         <option value="$PROJECT_DIR$/src/main/java/steps/NotificationSteps.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/utils/DesiredCapsManager.java" />
         <option value="$PROJECT_DIR$/src/test/xml/testng.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/steps/EditorSteps.java" />
-        <option value="$PROJECT_DIR$/src/main/java/screens/EditorScreen.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testeditor/EditorScreenTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/screens/NotificationScreen.java" />
         <option value="$PROJECT_DIR$/src/main/java/steps/RegisterSteps.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testnotification/NotificationScreenTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/screens/NotificationScreen.java" />
+        <option value="$PROJECT_DIR$/src/main/java/utils/DesiredCapsManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/utils/Utils.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testeditor/EditorScreenTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/utils/AppiumServerStartSession.java" />
+        <option value="$PROJECT_DIR$/src/main/java/screens/EditorScreen.java" />
+        <option value="$PROJECT_DIR$/src/main/java/steps/EditorSteps.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testnotification/NotificationScreenTest.java" />
       </list>
     </option>
   </component>
@@ -307,9 +431,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="width" value="1280" />
-    <option name="height" value="800" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="-280" />
+    <option name="y" value="-1080" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -339,7 +465,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -393,13 +519,6 @@
               <item name="TestPicsArt" type="b2602c69:ProjectViewProjectNode" />
               <item name="TestPicsArt" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TestPicsArt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TestPicsArt" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -429,13 +548,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="plug&#9;ACTION&#9;WelcomeScreen.Plugins&#10;plugin&#9;ACTION&#9;WelcomeScreen.Plugins&#10;effect&#9;PSI&#9;JAVA://com.sun.scenario.effect.Effect&#10;util&#9;FILE&#9;file:///Users/arturpoturyan/IdeaProjects/TestPicsArt/src/main/java/utils/Utils.java&#10;ut&#9;FILE&#9;file:///Users/arturpoturyan/IdeaProjects/TestPicsArt/src/main/java/utils/Utils.java&#10;not&#9;PSI&#9;JAVA://screens.NotificationScreen&#10;rand&#9;FILE&#9;file:///Users/arturpoturyan/IdeaProjects/TestPicsArt/src/main/java/utils/RandomGeneratingNumbers.java&#10;register&#9;FILE&#9;file:///Users/arturpoturyan/IdeaProjects/TestPicsArt/src/main/java/teststeps/RegisterSteps.java&#10;Des&#9;FILE&#9;jar:///Users/arturpoturyan/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/3.12.0/selenium-remote-driver-3.12.0-sources.jar!/org/openqa/selenium/remote/DesiredCapabilities.java&#10;driver&#9;FILE&#9;jar:///Users/arturpoturyan/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/3.12.0/selenium-remote-driver-3.12.0.jar!/org/openqa/selenium/remote/RemoteWebDriver.class&#10;Login&#9;FILE&#9;file:///Users/arturpoturyan/IdeaProjects/TestPicsArt/src/test/java/testlogin/LoginTest.java" />
     <property name="add_unversioned_files" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551466872841" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551774958118" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/java" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -462,7 +581,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.EditorScreenTest and 1 more">
+  <component name="RunManager" selected="TestNG.NotificationScreenTest">
     <configuration name="EditorScreenTest and 1 more" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <module name="TestPicsArt" />
       <option name="TEST_OBJECT" value="PATTERN" />
@@ -476,23 +595,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EditorScreenTest,verifyDrawFunctionality and 3 more" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="TestPicsArt" />
-      <option name="TEST_OBJECT" value="PATTERN" />
-      <option name="PARAMETERS" value="0" />
-      <properties />
-      <listeners />
-      <patterns>
-        <pattern testClass="testeditor.EditorScreenTest,verifyDrawFunctionality" />
-        <pattern testClass="testnotification.NotificationScreenTest,verifyAppearanceOfLetIsStartButton" />
-        <pattern testClass="testnotification.NotificationScreenTest,verifyAppearanceOfContactSupportButton" />
-        <pattern testClass="testnotification.NotificationScreenTest,verifyFunctionalityOfLetIsStartButton" />
-      </patterns>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EditorScreenTest.verifyDrawFunctionality" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="EditorScreenTest" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <module name="TestPicsArt" />
       <extension name="coverage">
         <pattern>
@@ -502,7 +605,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="testeditor" />
       <option name="MAIN_CLASS_NAME" value="testeditor.EditorScreenTest" />
-      <option name="METHOD_NAME" value="verifyDrawFunctionality" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EditorScreenTest.verifyFunctionalityArtisticAndBlurCategory" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="TestPicsArt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testeditor.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testeditor" />
+      <option name="MAIN_CLASS_NAME" value="testeditor.EditorScreenTest" />
+      <option name="METHOD_NAME" value="verifyFunctionalityArtisticAndBlurCategory" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -510,7 +629,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NotificationScreenTest.swipeLeftAndRight" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="EditorScreenTest.verifyFunctionalityOfImageSharedSuccessfully" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="TestPicsArt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testeditor.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testeditor" />
+      <option name="MAIN_CLASS_NAME" value="testeditor.EditorScreenTest" />
+      <option name="METHOD_NAME" value="verifyFunctionalityOfImageSharedSuccessfully" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NotificationScreenTest" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <module name="TestPicsArt" />
       <extension name="coverage">
         <pattern>
@@ -520,26 +657,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="testnotification" />
       <option name="MAIN_CLASS_NAME" value="testnotification.NotificationScreenTest" />
-      <option name="METHOD_NAME" value="swipeLeftAndRight" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NotificationScreenTest.verifyAppearanceOfContactSupportButton" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="TestPicsArt" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testnotification.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testnotification" />
-      <option name="MAIN_CLASS_NAME" value="testnotification.NotificationScreenTest" />
-      <option name="METHOD_NAME" value="verifyAppearanceOfContactSupportButton" />
-      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -548,18 +665,18 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.EditorScreenTest and 1 more" />
-      <item itemvalue="TestNG.EditorScreenTest,verifyDrawFunctionality and 3 more" />
-      <item itemvalue="TestNG.NotificationScreenTest.swipeLeftAndRight" />
-      <item itemvalue="TestNG.NotificationScreenTest.verifyAppearanceOfContactSupportButton" />
-      <item itemvalue="TestNG.EditorScreenTest.verifyDrawFunctionality" />
+      <item itemvalue="TestNG.EditorScreenTest.verifyFunctionalityOfImageSharedSuccessfully" />
+      <item itemvalue="TestNG.EditorScreenTest.verifyFunctionalityArtisticAndBlurCategory" />
+      <item itemvalue="TestNG.EditorScreenTest" />
+      <item itemvalue="TestNG.NotificationScreenTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.NotificationScreenTest" />
+        <item itemvalue="TestNG.EditorScreenTest" />
+        <item itemvalue="TestNG.EditorScreenTest.verifyFunctionalityArtisticAndBlurCategory" />
+        <item itemvalue="TestNG.EditorScreenTest.verifyFunctionalityOfImageSharedSuccessfully" />
         <item itemvalue="TestNG.EditorScreenTest and 1 more" />
-        <item itemvalue="TestNG.EditorScreenTest.verifyDrawFunctionality" />
-        <item itemvalue="TestNG.NotificationScreenTest.verifyAppearanceOfContactSupportButton" />
-        <item itemvalue="TestNG.NotificationScreenTest.swipeLeftAndRight" />
-        <item itemvalue="TestNG.EditorScreenTest,verifyDrawFunctionality and 3 more" />
       </list>
     </recent_temporary>
   </component>
@@ -623,39 +740,46 @@
       <option name="project" value="LOCAL" />
       <updated>1551118506902</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Utils class changing">
+      <created>1551467022801</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1551467022801</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="NotificationScreenTest_verifyAppearanceOfContactSupportButton - 2019.03.01 at 19h 31m 27s.xml">
-      <configuration name="NotificationScreenTest.verifyAppearanceOfContactSupportButton" configurationId="TestNG" />
+    <history-entry file="NotificationScreenTest_verifyAppearanceOfLetIsStartButton - 2019.03.04 at 14h 24m 35s.xml">
+      <configuration name="NotificationScreenTest.verifyAppearanceOfLetIsStartButton" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="NotificationScreenTest_verifyAppearanceOfContactSupportButton - 2019.03.01 at 19h 34m 27s.xml">
-      <configuration name="NotificationScreenTest.verifyAppearanceOfContactSupportButton" configurationId="TestNG" />
+    <history-entry file="NotificationScreenTest_verifyAppearanceOfLetIsStartButton - 2019.03.04 at 14h 27m 21s.xml">
+      <configuration name="NotificationScreenTest.verifyAppearanceOfLetIsStartButton" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="NotificationScreenTest_verifyAppearanceOfContactSupportButton - 2019.03.01 at 19h 37m 47s.xml">
-      <configuration name="NotificationScreenTest.verifyAppearanceOfContactSupportButton" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="NotificationScreenTest_verifyAppearanceOfContactSupportButton - 2019.03.01 at 19h 39m 33s.xml">
-      <configuration name="NotificationScreenTest.verifyAppearanceOfContactSupportButton" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="NotificationScreenTest_verifyAppearanceOfContactSupportButton - 2019.03.01 at 20h 00m 47s.xml">
-      <configuration name="NotificationScreenTest.verifyAppearanceOfContactSupportButton" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="NotificationScreenTest_verifyAppearanceOfContactSupportButton - 2019.03.01 at 20h 02m 15s.xml">
-      <configuration name="NotificationScreenTest.verifyAppearanceOfContactSupportButton" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="NotificationScreenTest_verifyAppearanceOfContactSupportButton - 2019.03.01 at 20h 04m 07s.xml">
-      <configuration name="NotificationScreenTest.verifyAppearanceOfContactSupportButton" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="NotificationScreenTest_verifyAppearanceOfContactSupportButton - 2019.03.01 at 20h 06m 46s.xml">
-      <configuration name="NotificationScreenTest.verifyAppearanceOfContactSupportButton" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="EditorScreenTest_verifyDrawFunctionality - 2019.03.01 at 22h 43m 14s.xml">
-      <configuration name="EditorScreenTest.verifyDrawFunctionality" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="EditorScreenTest_and_1_more - 2019.03.01 at 22h 58m 22s.xml">
+    <history-entry file="EditorScreenTest_and_1_more - 2019.03.04 at 15h 13m 48s.xml">
       <configuration name="EditorScreenTest and 1 more" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="EditorScreenTest_verifyFunctionalityOfImageSharedSuccessfully - 2019.03.04 at 15h 15m 15s.xml">
+      <configuration name="EditorScreenTest.verifyFunctionalityOfImageSharedSuccessfully" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="EditorScreenTest_verifyFunctionalityArtisticAndBlurCategory - 2019.03.04 at 15h 31m 34s.xml">
+      <configuration name="EditorScreenTest.verifyFunctionalityArtisticAndBlurCategory" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="EditorScreenTest_verifyFunctionalityArtisticAndBlurCategory - 2019.03.04 at 15h 36m 29s.xml">
+      <configuration name="EditorScreenTest.verifyFunctionalityArtisticAndBlurCategory" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="EditorScreenTest - 2019.03.04 at 15h 55m 37s.xml">
+      <configuration name="EditorScreenTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="NotificationScreenTest - 2019.03.05 at 11h 08m 25s.xml">
+      <configuration name="NotificationScreenTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="NotificationScreenTest - 2019.03.05 at 11h 11m 19s.xml">
+      <configuration name="NotificationScreenTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="NotificationScreenTest - 2019.03.05 at 11h 28m 15s.xml">
+      <configuration name="NotificationScreenTest" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="TodoView" selected-index="2">
@@ -668,10 +792,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="6" />
+    <frame x="-280" y="-1080" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4988864" visible="true" weight="0.26009694" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4988864" visible="true" weight="0.17412141" />
       <window_info id="Structure" order="1" sideWeight="0.50136983" side_tool="true" weight="0.27059773" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -681,8 +805,8 @@
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32320163" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32673267" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49946752" visible="true" weight="0.48514852" />
-      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.49946752" weight="0.1923621" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49946752" visible="true" weight="0.22289766" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.49946752" weight="0.32218844" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.3272543" />
@@ -764,7 +888,8 @@
     <MESSAGE value="deleted comments and driver init change" />
     <MESSAGE value="added new test cases" />
     <MESSAGE value="last 3 test cases by Serg" />
-    <option name="LAST_COMMIT_MESSAGE" value="last 3 test cases by Serg" />
+    <MESSAGE value="Utils class changing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Utils class changing" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -815,6 +940,21 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
+        <expression-string>notificationScreen.refresh();</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>notificationScreen.pullToRefreshProfileTab();//todo refresh</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>notificationScreen.pullToRefreshProfileTab();</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>notificationScreen.verticalScrollSettingsScreen();</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
@@ -841,21 +981,6 @@
       </expression>
       <expression>
         <expression-string>editorScreen.isUndoButtonEnabled()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>assertTrue(editorScreen.isUndoButtonEnabled(), &quot;Undo button is not enabled&quot;);</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>utils.clickElementByText(CREATE_NEW, &quot;Create New&quot;);</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>isBlurCategoryPresent()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -894,13 +1019,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2327">
           <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utils/CommonValues.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="31" lean-forward="true" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -1086,10 +1204,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="82" column="32" lean-forward="true" selection-start-line="82" selection-start-column="32" selection-end-line="82" selection-end-column="32" />
-          <folding>
-            <element signature="e#3030#3031#0" expanded="true" />
-            <element signature="e#3103#3104#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1097,10 +1211,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="138" column="10" lean-forward="true" selection-start-line="138" selection-start-column="10" selection-end-line="138" selection-end-column="10" />
-          <folding>
-            <element signature="e#5423#5424#0" expanded="true" />
-            <element signature="e#5457#5458#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1108,18 +1218,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="251">
           <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utils/DesiredCapsManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="22" column="31" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#918#919#0" expanded="true" />
-            <element signature="e#984#985#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1144,13 +1242,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/screens/LoginScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-202">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/screens/LoginScreenPageObjectFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
@@ -1158,60 +1249,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/screens/EditorScreen.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/steps/RegisterSteps.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3179#3180#0" expanded="true" />
-            <element signature="e#3251#3252#0" expanded="true" />
-            <element signature="e#3294#3295#0" expanded="true" />
-            <element signature="e#3365#3366#0" expanded="true" />
-            <element signature="e#3515#3516#0" expanded="true" />
-            <element signature="e#3556#3557#0" expanded="true" />
-            <element signature="e#7259#7260#0" expanded="true" />
-            <element signature="e#7319#7320#0" expanded="true" />
-            <element signature="e#8253#8254#0" expanded="true" />
-            <element signature="e#8339#8340#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/steps/EditorSteps.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="71" column="16" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/steps/LoginSteps.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/steps/NotificationSteps.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="32" column="9" lean-forward="true" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testeditor/EditorScreenTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="647">
-          <caret line="63" column="41" lean-forward="true" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="555">
+          <caret line="40" column="44" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -1226,24 +1267,129 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/steps/RegisterSteps.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/steps/LoginSteps.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="40" column="44" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
+        <state relative-caret-position="285">
+          <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/screens/NotificationScreen.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/screens/LoginScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="137" column="16" selection-start-line="137" selection-start-column="16" selection-end-line="137" selection-end-column="16" />
+        <state relative-caret-position="-377">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testnotification/NotificationScreenTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/CommonValues.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="94" selection-start-line="94" selection-end-line="94" />
+        <state relative-caret-position="30">
+          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/AppiumServerStartSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-326">
+          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#940#941#0" expanded="true" />
+            <element signature="e#1006#1007#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/steps/NotificationSteps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/screens/EditorScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2946#2947#0" expanded="true" />
+            <element signature="e#3008#3009#0" expanded="true" />
+            <element signature="e#3203#3204#0" expanded="true" />
+            <element signature="e#3275#3276#0" expanded="true" />
+            <element signature="e#3318#3319#0" expanded="true" />
+            <element signature="e#3389#3390#0" expanded="true" />
+            <element signature="e#3539#3540#0" expanded="true" />
+            <element signature="e#3580#3581#0" expanded="true" />
+            <element signature="e#3632#3633#0" expanded="true" />
+            <element signature="e#3698#3699#0" expanded="true" />
+            <element signature="e#3828#3829#0" expanded="true" />
+            <element signature="e#3886#3887#0" expanded="true" />
+            <element signature="e#3922#3923#0" expanded="true" />
+            <element signature="e#3968#3969#0" expanded="true" />
+            <element signature="e#4110#4111#0" expanded="true" />
+            <element signature="e#4174#4175#0" expanded="true" />
+            <element signature="e#4221#4222#0" expanded="true" />
+            <element signature="e#4281#4282#0" expanded="true" />
+            <element signature="e#4323#4324#0" expanded="true" />
+            <element signature="e#4389#4390#0" expanded="true" />
+            <element signature="e#4531#4532#0" expanded="true" />
+            <element signature="e#4585#4586#0" expanded="true" />
+            <element signature="e#5053#5054#0" expanded="true" />
+            <element signature="e#5094#5095#0" expanded="true" />
+            <element signature="e#5151#5152#0" expanded="true" />
+            <element signature="e#5229#5230#0" expanded="true" />
+            <element signature="e#5277#5278#0" expanded="true" />
+            <element signature="e#5348#5349#0" expanded="true" />
+            <element signature="e#5908#5909#0" expanded="true" />
+            <element signature="e#5989#5990#0" expanded="true" />
+            <element signature="e#6035#6036#0" expanded="true" />
+            <element signature="e#6112#6113#0" expanded="true" />
+            <element signature="e#6153#6154#0" expanded="true" />
+            <element signature="e#6220#6221#0" expanded="true" />
+            <element signature="e#6261#6262#0" expanded="true" />
+            <element signature="e#6313#6314#0" expanded="true" />
+            <element signature="e#6367#6368#0" expanded="true" />
+            <element signature="e#6429#6430#0" expanded="true" />
+            <element signature="e#7056#7057#0" expanded="true" />
+            <element signature="e#7113#7114#0" expanded="true" />
+            <element signature="e#7159#7160#0" expanded="true" />
+            <element signature="e#7211#7212#0" expanded="true" />
+            <element signature="e#7261#7262#0" expanded="true" />
+            <element signature="e#7323#7324#0" expanded="true" />
+            <element signature="e#7380#7381#0" expanded="true" />
+            <element signature="e#7454#7455#0" expanded="true" />
+            <element signature="e#7612#7613#0" expanded="true" />
+            <element signature="e#7672#7673#0" expanded="true" />
+            <element signature="e#7710#7711#0" expanded="true" />
+            <element signature="e#7759#7760#0" expanded="true" />
+            <element signature="e#7802#7803#0" expanded="true" />
+            <element signature="e#7852#7853#0" expanded="true" />
+            <element signature="e#7886#7887#0" expanded="true" />
+            <element signature="e#7940#7941#0" expanded="true" />
+            <element signature="e#7986#7987#0" expanded="true" />
+            <element signature="e#8065#8066#0" expanded="true" />
+            <element signature="e#8112#8113#0" expanded="true" />
+            <element signature="e#8173#8174#0" expanded="true" />
+            <element signature="e#8219#8220#0" expanded="true" />
+            <element signature="e#8286#8287#0" expanded="true" />
+            <element signature="e#8452#8453#0" expanded="true" />
+            <element signature="e#8538#8539#0" expanded="true" />
+            <element signature="e#8590#8591#0" expanded="true" />
+            <element signature="e#8651#8652#0" expanded="true" />
+            <element signature="e#8687#8688#0" expanded="true" />
+            <element signature="e#8766#8767#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/steps/EditorSteps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="51" column="16" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1252,8 +1398,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/utils/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="183" column="37" selection-start-line="183" selection-start-column="37" selection-end-line="183" selection-end-column="37" />
+        <state relative-caret-position="240">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+          <folding>
+            <element signature="e#2010#2011#0" expanded="true" />
+            <element signature="e#9162#9163#0" expanded="true" />
+            <element signature="e#9195#9196#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/screens/NotificationScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="236" selection-start-line="236" selection-end-line="236" />
+          <folding>
+            <element signature="e#4178#4179#0" expanded="true" />
+            <element signature="e#4245#4246#0" expanded="true" />
+            <element signature="e#8003#8004#0" expanded="true" />
+            <element signature="e#8242#8243#0" expanded="true" />
+            <element signature="e#8275#8276#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testeditor/EditorScreenTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="40" column="45" lean-forward="true" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testnotification/NotificationScreenTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-598">
+          <caret line="38" column="23" lean-forward="true" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

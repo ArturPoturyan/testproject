@@ -4,9 +4,9 @@ package pageobjectfactorylogintest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import screens.LoginScreenPageObjectFactory;
-import utils.DesiredCapsManager;
+import utils.AppiumServerStartSession;
 
-public class LoginTestPageObjectFactory extends DesiredCapsManager {
+public class LoginTestPageObjectFactory extends AppiumServerStartSession {
     private LoginScreenPageObjectFactory login;
 
 

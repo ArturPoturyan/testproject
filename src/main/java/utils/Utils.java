@@ -199,7 +199,6 @@ public class Utils {
                 .waitAction(waitOptions(Duration.ofSeconds(1)))
                 .moveTo(point(width, heightEnd)).release().perform();
 
-//todo poxel
 
     }
 
@@ -210,7 +209,6 @@ public class Utils {
         int width = widthX + element.getSize().getWidth() / 2;
         int height = heightY + element.getSize().getHeight() / 2;
         int heightEnd = element.getLocation().getY();
-
 
         TouchAction scrollDown = new TouchAction(driver);
         scrollDown.press(point(width, height))
@@ -225,12 +223,12 @@ public class Utils {
         int width = widthX + element.getSize().getWidth() / 2;
         int height = heightY + element.getSize().getHeight() / 2;
         int heightEnd = heightY + element.getSize().getHeight() - 1;
+
         TouchAction scrollDown = new TouchAction(driver);
         scrollDown.press(point(width, height))
                 .waitAction(waitOptions(Duration.ofSeconds(1)))
                 .moveTo(point(width, heightEnd)).release().perform();
 
-//todo poxel
     }
 
     public void scrollVerticalFromCenterToDown(By by, int number) {
@@ -245,29 +243,14 @@ public class Utils {
                 .waitAction(waitOptions(Duration.ofSeconds(1)))
                 .moveTo(point(width, heightEnd)).release().perform();
 
-//todo poxel
     }
 
-//    public void scrollVerticalFromCenterToDownMardavari(By by) {
-//        MobileElement element = driver.findElement(by);
-//        int originX = element.getLocation().getX();
-//        int originY = element.getLocation().getY();
-//        int elementCenterX = originX + element.getSize().getWidth() / 2;
-//        int elementCenterY = originY + element.getSize().getHeight() / 2;
-//        int destinationPointY = originY + element.getSize().getHeight() - 1;
-//        TouchAction scrollDown = new TouchAction(driver);
-//        scrollDown.press(point(elementCenterX, elementCenterY))
-//                .waitAction(waitOptions(Duration.ofSeconds(1)))
-//                .moveTo(point(elementCenterX, destinationPointY)).release().perform();
 //
-////todo poxel
+//    public void pullToRefresh(double startYPercentage, double endYPercentage, double startXPercentage) {
+//        verticalSwipeByPercentages(startYPercentage, endYPercentage, startXPercentage);
 //    }
 
-//    public void refreshPage(){
-//        driver
-//    }
-
-    public void resetData() {
+    public void resetApp() {
         driver.resetApp();
     }
 }

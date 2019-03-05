@@ -43,19 +43,29 @@ public class EditorSteps {
         skipGoldPopup();
     }
 
+    public void skipGoldOffeScreen() {
+        if (editorScreen.isSubscriptionOfferScreenPresent()) {
+            editorScreen.clickXButtonInOfferScreen();
+        }
+    }
+
     public void applyAllArtisticEffects() throws InterruptedException {
 
         for (int i = 0; i < editorScreen.ARTISTIC_CATEGORY.length; i++) {
+
+            if (editorScreen.isSimpleProgressPresent()) {
+                Thread.sleep(2000);
+            }
             editorScreen.clickEffectByName(editorScreen.ARTISTIC_CATEGORY[i]);
-            Thread.sleep(2000);//todo poxel
         }
     }
 
     public void applyAllBlurEffects() throws InterruptedException {
         for (int i = 0; i < editorScreen.BLUR_CATEGORY.length; i++) {
+            if (editorScreen.isSimpleProgressPresent()) {
+                Thread.sleep(2000);
+            }
             editorScreen.clickEffectByName(editorScreen.BLUR_CATEGORY[i]);
-            Thread.sleep(2000);
-
         }
     }
 

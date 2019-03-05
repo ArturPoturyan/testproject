@@ -20,7 +20,7 @@ import static utils.CommonValues.APP_PACKAGE_NAME;
 
 //harc inch a anum es class@
 
-public class DesiredCapsManager {//todo rename
+public class AppiumServerStartSession {
     public AndroidDriver<MobileElement> driver;
     private AppiumDriverLocalService service;
 
@@ -63,7 +63,7 @@ public class DesiredCapsManager {//todo rename
     private DesiredCapabilities initDesiredCapability() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(Objects.requireNonNull(classLoader.getResource("apk/release_11.5-build46.apk")).getFile());
+        File file = new File(Objects.requireNonNull(classLoader.getResource("apk/11.7-104-signed.apk")).getFile());
         capabilities.setCapability("app", file);
 //        capabilities.setCapability(MobileCapabilityType.UDID, "b15ffa8f");
         capabilities.setCapability(MobileCapabilityType.UDID, "410042ad44709101");

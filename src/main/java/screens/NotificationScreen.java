@@ -60,6 +60,7 @@ public class NotificationScreen {
     private By AVATAR_ICON = By.id(APP_PACKAGE_NAME + ":id/action_bar_avatar");
     private By HOME_PAGING_RECYCLER_VIEW = By.id(APP_PACKAGE_NAME + ":id/paging_recycler_view_id");
     private By SETTINGS_LIST = By.id("android:id/list");
+    private By SWIPE_REFRESH = By.id(APP_PACKAGE_NAME+":id/swipe_refresh");
 
 
     public void clickFollowButton() {
@@ -72,6 +73,17 @@ public class NotificationScreen {
 
     }
 
+    public boolean isProfileMoreButtonPresent() {
+        return utils.isElementPresent(PROFILE_MORE_BUTTON);
+    }
+
+//    public void pullToRefreshProfileTab() {
+//        utils.pullToRefresh(0.5, 0.7, 0.5);
+//    }
+
+    public void pullToRefreshInProfilePage() {
+        utils.scrollVerticalFromCenterToDown(SWIPE_REFRESH);
+    }
 
     public void clickContactSupportButton() {
         utils.clickElementByText(SETTINGS_TEXT, "Contact Support");
@@ -237,7 +249,7 @@ public class NotificationScreen {
     }
 
     public void resetPicsArtAppData() {
-        utils.resetData();
+        utils.resetApp();
     }
 
     public boolean isCreateFlowScreenPresent() {

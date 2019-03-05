@@ -4,12 +4,12 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import screens.RegisterScreen;
 import steps.RegisterSteps;
-import utils.DesiredCapsManager;
+import utils.AppiumServerStartSession;
 
 import static org.testng.AssertJUnit.assertTrue;
 
 
-public class RegisterScreenTest extends DesiredCapsManager {
+public class RegisterScreenTest extends AppiumServerStartSession {
 
 
     private RegisterSteps registerSteps;

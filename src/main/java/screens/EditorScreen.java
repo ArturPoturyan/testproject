@@ -42,6 +42,8 @@ public class EditorScreen {
     private By OK_BUTTON = By.id(APP_PACKAGE_NAME + ":id/ok");
     private By UNDO_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_undo");
     private By CREATE_NEW = By.id(APP_PACKAGE_NAME + ":id/description");
+    private By SUBSCRIPTION_PAYMENT_BUTTON = By.id(APP_PACKAGE_NAME + ":id/subscription_payment_button_1");
+    private By SUBSCRIPTION_OFFER_CLOSE_BUTTON = By.id("android.widget.ImageButton");
 
 
     //Views
@@ -53,7 +55,11 @@ public class EditorScreen {
     private By EFFECTS_BOTTOM_PANEL = By.id(APP_PACKAGE_NAME + ":id/effects_category_list");
     private By CREATE_FLOW_RECYCLER_VIEW = By.id(APP_PACKAGE_NAME + ":id/recycler_view");
     private By EFFECT_THUMBS_RECYCLER_VIEW = By.id(APP_PACKAGE_NAME + ":id/effects_thumbs_recycler_view");
+    private By SIMPLE_PROGGRES = By.id(APP_PACKAGE_NAME + ":id/simple_progress");
 
+    public boolean isSimpleProgressPresent() {
+        return utils.isElementPresent(SIMPLE_PROGGRES);
+    }
 
     public void clickFubButton() {//todo rename
         utils.clickIdButton(FUB_BUTTON);
@@ -70,16 +76,6 @@ public class EditorScreen {
         utils.clickElementByText(CREATE_NEW, "Create New");
 
     }
-
-//    public void goToDrawScreenFromCreateFlow() {
-////        clickFubButton();
-//        int repeat = 4;
-//        while (!isCreateNewButtonPresent() && repeat > 0) {
-////            utils.scrollVerticalFromCenterToUp(CREATE_FLOW_RECYCLER_VIEW);
-//            repeat--;
-//        }
-//        utils.clickElementByText(CREATE_NEW, "Create New");
-//    }
 
     public boolean isCreateNewButtonPresent() {
         return utils.findElementByText(CREATE_NEW, "Create New");
@@ -239,6 +235,16 @@ public class EditorScreen {
 
     public boolean isPicsArtGoldPopupPresent() {
         return utils.isElementPresent(NEGATIVE_BUTTON);
+    }
+
+    public boolean isSubscriptionOfferScreenPresent() {
+        return utils.isElementPresent(SUBSCRIPTION_PAYMENT_BUTTON);
+    }
+
+
+    public void clickXButtonInOfferScreen() {
+
+        utils.clickIdButton(SUBSCRIPTION_OFFER_CLOSE_BUTTON);
     }
 
     public void clickAllPhotoButton() {

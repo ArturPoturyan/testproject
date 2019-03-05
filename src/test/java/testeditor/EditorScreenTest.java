@@ -4,11 +4,11 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import screens.EditorScreen;
 import steps.EditorSteps;
-import utils.DesiredCapsManager;
+import utils.AppiumServerStartSession;
 
 import static org.testng.Assert.assertTrue;
 
-public class EditorScreenTest extends DesiredCapsManager {
+public class EditorScreenTest extends AppiumServerStartSession {
 
     private EditorScreen editorScreen;
     private EditorSteps editorSteps;
@@ -48,6 +48,7 @@ public class EditorScreenTest extends DesiredCapsManager {
     @Test
     public void verifyFunctionalityArtisticAndBlurCategory() throws InterruptedException {
         editorSteps.openEditorWithFreeToEditImage();
+        editorSteps.skipGoldOffeScreen();
         editorScreen.clickEffectsButton();
         editorScreen.chooseArtisticCategoryByName();
         assertTrue(editorScreen.isOilPaintingEffectsNamePresent(), "Artistic effects category is not present");
@@ -58,6 +59,8 @@ public class EditorScreenTest extends DesiredCapsManager {
 
     }
 
+    //TODO Test Case 3 By Serg
+
     @Test
     public void verifyDrawFunctionality() throws InterruptedException {
 
@@ -65,7 +68,7 @@ public class EditorScreenTest extends DesiredCapsManager {
         assertTrue(editorScreen.isBrushButtonPresent(), "Draw brush mode is not present");
         for (int i = 0; i < 5; i++) {
             editorScreen.drawWithBrush();
-            Thread.sleep(2000);
+            Thread.sleep(3000);
             assertTrue(editorScreen.isUndoButtonEnabled(), "Undo button is not enabled");
             editorScreen.clickUndoButton();
             editorScreen.clickDrawBrashMode();

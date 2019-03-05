@@ -4,9 +4,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import screens.LoginScreen;
 import steps.LoginSteps;
-import utils.DesiredCapsManager;
+import utils.AppiumServerStartSession;
 
-public class SignInScreenTest extends DesiredCapsManager {
+public class SignInScreenTest extends AppiumServerStartSession {
 
     private LoginSteps loginSteps;
     private LoginScreen loginScreen;
