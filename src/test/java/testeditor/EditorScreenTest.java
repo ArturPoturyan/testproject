@@ -48,7 +48,7 @@ public class EditorScreenTest extends AppiumServerStartSession {
     @Test
     public void verifyFunctionalityArtisticAndBlurCategory() throws InterruptedException {
         editorSteps.openEditorWithFreeToEditImage();
-        editorSteps.skipGoldOffeScreen();
+        editorSteps.skipGoldOfferScreen();
         editorScreen.clickEffectsButton();
         editorScreen.chooseArtisticCategoryByName();
         assertTrue(editorScreen.isOilPaintingEffectsNamePresent(), "Artistic effects category is not present");

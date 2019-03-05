@@ -42,8 +42,8 @@ public class EditorScreen {
     private By OK_BUTTON = By.id(APP_PACKAGE_NAME + ":id/ok");
     private By UNDO_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_undo");
     private By CREATE_NEW = By.id(APP_PACKAGE_NAME + ":id/description");
-    private By SUBSCRIPTION_PAYMENT_BUTTON = By.id(APP_PACKAGE_NAME + ":id/subscription_payment_button_1");
-    private By SUBSCRIPTION_OFFER_CLOSE_BUTTON = By.id("android.widget.ImageButton");
+    private By SHOP_SUBSCRIPTION_FRAGMENT = By.id(APP_PACKAGE_NAME + ":id/shop_subscription_fragment_continer");
+    private By SUBSCRIPTION_OFFER_CLOSE_BUTTON = By.className("android.widget.ImageButton");
 
 
     //Views
@@ -238,7 +238,7 @@ public class EditorScreen {
     }
 
     public boolean isSubscriptionOfferScreenPresent() {
-        return utils.isElementPresent(SUBSCRIPTION_PAYMENT_BUTTON);
+        return utils.isElementPresent(SHOP_SUBSCRIPTION_FRAGMENT);
     }
 
 

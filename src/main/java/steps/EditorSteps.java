@@ -43,7 +43,7 @@ public class EditorSteps {
         skipGoldPopup();
     }
 
-    public void skipGoldOffeScreen() {
+    public void skipGoldOfferScreen() {
         if (editorScreen.isSubscriptionOfferScreenPresent()) {
             editorScreen.clickXButtonInOfferScreen();
         }
