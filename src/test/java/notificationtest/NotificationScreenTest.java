@@ -1,4 +1,4 @@
-package testnotification;
+package notificationtest;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -9,7 +9,7 @@ import steps.NotificationSteps;
 import steps.RegisterSteps;
 import utils.AppiumServerStartSession;
 
-import static org.testng.AssertJUnit.assertTrue;
+import static org.testng.Assert.assertTrue;
 
 public class NotificationScreenTest extends AppiumServerStartSession {
 
@@ -48,29 +48,28 @@ public class NotificationScreenTest extends AppiumServerStartSession {
         notificationScreen.clickFeedsTab();
         notificationScreen.clickNotificationButton();
         notificationScreen.clickOnFollowingTab();
-        assertTrue("No Result is not present on the notification Following tab"
-                , notificationScreen.isNoResultTextPresent());
+        assertTrue(notificationScreen.isNoResultTextPresent(), "No Result is not present on the notification Following tab");
 
     }
+
     //TODO PIA-53635,TODO PIA-53641
 
     // [InApp_Notifications] verify appearance and functionality upload image button
-    @Test(priority = 2)
+    @Test(priority = 2, dependsOnMethods = {"verifyAppearanceOfEmptyStateInFollowingTab"})
     public void verifyAppearanceAndFunctionalityUploadImageButton() {
         notificationScreen.clickFeedsTab();
         notificationScreen.clickNotificationButton();
         notificationScreen.clickOnMeTab();
-        assertTrue("You have no activity :( is not present on the notification me tab"
-                , notificationScreen.isYouHaveNoActivityTextPresent());
+        assertTrue(notificationScreen.isYouHaveNoActivityTextPresent(), "You have no activity :( is not present on the notification me tab"
+        );
         notificationScreen.clickUploadImageButton();
-        assertTrue("Photo chooser is not present on the screen",
-                notificationScreen.isPhotoChooserImageListPresent());
+        assertTrue(notificationScreen.isPhotoChooserImageListPresent(), "Photo chooser is not present on the screen");
 
     }
 
     //TODO PIA-53614,PIA-53620
     //[InApp_Notifications] verify appearance and functionality of let is start button
-    @Test(priority = 3)
+    @Test(priority = 3, dependsOnMethods = {"verifyAppearanceOfEmptyStateInFollowingTab"})
     public void verifyAppearanceAndFunctionalityOfLetIsStartButton() {
         notificationScreen.clickFeedsTab();
         notificationScreen.clickNotificationButton();
@@ -82,21 +81,19 @@ public class NotificationScreenTest extends AppiumServerStartSession {
         notificationScreen.clickUploadShareButton();
         notificationScreen.clickUploadDoneButton();
         notificationScreen.clickProfileTab();
-        assertTrue("Profile more button is not present ", notificationScreen.isProfileMoreButtonPresent());
+        assertTrue(notificationScreen.isProfileMoreButtonPresent(), "Profile more button is not present ");
         notificationScreen.pullToRefreshInProfilePage();
         notificationScreen.clickFeedsTab();
         notificationScreen.clickNotificationButton();
         notificationScreen.clickOnMeTab();
-        assertTrue("Find People to Follow text is not present on the notification Me tab",
-                notificationScreen.isFindPeopleToFollowTextPresent());
+        assertTrue(notificationScreen.isFindPeopleToFollowTextPresent(), "Find People to Follow text is not present on the notification Me tab");
         notificationScreen.clickLetIsStartButton();
-        assertTrue("Discover Artists title is not present on the discover screen"
-                , notificationScreen.isDiscoverArtistsPresent());
+        assertTrue(notificationScreen.isDiscoverArtistsPresent(), "Discover Artists title is not present on the discover screen");
     }
 
     //TODO PIA-56760,PIA-56762
     //[Notifications_Settings] Verify the appearance and functionality of contact support button
-    @Test(priority = 4)
+    @Test(priority = 4, dependsOnMethods = {"verifyAppearanceOfEmptyStateInFollowingTab"})
     public void verifyAppearanceAndFunctionalityOfContactSupportButton() {
         notificationScreen.clickProfileTab();
         notificationScreen.clickProfileMoreButton();
@@ -106,12 +103,12 @@ public class NotificationScreenTest extends AppiumServerStartSession {
             notificationScreen.verticalScrollToUpSettingsScreen();
             k++;
         }
-        assertTrue("Contact Support title is not present on the settings page", notificationScreen.isContactSupportTextPresent());
+        assertTrue(notificationScreen.isContactSupportTextPresent(), "Contact Support title is not present on the settings page");
         notificationScreen.clickContactSupportButton();
-        assertTrue("Choose Email Client is not present ", notificationScreen.isChooseEmailClientTextPresent());
+        assertTrue(notificationScreen.isChooseEmailClientTextPresent(), "Choose Email Client is not present ");
     }
 
-    @Test(priority = 5)
+    @Test
     public void swipeLeftAndRight() {
         notificationScreen.clickFeedsTab();
         int repeat = 10;
@@ -120,7 +117,7 @@ public class NotificationScreenTest extends AppiumServerStartSession {
             repeat--;
         }
         notificationScreen.clickImageMyNetworkTab();
-        assertTrue("actions panel is not present ", notificationScreen.isUserAvatarIconPresent());
+        assertTrue(notificationScreen.isUserAvatarIconPresent(), "actions panel is not present ");
         for (int i = 0; i < 5; i++) {
             notificationScreen.swipeHomeImageToLeft();
         }
@@ -135,6 +132,6 @@ public class NotificationScreenTest extends AppiumServerStartSession {
         notificationScreen.clickGalleryCommentButton();
         notificationScreen.clickCommentInputField();
         notificationScreen.typeCommentText();
-        assertTrue("Send button is not enabled ", notificationScreen.isSendButtonEnabled());
+        assertTrue(notificationScreen.isSendButtonEnabled(), "Send button is not enabled ");
     }
 }

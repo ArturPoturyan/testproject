@@ -4,8 +4,8 @@
     <test name="test1">
 
         <classes>
-            <class name="testnotification.NotificationScreenTest"/>
-            <class name="logintests.SignInScreenTest"/>
+            <class name="notificationtest.NotificationScreenTest"/>
+            <class name="editortest.EditorScreenTest"/>
         </classes>
 
     </test>

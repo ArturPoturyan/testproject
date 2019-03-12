@@ -1,4 +1,4 @@
-package testeditor;
+package editortest;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -39,8 +39,7 @@ public class EditorScreenTest extends AppiumServerStartSession {
         editorScreen.swipeSeekBarToRight();
         editorScreen.clickApplyDoneButton();
         editorScreen.clickEditorNextButton();
-        assertTrue(editorScreen.isUploadShareButtonPresent(),
-                "Upload share button is not present ");
+        assertTrue(editorScreen.isUploadShareButtonPresent(), "Upload share button is not present ");
     }
 
 

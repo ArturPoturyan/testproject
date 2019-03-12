@@ -15,12 +15,8 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
-import static utils.CommonValues.APP_ACTIVITY_NAME;
-import static utils.CommonValues.APP_PACKAGE_NAME;
 
-//harc inch a anum es class@
-
-public class AppiumServerStartSession {
+public class AppiumServerStartSession implements CommonValues{
     public AndroidDriver<MobileElement> driver;
     private AppiumDriverLocalService service;
 
@@ -33,7 +29,6 @@ public class AppiumServerStartSession {
     @BeforeMethod
     public void beforeMethodSetUp() {
         driver.launchApp();
-
     }
 
     @AfterMethod
@@ -65,9 +60,7 @@ public class AppiumServerStartSession {
         ClassLoader classLoader = getClass().getClassLoader();
         File file = new File(Objects.requireNonNull(classLoader.getResource("apk/11.7-104-signed.apk")).getFile());
         capabilities.setCapability("app", file);
-//        capabilities.setCapability(MobileCapabilityType.UDID, "b15ffa8f");
         capabilities.setCapability(MobileCapabilityType.UDID, "410042ad44709101");
-//        capabilities.setCapability("deviceName", "A7");
         capabilities.setCapability("deviceName", "Galaxy Note4");
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("platformVersion", "6.0.1");
@@ -84,10 +77,8 @@ public class AppiumServerStartSession {
             throw new AppiumServerHasNotBeenStartedLocallyException("An appium server node is not started!");
         }
         service.start();
-        String appiumServiceUrl = service.getUrl().toString();
-        System.out.println("Appium Service Address : - " + appiumServiceUrl);
 
-        return appiumServiceUrl;
+        return service.getUrl().toString();
     }
 
 }

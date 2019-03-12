@@ -6,11 +6,10 @@ import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.support.PageFactory;
+import utils.CommonValues;
 
-import static utils.CommonValues.APP_PACKAGE_NAME;
 
-
-public class LoginScreenPageObjectFactory {
+public class LoginScreenPageObjectFactory implements CommonValues {
     private AppiumDriver<MobileElement> driver;
 
     public LoginScreenPageObjectFactory(AppiumDriver driver) {

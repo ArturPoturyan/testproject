@@ -2,10 +2,10 @@ package screens;
 
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
+import utils.CommonValues;
 import utils.Utils;
-import static utils.CommonValues.APP_PACKAGE_NAME;
 
-public class RegisterScreen {
+public class RegisterScreen implements CommonValues {
     private AndroidDriver driver;
     private Utils utils;
 

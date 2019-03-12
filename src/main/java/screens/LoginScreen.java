@@ -2,11 +2,10 @@ package screens;
 
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
+import utils.CommonValues;
 import utils.Utils;
 
-import static utils.CommonValues.APP_PACKAGE_NAME;
-
-public class LoginScreen {
+public class LoginScreen implements CommonValues {
     private AppiumDriver driver;
     private Utils utils;
 
