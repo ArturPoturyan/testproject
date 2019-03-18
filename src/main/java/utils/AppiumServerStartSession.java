@@ -7,16 +7,18 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServerHasNotBeenStartedLocallyException;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 
-public class AppiumServerStartSession implements CommonValues{
+public class AppiumServerStartSession implements CommonValues {
     public AndroidDriver<MobileElement> driver;
     private AppiumDriverLocalService service;
 
@@ -58,8 +60,8 @@ public class AppiumServerStartSession implements CommonValues{
     private DesiredCapabilities initDesiredCapability() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(Objects.requireNonNull(classLoader.getResource("apk/11.7-104-signed.apk")).getFile());
-        capabilities.setCapability("app", file);
+        File file = new File(classLoader.getResource("apk/11.8-164-signed.apk").getFile());
+        capabilities.setCapability(MobileCapabilityType.APP, file);
         capabilities.setCapability(MobileCapabilityType.UDID, "410042ad44709101");
         capabilities.setCapability("deviceName", "Galaxy Note4");
         capabilities.setCapability("platformName", "Android");

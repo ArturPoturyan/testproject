@@ -11,7 +11,7 @@ import utils.AppiumServerStartSession;
 
 import static org.testng.Assert.assertTrue;
 
-public class NotificationScreenTest extends AppiumServerStartSession {
+public class NotificationTest extends AppiumServerStartSession {
 
 
     private RegisterSteps registerSteps;
@@ -37,7 +37,7 @@ public class NotificationScreenTest extends AppiumServerStartSession {
     //    //TODO PIA-53631
     //[InApp_Notifications] Verify the appearance of  "Empty State" if there is no notification in Following tab
     @Test(priority = 1)
-    public void verifyAppearanceOfEmptyStateInFollowingTab() throws InterruptedException {
+    public void verifyAppearanceOfEmptyStateInFollowingTab() {
         notificationSteps.logOutFromPicsArt();
         registerSteps.registerNewUser();
         notificationSteps.accessPhotoPermission();
@@ -60,8 +60,7 @@ public class NotificationScreenTest extends AppiumServerStartSession {
         notificationScreen.clickFeedsTab();
         notificationScreen.clickNotificationButton();
         notificationScreen.clickOnMeTab();
-        assertTrue(notificationScreen.isYouHaveNoActivityTextPresent(), "You have no activity :( is not present on the notification me tab"
-        );
+        assertTrue(notificationScreen.isYouHaveNoActivityTextPresent(), "You have no activity :( is not present on the notification me tab");
         notificationScreen.clickUploadImageButton();
         assertTrue(notificationScreen.isPhotoChooserImageListPresent(), "Photo chooser is not present on the screen");
 
@@ -89,6 +88,7 @@ public class NotificationScreenTest extends AppiumServerStartSession {
         assertTrue(notificationScreen.isFindPeopleToFollowTextPresent(), "Find People to Follow text is not present on the notification Me tab");
         notificationScreen.clickLetIsStartButton();
         assertTrue(notificationScreen.isDiscoverArtistsPresent(), "Discover Artists title is not present on the discover screen");
+
     }
 
     //TODO PIA-56760,PIA-56762
@@ -106,32 +106,33 @@ public class NotificationScreenTest extends AppiumServerStartSession {
         assertTrue(notificationScreen.isContactSupportTextPresent(), "Contact Support title is not present on the settings page");
         notificationScreen.clickContactSupportButton();
         assertTrue(notificationScreen.isChooseEmailClientTextPresent(), "Choose Email Client is not present ");
-    }
 
-    @Test
-    public void swipeLeftAndRight() {
-        notificationScreen.clickFeedsTab();
-        int repeat = 10;
-        while (!notificationScreen.isZoomableItemPresent() && repeat > 0) {
-            notificationScreen.scrollHomeToUp();
-            repeat--;
-        }
-        notificationScreen.clickImageMyNetworkTab();
-        assertTrue(notificationScreen.isUserAvatarIconPresent(), "actions panel is not present ");
-        for (int i = 0; i < 5; i++) {
-            notificationScreen.swipeHomeImageToLeft();
-        }
-        for (int i = 0; i < 5; i++) {
-            notificationScreen.swipeHomeImageToRight();
-        }
-        int swipeTryes = 10;
-        while (!notificationScreen.isGalleryCommentButtonPresent() && swipeTryes > 0) {
-            notificationScreen.swipeHomeImageToLeft();
-            swipeTryes--;
-        }
-        notificationScreen.clickGalleryCommentButton();
-        notificationScreen.clickCommentInputField();
-        notificationScreen.typeCommentText();
-        assertTrue(notificationScreen.isSendButtonEnabled(), "Send button is not enabled ");
     }
+//
+//    @Test
+//    public void swipeLeftAndRight() {
+//        notificationScreen.clickFeedsTab();
+//        int repeat = 10;
+//        while (!notificationScreen.isZoomableItemPresent() && repeat > 0) {
+//            notificationScreen.scrollHomeToUp();
+//            repeat--;
+//        }
+//        notificationScreen.clickImageMyNetworkTab();
+//        assertTrue(notificationScreen.isUserAvatarIconPresent(), "actions panel is not present ");
+//        for (int i = 0; i < 5; i++) {
+//            notificationScreen.swipeHomeImageToLeft();
+//        }
+//        for (int i = 0; i < 5; i++) {
+//            notificationScreen.swipeHomeImageToRight();
+//        }
+//        int swipeTryes = 10;
+//        while (!notificationScreen.isGalleryCommentButtonPresent() && swipeTryes > 0) {
+//            notificationScreen.swipeHomeImageToLeft();
+//            swipeTryes--;
+//        }
+//        notificationScreen.clickGalleryCommentButton();
+//        notificationScreen.clickCommentInputField();
+//        notificationScreen.typeCommentText();
+//        assertTrue(notificationScreen.isSendButtonEnabled(), "Send button is not enabled ");
+//    }
 }

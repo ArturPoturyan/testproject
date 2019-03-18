@@ -3,21 +3,30 @@ package editortest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import screens.EditorScreen;
+import screens.LoginScreen;
 import steps.EditorSteps;
+import steps.LoginSteps;
 import utils.AppiumServerStartSession;
 
 import static org.testng.Assert.assertTrue;
 
-public class EditorScreenTest extends AppiumServerStartSession {
+public class EditorTest extends AppiumServerStartSession {
 
     private EditorScreen editorScreen;
     private EditorSteps editorSteps;
+    private LoginScreen loginScreen;
+    private LoginSteps loginSteps;
 
 
     @BeforeClass
     public void setup() {
         editorScreen = new EditorScreen(driver);
         editorSteps = new EditorSteps(driver);
+        loginScreen = new LoginScreen(driver);
+        loginSteps = new LoginSteps(driver);
+        if (loginScreen.isSignInButtonPresent()) {
+            loginSteps.signIn();
+        }
     }
 
 
@@ -40,12 +49,12 @@ public class EditorScreenTest extends AppiumServerStartSession {
         editorScreen.clickApplyDoneButton();
         editorScreen.clickEditorNextButton();
         assertTrue(editorScreen.isUploadShareButtonPresent(), "Upload share button is not present ");
+
     }
 
-
-    //TODO Test Case 2 By Serg
+    //    //TODO Test Case 2 By Serg
     @Test
-    public void verifyFunctionalityArtisticAndBlurCategory() throws InterruptedException {
+    public void verifyFunctionalityArtisticAndBlurCategory()  {
         editorSteps.openEditorWithFreeToEditImage();
         editorSteps.skipGoldOfferScreen();
         editorScreen.clickEffectsButton();
@@ -58,21 +67,20 @@ public class EditorScreenTest extends AppiumServerStartSession {
 
     }
 
-    //TODO Test Case 3 By Serg
-
+    //    //TODO Test Case 3 By Serg
     @Test
-    public void verifyDrawFunctionality() throws InterruptedException {
+    public void verifyDrawFunctionality() {
 
         editorSteps.goToDrawScreenFromCreateFlow();
         assertTrue(editorScreen.isBrushButtonPresent(), "Draw brush mode is not present");
         for (int i = 0; i < 5; i++) {
-            editorScreen.drawWithBrush();
-            Thread.sleep(3000);
-            assertTrue(editorScreen.isUndoButtonEnabled(), "Undo button is not enabled");
-            editorScreen.clickUndoButton();
             editorScreen.clickDrawBrashMode();
             editorScreen.clickDrawingBrushItem(i);
             editorScreen.clickSetButton();
+            editorScreen.drawWithBrush();
+            assertTrue(editorScreen.isUndoButtonEnabled(), "Undo button is not enabled");
+            editorScreen.clickUndoButton();
+
         }
     }
 }

@@ -21,7 +21,7 @@ public class NotificationScreen implements CommonValues {
     //Buttons
     private By NOTIFICATION_BUTTON = By.id(APP_PACKAGE_NAME + ":id/menu_main_notification");
     private By POSITIVE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_positive");
-    private By PERMISSION_ALLOW_BUTTON = By.id(APP_PACKAGE_NAME + ":id/permission_allow_button");
+    private By PERMISSION_ALLOW_BUTTON = By.id("com.android.packageinstaller:id/permission_allow_button");
     private By BACK_IMAGE_BUTTON = By.className("android.widget.ImageButton");
     private By PRIMARY_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_primary");
     private By GRID_IMAGE_ITEM = By.id(APP_PACKAGE_NAME + ":id/grid_image");
@@ -59,7 +59,7 @@ public class NotificationScreen implements CommonValues {
     private By AVATAR_ICON = By.id(APP_PACKAGE_NAME + ":id/action_bar_avatar");
     private By HOME_PAGING_RECYCLER_VIEW = By.id(APP_PACKAGE_NAME + ":id/paging_recycler_view_id");
     private By SETTINGS_LIST = By.id("android:id/list");
-    private By SWIPE_REFRESH = By.id(APP_PACKAGE_NAME+":id/swipe_refresh");
+    private By SWIPE_REFRESH = By.id(APP_PACKAGE_NAME + ":id/swipe_refresh");
 
 
     public void clickFollowButton() {

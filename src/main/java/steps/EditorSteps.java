@@ -35,6 +35,7 @@ public class EditorSteps {
 
     public void openEditorWithFreeToEditImage() {
         editorScreen.clickFubButton();
+        accessPhotoPermission();
         editorScreen.clickAllPhotoButton();
         editorScreen.clickArrowButton();
         editorScreen.clickFreeToEditButton();
@@ -49,38 +50,47 @@ public class EditorSteps {
         }
     }
 
-    public void applyAllArtisticEffects() throws InterruptedException {
+    public void applyAllArtisticEffects() {
 
         for (int i = 0; i < editorScreen.ARTISTIC_CATEGORY.length; i++) {
-
-            if (editorScreen.isSimpleProgressPresent()) {
-                Thread.sleep(2000);
-            }
             editorScreen.clickEffectByName(editorScreen.ARTISTIC_CATEGORY[i]);
+            editorScreen.waitUntilProgressBarIsDisappear();
         }
     }
 
-    public void applyAllBlurEffects() throws InterruptedException {
+    public void applyAllBlurEffects() {
         for (int i = 0; i < editorScreen.BLUR_CATEGORY.length; i++) {
-            if (editorScreen.isSimpleProgressPresent()) {
-                Thread.sleep(2000);
-            }
             editorScreen.clickEffectByName(editorScreen.BLUR_CATEGORY[i]);
+            editorScreen.waitUntilProgressBarIsDisappear();
         }
+    }
+
+    public void accessPhotoPermission() {
+        if (editorScreen.isStoragePermissionPopupPresent()) {
+            editorScreen.clickPermissionLetIsGoButton();
+            editorScreen.clickPermissionAllowButton();
+            editorScreen.clickBackImageButton();
+        }
+//        if (editorScreen.isDevicePhotosPermissionPopupPresent()) {
+//            editorScreen.clickPermissionAllowButton();
+//        }
+//        if (editorScreen.isCreateFlowScreenPresent()) {
+//            editorScreen.clickBackImageButton();
+//        }
     }
 
     public void goToEditorScreenFromRecentImage() {
         editorScreen.clickFubButton();
+        accessPhotoPermission();
         editorScreen.clickAllPhotoButton();
         editorScreen.clickOnPhoto();
         skipChooseImageSize();
         skipGoldPopup();
 
     }
-
-
     public void goToDrawScreenFromCreateFlow() {
         editorScreen.clickFubButton();
+        accessPhotoPermission();
         int repeat = 4;
         while (!editorScreen.isCreateNewButtonPresent() && repeat > 0) {
             editorScreen.scrollVerticalCreateFLowScreen();

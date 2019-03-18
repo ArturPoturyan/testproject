@@ -3,7 +3,7 @@ package steps;
 import io.appium.java_client.android.AndroidDriver;
 import screens.RegisterScreen;
 
-import static org.testng.AssertJUnit.assertTrue;
+import static org.testng.Assert.assertTrue;
 
 public class RegisterSteps {
 
@@ -16,19 +16,18 @@ public class RegisterSteps {
         registerScreen = new RegisterScreen(driver);
     }
 
-    public void registerNewUser() throws InterruptedException {
+    public void registerNewUser() {
 
         registerScreen.clickNextButton();
         registerScreen.typeUserInfoEmailText();
-        assertTrue("User info email next button in not enable "
-                , registerScreen.isNextButtonEnabled());
+        assertTrue(registerScreen.isNextButtonEnabled(), "User info email next button is not enable ");
         registerScreen.clickNextButton();
 //        registerScreen.typeUserInfoFullNameText();
         registerScreen.typePassword();
-        assertTrue("password next button is not enable "
-                , registerScreen.isNextButtonEnabled());
+        assertTrue(registerScreen.isNextButtonEnabled(), "password next button is not enable ");
         registerScreen.clickNextButton();
-        Thread.sleep(2000);
+        assertTrue(registerScreen.isUsernameCheckPositiveStatePresent(), "username check positive state is not present");
+//        Thread.sleep(2000);
 //        registerScreen.typeUserInfoUsernameText();
 //        Thread.sleep(2000);
 //            if (registerScreen.isNextButtonEnabled()) {

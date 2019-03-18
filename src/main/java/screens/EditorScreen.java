@@ -6,7 +6,6 @@ import utils.CommonValues;
 import utils.Utils;
 
 
-
 public class EditorScreen implements CommonValues {
 
 
@@ -44,6 +43,7 @@ public class EditorScreen implements CommonValues {
     private By CREATE_NEW = By.id(APP_PACKAGE_NAME + ":id/description");
     private By SHOP_SUBSCRIPTION_FRAGMENT = By.id(APP_PACKAGE_NAME + ":id/shop_subscription_fragment_continer");
     private By SUBSCRIPTION_OFFER_CLOSE_BUTTON = By.className("android.widget.ImageButton");
+    private By POSITIVE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_positive");
 
 
     //Views
@@ -56,8 +56,14 @@ public class EditorScreen implements CommonValues {
     private By CREATE_FLOW_RECYCLER_VIEW = By.id(APP_PACKAGE_NAME + ":id/recycler_view");
     private By EFFECT_THUMBS_RECYCLER_VIEW = By.id(APP_PACKAGE_NAME + ":id/effects_thumbs_recycler_view");
     private By SIMPLE_PROGGRES = By.id(APP_PACKAGE_NAME + ":id/simple_progress");
+    private By STORAGE_PERMISSION_POPUP = By.id(APP_PACKAGE_NAME + ":id/pop_up_layout");
+    private By PHOTO_ACCESS_PERMISSION_POPUP = By.id("com.android.packageinstaller:id/dialog_container");
+    private By PERMISSION_ALLOW_BUTTON = By.id("com.android.packageinstaller:id/permission_allow_button");
+    private By CREATE_FLOW_SCREEN = By.id(APP_PACKAGE_NAME + ":id/recycler_view");
+    private By BACK_IMAGE_BUTTON = By.className("android.widget.ImageButton");
 
-    public boolean isSimpleProgressPresent() {
+
+    public boolean waitUntilProgressBarIsDisappear() {
         return utils.isElementPresent(SIMPLE_PROGGRES);
     }
 
@@ -65,6 +71,32 @@ public class EditorScreen implements CommonValues {
         utils.clickIdButton(FUB_BUTTON);
 
     }
+
+    public boolean isStoragePermissionPopupPresent() {
+
+        return utils.isElementPresent(STORAGE_PERMISSION_POPUP);
+    }
+
+    public void clickPermissionLetIsGoButton() {
+        utils.clickIdButton(POSITIVE_BUTTON);
+    }
+
+    public boolean isDevicePhotosPermissionPopupPresent() {
+        return utils.isElementPresent(PHOTO_ACCESS_PERMISSION_POPUP);
+    }
+
+    public void clickPermissionAllowButton() {
+        utils.clickIdButton(PERMISSION_ALLOW_BUTTON);
+    }
+
+    public boolean isCreateFlowScreenPresent() {
+        return utils.isElementPresent(CREATE_FLOW_SCREEN);
+    }
+
+    public void clickBackImageButton() {
+        utils.clickIdButton(BACK_IMAGE_BUTTON);
+    }
+
 
     public void scrollVerticalCreateFLowScreen() {
         utils.scrollVerticalFromCenterToUp(CREATE_FLOW_RECYCLER_VIEW);

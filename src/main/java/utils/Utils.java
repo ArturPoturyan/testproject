@@ -245,10 +245,6 @@ public class Utils {
 
     }
 
-//
-//    public void pullToRefresh(double startYPercentage, double endYPercentage, double startXPercentage) {
-//        verticalSwipeByPercentages(startYPercentage, endYPercentage, startXPercentage);
-//    }
 
     public void resetApp() {
         driver.resetApp();

@@ -21,6 +21,7 @@ public class RegisterScreen implements CommonValues {
     private By REGISTER_INPUT_FIELD = By.id(APP_PACKAGE_NAME + ":id/user_info_edit_text");
     private By SUBSCRIPTION_BANNER = By.id(APP_PACKAGE_NAME + ":id/shop_subscription_banner_container");
     private By NEGATIVE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_negative");
+    private By USERNAME_CHECK_POSITIVE_STATE = By.id(APP_PACKAGE_NAME + ":id/username_check_positive_state");
 
 
     //PopupViews
@@ -30,6 +31,10 @@ public class RegisterScreen implements CommonValues {
     public void clickNextButton() {
         utils.clickIdButton(NEXT_BUTTON);
 
+    }
+
+    public boolean isUsernameCheckPositiveStatePresent() {
+        return utils.isElementPresent(USERNAME_CHECK_POSITIVE_STATE);
     }
 
     public void clickMaybeLaterButton() {

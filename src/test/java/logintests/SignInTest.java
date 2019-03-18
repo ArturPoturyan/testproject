@@ -6,7 +6,7 @@ import screens.LoginScreen;
 import steps.LoginSteps;
 import utils.AppiumServerStartSession;
 
-public class SignInScreenTest extends AppiumServerStartSession {
+public class SignInTest extends AppiumServerStartSession {
 
     private LoginSteps loginSteps;
     private LoginScreen loginScreen;

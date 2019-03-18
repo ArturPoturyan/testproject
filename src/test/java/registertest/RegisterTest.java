@@ -6,10 +6,10 @@ import screens.RegisterScreen;
 import steps.RegisterSteps;
 import utils.AppiumServerStartSession;
 
-import static org.testng.AssertJUnit.assertTrue;
+import static org.testng.Assert.assertTrue;
 
 
-public class RegisterScreenTest extends AppiumServerStartSession {
+public class RegisterTest extends AppiumServerStartSession {
 
 
     private RegisterSteps registerSteps;
@@ -23,24 +23,20 @@ public class RegisterScreenTest extends AppiumServerStartSession {
     }
 
     @Test
-    public void verifyFunctionalityOfRegister() throws InterruptedException {
+    public void verifyFunctionalityOfRegister() {
         registerScreen.clickNextButton();
         registerScreen.typeUserInfoEmailText();
-        assertTrue("User info email next button in not enable "
-                , registerScreen.isNextButtonEnabled());
+        assertTrue(registerScreen.isNextButtonEnabled(), "User info email next button in not enable ");
         registerScreen.clickNextButton();
         registerScreen.typePassword();
-        assertTrue("password next button is not enable "
-                , registerScreen.isNextButtonEnabled());
+        assertTrue(registerScreen.isNextButtonEnabled(), "password next button is not enable ");
         registerScreen.clickNextButton();
-        Thread.sleep(2000);
         registerScreen.clickNextButton();
 
         if (registerScreen.isForgotToAddProfilePhotoPopupPresent()) {
             registerScreen.clickMaybeLaterButton();
         }
-        assertTrue("payment button offer screen is not present on the screen"
-                , registerScreen.isSubscriptionBannerPresent());
+        assertTrue(registerScreen.isSubscriptionBannerPresent(), "payment button offer screen is not present on the screen");
         registerScreen.clickSubscriptionOfferCloseButton();
     }
 }
