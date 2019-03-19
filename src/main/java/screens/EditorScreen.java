@@ -23,13 +23,9 @@ public class EditorScreen implements CommonValues {
 
 
     private By FUB_BUTTON = By.id(APP_PACKAGE_NAME + ":id/center_button_create_id");
-    private By ARROW_BUTTON = By.id(APP_PACKAGE_NAME + ":id/arrow_down");
-    private By FOLDER_NAME = By.id(APP_PACKAGE_NAME + ":id/folder_name");
-    private By GRID_IMAGE_ITEM = By.id(APP_PACKAGE_NAME + ":id/grid_image");
     private By NEGATIVE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_negative");
     private By EFFECTS_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_effect");
     private By EFFECTS_CATEGORY_NAME = By.id(APP_PACKAGE_NAME + ":id/category_name");
-    private By SET_SIZE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/dialog_ok_btn");
     private By APPLY_DONE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/button_done");
     private By EDITOR_NEXT_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_share");
     private By UPLOAD_SHARE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/share_in_bottom");
@@ -40,14 +36,12 @@ public class EditorScreen implements CommonValues {
     private By DRAWING_BRUSH_ITEM = By.id(APP_PACKAGE_NAME + ":id/drawing_brush_normal");
     private By OK_BUTTON = By.id(APP_PACKAGE_NAME + ":id/ok");
     private By UNDO_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_undo");
-    private By CREATE_NEW = By.id(APP_PACKAGE_NAME + ":id/description");
     private By SHOP_SUBSCRIPTION_FRAGMENT = By.id(APP_PACKAGE_NAME + ":id/shop_subscription_fragment_continer");
     private By SUBSCRIPTION_OFFER_CLOSE_BUTTON = By.className("android.widget.ImageButton");
     private By POSITIVE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_positive");
 
 
     //Views
-    private By CREATE_FLOW_CARD_TEXT = By.id(APP_PACKAGE_NAME + ":id/card_text");
     private By EDITOR_BOTTOM_PANEL = By.id(APP_PACKAGE_NAME + ":id/panel_bottom");
     private By SEEK_BAR = By.className("android.widget.SeekBar");
     private By ADAPTER_TEXT_ID = By.id(APP_PACKAGE_NAME + ":id/adapter_text_id");
@@ -55,7 +49,7 @@ public class EditorScreen implements CommonValues {
     private By EFFECTS_BOTTOM_PANEL = By.id(APP_PACKAGE_NAME + ":id/effects_category_list");
     private By CREATE_FLOW_RECYCLER_VIEW = By.id(APP_PACKAGE_NAME + ":id/recycler_view");
     private By EFFECT_THUMBS_RECYCLER_VIEW = By.id(APP_PACKAGE_NAME + ":id/effects_thumbs_recycler_view");
-    private By SIMPLE_PROGGRES = By.id(APP_PACKAGE_NAME + ":id/simple_progress");
+    private By SIMPLE_PROGRESS = By.id(APP_PACKAGE_NAME + ":id/simple_progress");
     private By STORAGE_PERMISSION_POPUP = By.id(APP_PACKAGE_NAME + ":id/pop_up_layout");
     private By PHOTO_ACCESS_PERMISSION_POPUP = By.id("com.android.packageinstaller:id/dialog_container");
     private By PERMISSION_ALLOW_BUTTON = By.id("com.android.packageinstaller:id/permission_allow_button");
@@ -64,7 +58,7 @@ public class EditorScreen implements CommonValues {
 
 
     public boolean waitUntilProgressBarIsDisappear() {
-        return utils.isElementPresent(SIMPLE_PROGGRES);
+        return utils.isElementPresent(SIMPLE_PROGRESS);
     }
 
     public void clickFubButton() {//todo rename
@@ -101,16 +95,6 @@ public class EditorScreen implements CommonValues {
     public void scrollVerticalCreateFLowScreen() {
         utils.scrollVerticalFromCenterToUp(CREATE_FLOW_RECYCLER_VIEW);
 
-    }
-
-
-    public void clickCreateNewButton() {
-        utils.clickElementByText(CREATE_NEW, "Create New");
-
-    }
-
-    public boolean isCreateNewButtonPresent() {
-        return utils.findElementByText(CREATE_NEW, "Create New");
     }
 
 
@@ -227,14 +211,6 @@ public class EditorScreen implements CommonValues {
     }
 
 
-    public void clickSetSizeButton() {
-        utils.clickIdButton(SET_SIZE_BUTTON);
-    }
-
-    public boolean isChooseImageSizePopupPresent() {
-        return utils.isElementPresent(SET_SIZE_BUTTON);
-    }
-
 
     public void chooseBlurCategoryByName() {
 
@@ -279,21 +255,8 @@ public class EditorScreen implements CommonValues {
         utils.clickIdButton(SUBSCRIPTION_OFFER_CLOSE_BUTTON);
     }
 
-    public void clickAllPhotoButton() {
-        utils.clickByIndex(CREATE_FLOW_CARD_TEXT, 0);
-    }
 
-    public void clickArrowButton() {
-        utils.clickIdButton(ARROW_BUTTON);
-    }
 
-    public void clickFreeToEditButton() {
-        utils.clickByIndex(FOLDER_NAME, 0);
-    }
-
-    public void clickOnPhoto() {
-        utils.clickByIndex(GRID_IMAGE_ITEM, 4);
-    }
 
     public boolean isEditorScreenPresent() {//todo rename
         return utils.isElementPresent(EDITOR_BOTTOM_PANEL);

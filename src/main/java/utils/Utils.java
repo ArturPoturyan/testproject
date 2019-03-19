@@ -122,6 +122,7 @@ public class Utils {
         }
     }
 
+
     public void horizontalSwipeFromCenterToLeft(By by) {
         MobileElement element = driver.findElement(by);
         int widthX = element.getLocation().getX();

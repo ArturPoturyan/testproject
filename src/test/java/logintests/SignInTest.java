@@ -2,31 +2,31 @@ package logintests;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import screens.LoginScreen;
-import steps.LoginSteps;
+import screens.OnBoardingScreen;
+import steps.OnBoardingSteps;
 import utils.AppiumServerStartSession;
 
 public class SignInTest extends AppiumServerStartSession {
 
-    private LoginSteps loginSteps;
-    private LoginScreen loginScreen;
+    private OnBoardingSteps onboardingSteps;
+    private OnBoardingScreen onboardingScreen;
 
     @BeforeClass
     public void setup() {
 
-        loginSteps = new LoginSteps(driver);
-        loginScreen = new LoginScreen(driver);
+        onboardingSteps = new OnBoardingSteps(driver);
+        onboardingSteps = new OnBoardingSteps(driver);
 
     }
 
     @Test
     public void verifyFunctionalityOfSignIn() {
-        loginScreen.registerStepSignInButton();
-        if (loginScreen.isContinueWithEmailPopupPresent()) {
-            loginScreen.clickPopUpCancelButton();
+        onboardingScreen.registerStepSignInButton();
+        if (onboardingScreen.isContinueWithEmailPopupPresent()) {
+            onboardingScreen.clickPopUpCancelButton();
         }
-        loginScreen.typeSignInUsername();
-        loginScreen.typeSignInPassword();
-        loginScreen.clickFinalSignInButton();
+        onboardingScreen.typeSignInUsername();
+        onboardingScreen.typeSignInPassword();
+        onboardingScreen.clickFinalSignInButton();
     }
 }

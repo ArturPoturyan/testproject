@@ -15,17 +15,6 @@ public class NotificationSteps {
         notificationScreen = new NotificationScreen(driver);
     }
 
-    public void accessPhotoPermission() {
-        if (notificationScreen.isStoragePermissionPopupPresent()) {
-            notificationScreen.clickPermissionLetIsGoButton();
-        }
-        if (notificationScreen.isDevicePhotosPermissionPopupPresent()) {
-            notificationScreen.clickPermissionAllowButton();
-        }
-        if (notificationScreen.isCreateFlowScreenPresent()) {
-            notificationScreen.clickBackImageButton();
-        }
-    }
 
     public void skipGoldPopup() {
         if (notificationScreen.isPicsArtGoldPopupPresent()) {

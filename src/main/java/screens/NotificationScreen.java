@@ -24,7 +24,6 @@ public class NotificationScreen implements CommonValues {
     private By PERMISSION_ALLOW_BUTTON = By.id("com.android.packageinstaller:id/permission_allow_button");
     private By BACK_IMAGE_BUTTON = By.className("android.widget.ImageButton");
     private By PRIMARY_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_primary");
-    private By GRID_IMAGE_ITEM = By.id(APP_PACKAGE_NAME + ":id/grid_image");
     private By NOTIFICATIONS_TAB_BAR = By.className("android.support.v7.app.ActionBar$Tab");
     private By NOTIFICATIONS_SCREEN_BACK_BUTTON = By.id(APP_PACKAGE_NAME + ":id/pa_upload_btn_back");
     private By NEGATIVE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_negative");
@@ -34,7 +33,6 @@ public class NotificationScreen implements CommonValues {
     private By EMPTY_STATE_TEXT = By.id(APP_PACKAGE_NAME + ":id/tv_title");
     private By PROFILE_TAB_BUTTON = By.id(APP_PACKAGE_NAME + ":id/tab_profile_id");
     private By MY_NETWORK_BUTTON = By.id(APP_PACKAGE_NAME + ":id/tab_my_network_id");
-    private By DISCOVER_ARTISTS_TITLE = By.className("android.widget.TextView");
     private By PROFILE_MORE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/profile_menu_icon_top");
     private By PROFILE_LOGOUT_BUTTON = By.id(APP_PACKAGE_NAME + ":id/profile_menu_logout");
     private By DIALOG_OK_BUTTON = By.id(APP_PACKAGE_NAME + ":id/dialog_ok_btn");
@@ -43,7 +41,6 @@ public class NotificationScreen implements CommonValues {
     private By FOLLOW_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_follow");
     private By ZOOMABLE_ITEM = By.id(APP_PACKAGE_NAME + ":id/zoomable_item_id");
     private By IMAGE_BROWSER_MAIN_IMAGE = By.id(APP_PACKAGE_NAME + ":id/image_browser_main_image");
-
     private By PROFILE_MENU_SETTINGS = By.id(APP_PACKAGE_NAME + ":id/profile_menu_settings");
     private By SETTINGS_TEXT = By.id("android:id/title");
     private By GALLERY_COMMENT_BUTTON = By.id(APP_PACKAGE_NAME + ":id/gallery_item_comment_button");
@@ -76,9 +73,6 @@ public class NotificationScreen implements CommonValues {
         return utils.isElementPresent(PROFILE_MORE_BUTTON);
     }
 
-//    public void pullToRefreshProfileTab() {
-//        utils.pullToRefresh(0.5, 0.7, 0.5);
-//    }
 
     public void pullToRefreshInProfilePage() {
         utils.scrollVerticalFromCenterToDown(SWIPE_REFRESH);
@@ -195,22 +189,6 @@ public class NotificationScreen implements CommonValues {
         utils.scrollVerticalFromCenterToUp(HOME_PAGING_RECYCLER_VIEW);
     }
 
-    public void scrollSettingsToUp() {
-        utils.scrollVerticalFromCenterToUp(SETTINGS_LIST);
-    }
-
-    public void scrollHomeToDown() {
-        utils.scrollVerticalFromCenterToDown(HOME_PAGING_RECYCLER_VIEW);
-    }
-
-    public void clickOnPhoto() {
-        utils.clickByIndex(GRID_IMAGE_ITEM, 4);
-    }
-
-    public void clickNotificationBackButton() {
-        utils.clickIdButton(NOTIFICATIONS_SCREEN_BACK_BUTTON);
-    }
-
     public void clickGoldPopupSkipButton() {
         utils.clickIdButton(NEGATIVE_BUTTON);
     }
@@ -265,17 +243,11 @@ public class NotificationScreen implements CommonValues {
         return utils.isElementPresent(STORAGE_PERMISSION_POPUP);
     }
 
-    public boolean isPhotoChooserImageListPresent() {
-        return utils.isElementPresent(GRID_IMAGE_ITEM);
-    }
 
     public boolean isPicsArtGoldPopupPresent() {
         return utils.isElementPresent(TRY_GOLD_FOR_FREE);
     }
 
-    public boolean isDiscoverArtistsPresent() {
-        return utils.getText(DISCOVER_ARTISTS_TITLE).equals("Discover Artists");
-    }
 
     public boolean isChooseEmailClientTextPresent() {
         return utils.getText(CHOOSE_EMAIL_CLIENT).equals("Choose Email Client");
