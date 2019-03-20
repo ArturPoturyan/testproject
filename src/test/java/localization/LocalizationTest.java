@@ -65,7 +65,7 @@ public class LocalizationTest extends AppiumServerStartSession {
     }
 
     @Test
-    //Editor Share floww
+    //Editor Share flow
     public void step_2_verifyFunctionalityEditorShareFlow() {
         exploreScreen.clickFubButton(); //todo harcnel fub button vor screen i meja mtnum
         createFlowSteps.accessPhotoPermission();
