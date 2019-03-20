@@ -11,7 +11,7 @@ import utils.AppiumServerStartSession;
 
 import static org.testng.Assert.assertTrue;
 
-public class LocalisationTest extends AppiumServerStartSession {
+public class LocalisationTest extends AppiumServerStartSession {//todo rename
     private EditorScreen editorScreen;
     private EditorSteps editorSteps;
     private OnBoardingScreen onboardingScreen;
