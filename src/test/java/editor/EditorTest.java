@@ -1,4 +1,4 @@
-package editortest;
+package editor;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -16,7 +16,6 @@ public class EditorTest extends AppiumServerStartSession {
     private EditorSteps editorSteps;
     private OnBoardingScreen onboardingScreen;
     private OnBoardingSteps onboardingSteps;
-
 
 
     @BeforeClass

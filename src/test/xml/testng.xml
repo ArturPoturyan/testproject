@@ -4,8 +4,8 @@
     <test name="test1">
 
         <classes>
-            <class name="notificationtest.NotificationTest"/>
-            <class name="editortest.EditorTest"/>
+            <class name="notification.NotificationTest"/>
+            <class name="editor.EditorTest"/>
         </classes>
 
     </test>

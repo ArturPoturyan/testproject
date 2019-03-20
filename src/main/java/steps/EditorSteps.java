@@ -3,6 +3,7 @@ package steps;
 import io.appium.java_client.AppiumDriver;
 import screens.CreateFlowScreen;
 import screens.EditorScreen;
+import screens.ExploreScreen;
 import screens.PhotoChooserScreen;
 import utils.Utils;
 
@@ -16,6 +17,7 @@ public class EditorSteps {
     private CreateFlowScreen createFlowScreen;
     private PhotoChooserScreen photoChooserScreen;
     private PhotoChooserSteps photoChooserSteps;
+    private ExploreScreen exploreScreen;
 
 
     public EditorSteps(AppiumDriver driver) {
@@ -26,6 +28,7 @@ public class EditorSteps {
         createFlowScreen = new CreateFlowScreen(driver);
         photoChooserScreen = new PhotoChooserScreen(driver);
         photoChooserSteps = new PhotoChooserSteps(driver);
+        exploreScreen = new ExploreScreen(driver);
 
     }
 
@@ -36,7 +39,7 @@ public class EditorSteps {
     }
 
     public void openEditorWithFreeToEditImage() {
-        editorScreen.clickFubButton();//todo poxel
+        exploreScreen.clickFubButton();//todo poxel
         createFlowSteps.accessPhotoPermission();
         createFlowScreen.clickAllPhotoButton();
         photoChooserScreen.clickArrowButton();
@@ -68,7 +71,7 @@ public class EditorSteps {
     }
 
     public void goToEditorScreenFromRecentImage() {
-        editorScreen.clickFubButton(); //todo poxel
+        exploreScreen.clickFubButton(); //todo poxel
         createFlowSteps.accessPhotoPermission();
         createFlowScreen.clickAllPhotoButton();
         photoChooserScreen.clickOnPhoto();
@@ -78,7 +81,7 @@ public class EditorSteps {
     }
 
     public void goToDrawScreenFromCreateFlow() {
-        editorScreen.clickFubButton();
+        exploreScreen.clickFubButton();
         createFlowSteps.accessPhotoPermission();
         int repeat = 4;
         while (!createFlowScreen.isCreateNewButtonPresent() && repeat > 0) {

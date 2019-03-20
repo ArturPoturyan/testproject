@@ -1,4 +1,4 @@
-package localisation;
+package localization;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -11,7 +11,7 @@ import utils.AppiumServerStartSession;
 
 import static org.testng.Assert.assertTrue;
 
-public class LocalisationTest extends AppiumServerStartSession {//todo rename
+public class LocalizationTest extends AppiumServerStartSession {
     private EditorScreen editorScreen;
     private EditorSteps editorSteps;
     private OnBoardingScreen onboardingScreen;
@@ -24,6 +24,7 @@ public class LocalisationTest extends AppiumServerStartSession {//todo rename
     private ShareScreen shareScreen;
     private DiscoverScreen discoverScreen;
     private ProfileScreen profileScreen;
+    private ExploreScreen exploreScreen;
 
 
     @BeforeClass
@@ -39,6 +40,7 @@ public class LocalisationTest extends AppiumServerStartSession {//todo rename
         myNetworkScreen = new MyNetworkScreen(driver);
         discoverScreen = new DiscoverScreen(driver);
         profileScreen = new ProfileScreen(driver);
+        exploreScreen = new ExploreScreen(driver);
 
         shareScreen = new ShareScreen(driver);
         if (onboardingScreen.isSignInButtonPresent()) {
@@ -50,25 +52,22 @@ public class LocalisationTest extends AppiumServerStartSession {//todo rename
     @Test
     public void step_1_verifyFunctionalityOfFollowingArtistsOnDiscoverPage() {
         profileScreen.clickProfileTab();
-//        assertTrue(profileScreen.isProfileMoreButtonPresent(), "Profile tab is not open"); //todo stugel mejeti button ov
+        assertTrue(profileScreen.isProfileMoreButtonPresent(), "Profile tab is not open");
         profileScreen.clickProfileMoreButton();
         profileScreen.clickDiscoverArtistsButton();
         assertTrue(discoverScreen.isDiscoverArtistsPresent(), "Discover Artists title is not present on the discover screen");
         discoverScreen.verticalScrollToUpDiscoverArtistsScreen();
         for (int i = 0; i < 2; i++) {
             discoverScreen.clickFollowButtonByIndex(i);
-            assertTrue(discoverScreen.isFollowingButtonTextPresent(i),"FOllOWING TEXT is not present");
+            assertTrue(discoverScreen.isFollowingButtonTextPresent(i), "FOllOWING TEXT is not present");
             discoverScreen.clickFollowButtonByIndex(i);
         }
-
     }
 
     @Test
     //Editor Share flow
     public void step_2_verifyFunctionalityEditorShareFlow() {
-
-//        editorSteps.goToEditorScreenFromRecentImage();
-        editorScreen.clickFubButton(); //todo harcnel fub button vor screen i meja mtnum
+        exploreScreen.clickFubButton(); //todo harcnel fub button vor screen i meja mtnum
         createFlowSteps.accessPhotoPermission();
         createFlowScreen.clickAllPhotoButton();
         assertTrue(photoChooserScreen.isPhotoChooserImageListPresent(), "Photo chooser is not present on the screen");
@@ -116,9 +115,11 @@ public class LocalisationTest extends AppiumServerStartSession {//todo rename
         assertTrue(editorScreen.isEditorScreenPresent(), "Editor screen is not present");
         editorScreen.clickEditorNextButton();
         assertTrue(editorScreen.isUploadShareButtonPresent(), "Share screen is not present");
-        shareScreen.clickUploadShareButton();//todo upload ha fail a gnum
+        shareScreen.clickUploadShareButton();
         shareScreen.clickButtonDone();
-        myNetworkScreen.clickImageMyNetworkTab();
+        profileScreen.clickProfileTab();
+        assertTrue(profileScreen.isProfileMoreButtonPresent(), "Profile tab is not open");
+        profileScreen.clickProfileImage();
         myNetworkScreen.clickMoreButton();
         assertTrue(myNetworkScreen.isImageSettingsPresent(), "image settings is not present");
         myNetworkScreen.clickEditButton();

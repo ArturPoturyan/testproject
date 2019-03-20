@@ -22,7 +22,6 @@ public class EditorScreen implements CommonValues {
     //Buttons
 
 
-    private By FUB_BUTTON = By.id(APP_PACKAGE_NAME + ":id/center_button_create_id");
     private By NEGATIVE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_negative");
     private By EFFECTS_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_effect");
     private By CATEGORY_NAME = By.id(APP_PACKAGE_NAME + ":id/category_name");
@@ -126,10 +125,7 @@ public class EditorScreen implements CommonValues {
         return utils.isElementPresent(SIMPLE_PROGRESS);
     }
 
-    public void clickFubButton() {//todo rename
-        utils.clickById(FUB_BUTTON);
 
-    }
 
     public void clickDrawingAddPhotoButton() {
         utils.clickById(DRAWING_ADD_PHOTO_BUTTON);

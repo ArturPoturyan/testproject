@@ -1,4 +1,4 @@
-package registertest;
+package register;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;

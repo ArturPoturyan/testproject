@@ -39,7 +39,7 @@ public class ShareScreen implements CommonValues {
     }
 
     public void clickUploadShareButton() {
-        utils.clickElementByText(PICS_ART_BUTTON_TEXT, "SHARE");
+        utils.clickByIndex(PICS_ART_BUTTON_TEXT, 1);
     }
 
     public void clickUploadDoneButton() {
