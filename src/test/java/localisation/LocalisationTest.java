@@ -67,10 +67,9 @@ public class LocalisationTest extends AppiumServerStartSession {//todo rename
     //Editor Share flow
     public void step_2_verifyFunctionalityEditorShareFlow() {
 
-//        assertTrue(); explore page
 //        editorSteps.goToEditorScreenFromRecentImage();
         editorScreen.clickFubButton(); //todo harcnel fub button vor screen i meja mtnum
-        createFlowSteps.accessPhotoPermission(); //todo arji stepic ogtvel esi ?
+        createFlowSteps.accessPhotoPermission();
         createFlowScreen.clickAllPhotoButton();
         assertTrue(photoChooserScreen.isPhotoChooserImageListPresent(), "Photo chooser is not present on the screen");
         photoChooserScreen.clickOnPhoto();
@@ -123,8 +122,9 @@ public class LocalisationTest extends AppiumServerStartSession {//todo rename
         myNetworkScreen.clickMoreButton();
         assertTrue(myNetworkScreen.isImageSettingsPresent(), "image settings is not present");
         myNetworkScreen.clickEditButton();
-        shareScreen.addTag();
+        String typedText = "#football";
+        shareScreen.typeTextToTagField(typedText);
         shareScreen.clickNextButton();
-//        assertTrue(myNetworkScreen.isImageDescriptionTextPresent(), "#football tag is not updated"); //todo misht freetoedit mnuma share aneluc
+        assertTrue(myNetworkScreen.getDescriptionText().contains(typedText), "#football tag is not updated");
     }
 }

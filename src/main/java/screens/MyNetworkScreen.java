@@ -26,10 +26,6 @@ public class MyNetworkScreen implements CommonValues {
     //Views
 
 
-    public boolean isImageDescriptionTextPresent() {
-        return utils.isElementByTextPresent(IMAGE_DESCRIPTION, "#football");
-    }
-
     public void clickEditButton() {
         utils.clickById(MENU_EDIT_BUTTON);
     }
@@ -49,5 +45,10 @@ public class MyNetworkScreen implements CommonValues {
 
     public boolean isZoomableItemPresent() {
         return utils.isElementPresent(ZOOMABLE_ITEM);
+    }
+
+
+    public String getDescriptionText(){
+        return utils.getText(IMAGE_DESCRIPTION);
     }
 }

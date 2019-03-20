@@ -25,10 +25,10 @@ public class ShareScreen implements CommonValues {
 
     //Views
 
-    public void addTag() {
-//        utils.clearTextField(ET_DESCRIPTION);
-        utils.typeText(ET_DESCRIPTION, "#football");
+    public void typeTextToTagField(String text) {
+        utils.typeText(ET_DESCRIPTION, text);
     }
+
 
     public void clickNextButton() {
         utils.clickById(NEXT_BUTTON);
