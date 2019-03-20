@@ -5,8 +5,6 @@ import org.openqa.selenium.By;
 import utils.CommonValues;
 import utils.Utils;
 
-import static org.testng.Assert.assertTrue;
-
 public class DiscoverScreen implements CommonValues {
 
     private AppiumDriver driver;
@@ -30,7 +28,7 @@ public class DiscoverScreen implements CommonValues {
 
 
     public boolean isDiscoverArtistsPresent() {
-        return utils.findElementByText(DISCOVER_ARTISTS_TITLE, "Discover Artists");
+        return utils.isElementByTextPresent(DISCOVER_ARTISTS_TITLE, "Discover Artists");
     }
 
 //    public void clickFollowButton(int index) {
@@ -46,19 +44,13 @@ public class DiscoverScreen implements CommonValues {
 
     }
 
-    public boolean isFollowingButtonTextPresent() {
-        return utils.getText(PICS_ART_BUTTON_TEXT).equals("  FOLLOWING");
+    public boolean isFollowingButtonTextPresent(int index) {
+        return utils.isElementByTextPresent(PICS_ART_BUTTON_TEXT, index, "  FOLLOWING");
+
     }
 
-    public void clickFollowButton() {
 
-        for (int i = 0; i < 4; i++) {
-            if (isFollowButtonTextPresent()) {
-                utils.clickElementByText(PICS_ART_BUTTON_TEXT, "  FOLLOW");
-                assertTrue(isFollowingButtonTextPresent(), "Following button is not present");
-
-            }
-            verticalScrollToUpDiscoverArtistsScreen();
-        }
+    public void clickFollowButtonByIndex(int index) {
+        utils.clickByIndex(PICS_ART_BUTTON_TEXT, index);
     }
 }

@@ -2,14 +2,10 @@ package editortest;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import screens.CreateFlowScreen;
 import screens.EditorScreen;
 import screens.OnBoardingScreen;
-import screens.PhotoChooserScreen;
-import steps.CreateFlowSteps;
 import steps.EditorSteps;
 import steps.OnBoardingSteps;
-import steps.PhotoChooserSteps;
 import utils.AppiumServerStartSession;
 
 import static org.testng.Assert.assertTrue;
@@ -20,10 +16,7 @@ public class EditorTest extends AppiumServerStartSession {
     private EditorSteps editorSteps;
     private OnBoardingScreen onboardingScreen;
     private OnBoardingSteps onboardingSteps;
-    private CreateFlowSteps createFlowSteps;
-    private CreateFlowScreen createFlowScreen;
-    private PhotoChooserScreen photoChooserScreen;
-    private PhotoChooserSteps photoChooserSteps;
+
 
 
     @BeforeClass
@@ -32,13 +25,10 @@ public class EditorTest extends AppiumServerStartSession {
         editorSteps = new EditorSteps(driver);
         onboardingScreen = new OnBoardingScreen(driver);
         onboardingSteps = new OnBoardingSteps(driver);
-        createFlowSteps = new CreateFlowSteps(driver);
-        createFlowScreen = new CreateFlowScreen(driver);
-        photoChooserScreen = new PhotoChooserScreen(driver);
-        photoChooserSteps = new PhotoChooserSteps(driver);
-//        if (onboardingScreen.isSignInButtonPresent()) {
-//            onboardingSteps.signIn();
-//        }
+
+        if (onboardingScreen.isSignInButtonPresent()) {
+            onboardingSteps.signIn();
+        }
     }
 
 
@@ -94,23 +84,5 @@ public class EditorTest extends AppiumServerStartSession {
             editorScreen.clickUndoButton();
 
         }
-    }
-
-    @Test
-    //Editor Share flow
-    public void verifyFunctionalityEditorShareFlow() {
-
-//        assertTrue(); explore page
-//        editorSteps.goToEditorScreenFromRecentImage();
-        editorScreen.clickFubButton(); //todo poxel
-        createFlowSteps.accessPhotoPermission();
-        createFlowScreen.clickAllPhotoButton();
-        assertTrue(photoChooserScreen.isPhotoChooserImageListPresent(), "Photo chooser is not present on the screen");
-        photoChooserScreen.clickOnPhoto();
-        editorSteps.skipGoldPopup();
-        photoChooserSteps.skipChooseImageSize();
-        assertTrue(editorScreen.isEditorScreenPresent(), "Editor screen is not present");
-
-
     }
 }

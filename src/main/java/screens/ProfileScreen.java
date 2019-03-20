@@ -22,7 +22,7 @@ public class ProfileScreen implements CommonValues {
 
 
     public void clickProfileTab() {
-        utils.clickIdButton(PROFILE_TAB_BUTTON);
+        utils.clickById(PROFILE_TAB_BUTTON);
     }
 
     public boolean isProfileMoreButtonPresent() {
@@ -30,10 +30,10 @@ public class ProfileScreen implements CommonValues {
     }
 
     public void clickProfileMoreButton() {
-        utils.clickIdButton(PROFILE_MORE_BUTTON);
+        utils.clickById(PROFILE_MORE_BUTTON);
     }
 
     public void clickDiscoverArtistsButton() {
-        utils.clickIdButton(DISCOVER_ARTISTS_BUTTON);
+        utils.clickById(DISCOVER_ARTISTS_BUTTON);
     }
 }

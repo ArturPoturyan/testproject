@@ -38,7 +38,7 @@ public class PhotoChooserScreen implements CommonValues {
     }
 
     public void clickSetSizeButton() {
-        utils.clickIdButton(SET_SIZE_BUTTON);
+        utils.clickById(SET_SIZE_BUTTON);
     }
 
     public void clickOnPhoto() {
@@ -46,7 +46,7 @@ public class PhotoChooserScreen implements CommonValues {
     }
 
     public void clickArrowButton() {
-        utils.clickIdButton(ARROW_BUTTON);
+        utils.clickById(ARROW_BUTTON);
     }
 
 }

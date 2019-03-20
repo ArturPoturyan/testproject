@@ -28,8 +28,6 @@ public class NotificationScreen implements CommonValues {
     private By NOTIFICATIONS_SCREEN_BACK_BUTTON = By.id(APP_PACKAGE_NAME + ":id/pa_upload_btn_back");
     private By NEGATIVE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_negative");
     private By EDITOR_NEXT_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_share");
-    private By UPLOAD_SHARE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/share_in_bottom");
-    private By UPLOAD_DONE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_done");
     private By EMPTY_STATE_TEXT = By.id(APP_PACKAGE_NAME + ":id/tv_title");
     private By PROFILE_TAB_BUTTON = By.id(APP_PACKAGE_NAME + ":id/tab_profile_id");
     private By MY_NETWORK_BUTTON = By.id(APP_PACKAGE_NAME + ":id/tab_my_network_id");
@@ -39,7 +37,6 @@ public class NotificationScreen implements CommonValues {
     private By PROFILE_FOLLOWINGS_BUTTON = By.id(APP_PACKAGE_NAME + ":id/tv_followings");
     private By DISPLAY_NAME = By.id(APP_PACKAGE_NAME + ":id/display_name");
     private By FOLLOW_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_follow");
-    private By ZOOMABLE_ITEM = By.id(APP_PACKAGE_NAME + ":id/zoomable_item_id");
     private By IMAGE_BROWSER_MAIN_IMAGE = By.id(APP_PACKAGE_NAME + ":id/image_browser_main_image");
     private By PROFILE_MENU_SETTINGS = By.id(APP_PACKAGE_NAME + ":id/profile_menu_settings");
     private By SETTINGS_TEXT = By.id("android:id/title");
@@ -60,7 +57,7 @@ public class NotificationScreen implements CommonValues {
 
 
     public void clickFollowButton() {
-        utils.clickIdButton(FOLLOW_BUTTON);
+        utils.clickById(FOLLOW_BUTTON);
     }
 
 
@@ -96,39 +93,36 @@ public class NotificationScreen implements CommonValues {
     }
 
     public void clickGalleryCommentButton() {
-        utils.clickIdButton(GALLERY_COMMENT_BUTTON);
+        utils.clickById(GALLERY_COMMENT_BUTTON);
     }
 
     public void clickCommentInputField() {
-        utils.clickIdButton(COMMENT_INPUT_FIELD);
+        utils.clickById(COMMENT_INPUT_FIELD);
     }
 
     public void clickSettingsButton() {
-        utils.clickIdButton(PROFILE_MENU_SETTINGS);
+        utils.clickById(PROFILE_MENU_SETTINGS);
     }
 
-    public boolean isZoomableItemPresent() {
-        return utils.isElementPresent(ZOOMABLE_ITEM);
-    }
 
     public boolean isPicsArtUserPresent() {
         return utils.getText(DISPLAY_NAME).equals("PicsArt");
     }
 
     public void clickFollowingsButton() {
-        utils.clickIdButton(PROFILE_FOLLOWINGS_BUTTON);
+        utils.clickById(PROFILE_FOLLOWINGS_BUTTON);
     }
 
     public void clickDialogOkButton() {
-        utils.clickIdButton(DIALOG_OK_BUTTON);
+        utils.clickById(DIALOG_OK_BUTTON);
     }
 
     public void clickProfileLogoutButton() {
-        utils.clickIdButton(PROFILE_LOGOUT_BUTTON);
+        utils.clickById(PROFILE_LOGOUT_BUTTON);
     }
 
     public void clickProfileMoreButton() {
-        utils.clickIdButton(PROFILE_MORE_BUTTON);
+        utils.clickById(PROFILE_MORE_BUTTON);
     }
 
     public boolean isMyNetworkPresent() {
@@ -146,33 +140,24 @@ public class NotificationScreen implements CommonValues {
     }
 
     public void clickLetIsStartButton() {
-        utils.clickIdButton(PRIMARY_BUTTON);
+        utils.clickById(PRIMARY_BUTTON);
     }
 
     public void clickFeedsTab() {
-        utils.clickIdButton(MY_NETWORK_BUTTON);
+        utils.clickById(MY_NETWORK_BUTTON);
 
     }
 
     public void clickProfileTab() {
-        utils.clickIdButton(PROFILE_TAB_BUTTON);
+        utils.clickById(PROFILE_TAB_BUTTON);
     }
 
-    public void clickUploadDoneButton() {
-        utils.clickIdButton(UPLOAD_DONE_BUTTON);
-    }
 
-    public void clickUploadShareButton() {
-        utils.clickIdButton(UPLOAD_SHARE_BUTTON);
-    }
+
+
 
     public void clickEditorNextButton() {
-        utils.clickIdButton(EDITOR_NEXT_BUTTON);
-
-    }
-
-    public void clickImageMyNetworkTab() {
-        utils.clickByIndex(ZOOMABLE_ITEM, 0);
+        utils.clickById(EDITOR_NEXT_BUTTON);
 
     }
 
@@ -190,28 +175,28 @@ public class NotificationScreen implements CommonValues {
     }
 
     public void clickGoldPopupSkipButton() {
-        utils.clickIdButton(NEGATIVE_BUTTON);
+        utils.clickById(NEGATIVE_BUTTON);
     }
 
     public void clickNotificationButton() {
-        utils.clickIdButton(NOTIFICATION_BUTTON);
+        utils.clickById(NOTIFICATION_BUTTON);
 
     }
 
     public void clickPermissionLetIsGoButton() {
-        utils.clickIdButton(POSITIVE_BUTTON);
+        utils.clickById(POSITIVE_BUTTON);
     }
 
     public void clickPermissionAllowButton() {
-        utils.clickIdButton(PERMISSION_ALLOW_BUTTON);
+        utils.clickById(PERMISSION_ALLOW_BUTTON);
     }
 
     public void clickBackImageButton() {
-        utils.clickIdButton(BACK_IMAGE_BUTTON);
+        utils.clickById(BACK_IMAGE_BUTTON);
     }
 
     public void clickUploadImageButton() {
-        utils.clickIdButton(PRIMARY_BUTTON);
+        utils.clickById(PRIMARY_BUTTON);
     }
 
     public void clickOnMeTab() {
@@ -267,7 +252,7 @@ public class NotificationScreen implements CommonValues {
     }
 
     public boolean isContactSupportTextPresent() {
-        return utils.findElementByText(SETTINGS_TEXT, "Contact Support");
+        return utils.isElementByTextPresent(SETTINGS_TEXT, "Contact Support");
     }
 
 

@@ -29,7 +29,7 @@ public class CreateFlowScreen implements CommonValues {
     }
 
     public boolean isCreateNewButtonPresent() {
-        return utils.findElementByText(CREATE_NEW, "Create New");
+        return utils.isElementByTextPresent(CREATE_NEW, "Create New");
     }
 
     public void clickAllPhotoButton() {
@@ -42,15 +42,15 @@ public class CreateFlowScreen implements CommonValues {
     }
 
     public void clickPermissionLetIsGoButton() {
-        utils.clickIdButton(POSITIVE_BUTTON);
+        utils.clickById(POSITIVE_BUTTON);
     }
 
     public void clickPermissionAllowButton() {
-        utils.clickIdButton(PERMISSION_ALLOW_BUTTON);
+        utils.clickById(PERMISSION_ALLOW_BUTTON);
     }
 
     public void clickBackImageButton() {
-        utils.clickIdButton(BACK_IMAGE_BUTTON);
+        utils.clickById(BACK_IMAGE_BUTTON);
     }
 
 }

@@ -43,16 +43,16 @@ public class OnBoardingScreen implements CommonValues {
     }
 
     public void registerStepSignInButton() {
-        utils.clickIdButton(REGISTER_STEP_SIGN_IN_BUTTON);
+        utils.clickById(REGISTER_STEP_SIGN_IN_BUTTON);
     }
 
     public void clickPopUpCancelButton() {
-        utils.clickIdButton(POPUP_CANCEL_BUTTON);
+        utils.clickById(POPUP_CANCEL_BUTTON);
 
     }
 
     public void clickFinalSignInButton() {
-        utils.clickIdButton(SIGN_IN_BUTTON);
+        utils.clickById(SIGN_IN_BUTTON);
 
     }
 
@@ -64,7 +64,6 @@ public class OnBoardingScreen implements CommonValues {
 
     public void typeSignInPassword() {
         utils.typeText(PASSWORD_FIELD, "qwertya");
-
     }
 
     public boolean isContinueWithEmailPopupPresent() {
@@ -72,7 +71,7 @@ public class OnBoardingScreen implements CommonValues {
     }
 
     public void clickNextButton() {
-        utils.clickIdButton(NEXT_BUTTON);
+        utils.clickById(NEXT_BUTTON);
 
     }
 
@@ -81,18 +80,18 @@ public class OnBoardingScreen implements CommonValues {
     }
 
     public void clickMaybeLaterButton() {
-        utils.clickIdButton(NEGATIVE_BUTTON);
+        utils.clickById(NEGATIVE_BUTTON);
 
     }
 
     public void clickBirthdaySkipButton() {
-        utils.clickIdButton(BIRTHDAY_SKIP_BUTTON);
+        utils.clickById(BIRTHDAY_SKIP_BUTTON);
 
     }
 
     public void clickSubscriptionOfferCloseButton() {
 
-        utils.clickIdButton(SUBSCRIPTION_OFFER_CLOSE_BUTTON);
+        utils.clickById(SUBSCRIPTION_OFFER_CLOSE_BUTTON);
 
     }
 

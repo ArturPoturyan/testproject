@@ -20,6 +20,8 @@ public class NotificationTest extends AppiumServerStartSession {
     private CreateFlowSteps createFlowSteps;
     private DiscoverScreen discoverScreen;
     private PhotoChooserScreen photoChooserScreen;
+    private MyNetworkScreen myNetworkScreen;
+    private ShareScreen shareScreen;
 
 
     @BeforeClass
@@ -32,6 +34,8 @@ public class NotificationTest extends AppiumServerStartSession {
         createFlowSteps = new CreateFlowSteps(driver);
         discoverScreen = new DiscoverScreen(driver);
         photoChooserScreen = new PhotoChooserScreen(driver);
+        myNetworkScreen = new MyNetworkScreen(driver);
+        shareScreen = new ShareScreen(driver);
         if (onboardingScreen.isSignInButtonPresent()) {
             onboardingSteps.signIn();
         }
@@ -80,8 +84,8 @@ public class NotificationTest extends AppiumServerStartSession {
         photoChooserScreen.clickOnPhoto();
         notificationSteps.skipGoldPopup();
         notificationScreen.clickEditorNextButton();
-        notificationScreen.clickUploadShareButton();
-        notificationScreen.clickUploadDoneButton();
+//        shareScreen.clickUploadShareButton();
+        shareScreen.clickUploadDoneButton();
         notificationScreen.clickProfileTab();
         assertTrue(notificationScreen.isProfileMoreButtonPresent(), "Profile more button is not present ");
         notificationScreen.pullToRefreshInProfilePage();
@@ -116,11 +120,11 @@ public class NotificationTest extends AppiumServerStartSession {
     public void swipeLeftAndRight() {
         notificationScreen.clickFeedsTab();
         int repeat = 10;
-        while (!notificationScreen.isZoomableItemPresent() && repeat > 0) {
+        while (!myNetworkScreen.isZoomableItemPresent() && repeat > 0) {
             notificationScreen.scrollHomeToUp();
             repeat--;
         }
-        notificationScreen.clickImageMyNetworkTab();
+        myNetworkScreen.clickImageMyNetworkTab();
         assertTrue(notificationScreen.isUserAvatarIconPresent(), "actions panel is not present ");
         for (int i = 0; i < 5; i++) {
             notificationScreen.swipeHomeImageToLeft();
