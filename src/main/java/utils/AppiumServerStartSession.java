@@ -12,10 +12,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
-import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 
@@ -60,9 +58,10 @@ public class AppiumServerStartSession implements CommonValues {
 
     private DesiredCapabilities initDesiredCapability() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(Objects.requireNonNull(classLoader.getResource("picsart.apk")).getFile());
-        capabilities.setCapability(MobileCapabilityType.APP, file);
+        String baseDir = System.getProperty("project.base.dir");
+        String apk = baseDir + "/src/main/resources/apk/picsart.apk";
+
+        capabilities.setCapability(MobileCapabilityType.APP, apk);
         capabilities.setCapability(MobileCapabilityType.UDID, "410042ad44709101");
         capabilities.setCapability("deviceName", "Galaxy Note4");
         capabilities.setCapability("platformName", "Android");
