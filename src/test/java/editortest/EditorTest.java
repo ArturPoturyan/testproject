@@ -52,7 +52,7 @@ public class EditorTest extends AppiumServerStartSession {
 
     }
 
-    //    //TODO Test Case 2 By Serg
+    //TODO Test Case 2 By Serg
     @Test
     public void verifyFunctionalityArtisticAndBlurCategory()  {
         editorSteps.openEditorWithFreeToEditImage();
