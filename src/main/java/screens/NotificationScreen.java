@@ -24,26 +24,20 @@ public class NotificationScreen implements CommonValues {
     private By PERMISSION_ALLOW_BUTTON = By.id("com.android.packageinstaller:id/permission_allow_button");
     private By BACK_IMAGE_BUTTON = By.className("android.widget.ImageButton");
     private By PRIMARY_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_primary");
-    private By GRID_IMAGE_ITEM = By.id(APP_PACKAGE_NAME + ":id/grid_image");
     private By NOTIFICATIONS_TAB_BAR = By.className("android.support.v7.app.ActionBar$Tab");
     private By NOTIFICATIONS_SCREEN_BACK_BUTTON = By.id(APP_PACKAGE_NAME + ":id/pa_upload_btn_back");
     private By NEGATIVE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_negative");
     private By EDITOR_NEXT_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_share");
-    private By UPLOAD_SHARE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/share_in_bottom");
-    private By UPLOAD_DONE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_done");
     private By EMPTY_STATE_TEXT = By.id(APP_PACKAGE_NAME + ":id/tv_title");
     private By PROFILE_TAB_BUTTON = By.id(APP_PACKAGE_NAME + ":id/tab_profile_id");
     private By MY_NETWORK_BUTTON = By.id(APP_PACKAGE_NAME + ":id/tab_my_network_id");
-    private By DISCOVER_ARTISTS_TITLE = By.className("android.widget.TextView");
     private By PROFILE_MORE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/profile_menu_icon_top");
     private By PROFILE_LOGOUT_BUTTON = By.id(APP_PACKAGE_NAME + ":id/profile_menu_logout");
     private By DIALOG_OK_BUTTON = By.id(APP_PACKAGE_NAME + ":id/dialog_ok_btn");
     private By PROFILE_FOLLOWINGS_BUTTON = By.id(APP_PACKAGE_NAME + ":id/tv_followings");
     private By DISPLAY_NAME = By.id(APP_PACKAGE_NAME + ":id/display_name");
     private By FOLLOW_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_follow");
-    private By ZOOMABLE_ITEM = By.id(APP_PACKAGE_NAME + ":id/zoomable_item_id");
     private By IMAGE_BROWSER_MAIN_IMAGE = By.id(APP_PACKAGE_NAME + ":id/image_browser_main_image");
-
     private By PROFILE_MENU_SETTINGS = By.id(APP_PACKAGE_NAME + ":id/profile_menu_settings");
     private By SETTINGS_TEXT = By.id("android:id/title");
     private By GALLERY_COMMENT_BUTTON = By.id(APP_PACKAGE_NAME + ":id/gallery_item_comment_button");
@@ -63,7 +57,7 @@ public class NotificationScreen implements CommonValues {
 
 
     public void clickFollowButton() {
-        utils.clickIdButton(FOLLOW_BUTTON);
+        utils.clickById(FOLLOW_BUTTON);
     }
 
 
@@ -76,9 +70,6 @@ public class NotificationScreen implements CommonValues {
         return utils.isElementPresent(PROFILE_MORE_BUTTON);
     }
 
-//    public void pullToRefreshProfileTab() {
-//        utils.pullToRefresh(0.5, 0.7, 0.5);
-//    }
 
     public void pullToRefreshInProfilePage() {
         utils.scrollVerticalFromCenterToDown(SWIPE_REFRESH);
@@ -102,39 +93,36 @@ public class NotificationScreen implements CommonValues {
     }
 
     public void clickGalleryCommentButton() {
-        utils.clickIdButton(GALLERY_COMMENT_BUTTON);
+        utils.clickById(GALLERY_COMMENT_BUTTON);
     }
 
     public void clickCommentInputField() {
-        utils.clickIdButton(COMMENT_INPUT_FIELD);
+        utils.clickById(COMMENT_INPUT_FIELD);
     }
 
     public void clickSettingsButton() {
-        utils.clickIdButton(PROFILE_MENU_SETTINGS);
+        utils.clickById(PROFILE_MENU_SETTINGS);
     }
 
-    public boolean isZoomableItemPresent() {
-        return utils.isElementPresent(ZOOMABLE_ITEM);
-    }
 
     public boolean isPicsArtUserPresent() {
         return utils.getText(DISPLAY_NAME).equals("PicsArt");
     }
 
     public void clickFollowingsButton() {
-        utils.clickIdButton(PROFILE_FOLLOWINGS_BUTTON);
+        utils.clickById(PROFILE_FOLLOWINGS_BUTTON);
     }
 
     public void clickDialogOkButton() {
-        utils.clickIdButton(DIALOG_OK_BUTTON);
+        utils.clickById(DIALOG_OK_BUTTON);
     }
 
     public void clickProfileLogoutButton() {
-        utils.clickIdButton(PROFILE_LOGOUT_BUTTON);
+        utils.clickById(PROFILE_LOGOUT_BUTTON);
     }
 
     public void clickProfileMoreButton() {
-        utils.clickIdButton(PROFILE_MORE_BUTTON);
+        utils.clickById(PROFILE_MORE_BUTTON);
     }
 
     public boolean isMyNetworkPresent() {
@@ -152,33 +140,24 @@ public class NotificationScreen implements CommonValues {
     }
 
     public void clickLetIsStartButton() {
-        utils.clickIdButton(PRIMARY_BUTTON);
+        utils.clickById(PRIMARY_BUTTON);
     }
 
     public void clickFeedsTab() {
-        utils.clickIdButton(MY_NETWORK_BUTTON);
+        utils.clickById(MY_NETWORK_BUTTON);
 
     }
 
     public void clickProfileTab() {
-        utils.clickIdButton(PROFILE_TAB_BUTTON);
+        utils.clickById(PROFILE_TAB_BUTTON);
     }
 
-    public void clickUploadDoneButton() {
-        utils.clickIdButton(UPLOAD_DONE_BUTTON);
-    }
 
-    public void clickUploadShareButton() {
-        utils.clickIdButton(UPLOAD_SHARE_BUTTON);
-    }
+
+
 
     public void clickEditorNextButton() {
-        utils.clickIdButton(EDITOR_NEXT_BUTTON);
-
-    }
-
-    public void clickImageMyNetworkTab() {
-        utils.clickByIndex(ZOOMABLE_ITEM, 0);
+        utils.clickById(EDITOR_NEXT_BUTTON);
 
     }
 
@@ -195,45 +174,29 @@ public class NotificationScreen implements CommonValues {
         utils.scrollVerticalFromCenterToUp(HOME_PAGING_RECYCLER_VIEW);
     }
 
-    public void scrollSettingsToUp() {
-        utils.scrollVerticalFromCenterToUp(SETTINGS_LIST);
-    }
-
-    public void scrollHomeToDown() {
-        utils.scrollVerticalFromCenterToDown(HOME_PAGING_RECYCLER_VIEW);
-    }
-
-    public void clickOnPhoto() {
-        utils.clickByIndex(GRID_IMAGE_ITEM, 4);
-    }
-
-    public void clickNotificationBackButton() {
-        utils.clickIdButton(NOTIFICATIONS_SCREEN_BACK_BUTTON);
-    }
-
     public void clickGoldPopupSkipButton() {
-        utils.clickIdButton(NEGATIVE_BUTTON);
+        utils.clickById(NEGATIVE_BUTTON);
     }
 
     public void clickNotificationButton() {
-        utils.clickIdButton(NOTIFICATION_BUTTON);
+        utils.clickById(NOTIFICATION_BUTTON);
 
     }
 
     public void clickPermissionLetIsGoButton() {
-        utils.clickIdButton(POSITIVE_BUTTON);
+        utils.clickById(POSITIVE_BUTTON);
     }
 
     public void clickPermissionAllowButton() {
-        utils.clickIdButton(PERMISSION_ALLOW_BUTTON);
+        utils.clickById(PERMISSION_ALLOW_BUTTON);
     }
 
     public void clickBackImageButton() {
-        utils.clickIdButton(BACK_IMAGE_BUTTON);
+        utils.clickById(BACK_IMAGE_BUTTON);
     }
 
     public void clickUploadImageButton() {
-        utils.clickIdButton(PRIMARY_BUTTON);
+        utils.clickById(PRIMARY_BUTTON);
     }
 
     public void clickOnMeTab() {
@@ -265,17 +228,11 @@ public class NotificationScreen implements CommonValues {
         return utils.isElementPresent(STORAGE_PERMISSION_POPUP);
     }
 
-    public boolean isPhotoChooserImageListPresent() {
-        return utils.isElementPresent(GRID_IMAGE_ITEM);
-    }
 
     public boolean isPicsArtGoldPopupPresent() {
         return utils.isElementPresent(TRY_GOLD_FOR_FREE);
     }
 
-    public boolean isDiscoverArtistsPresent() {
-        return utils.getText(DISCOVER_ARTISTS_TITLE).equals("Discover Artists");
-    }
 
     public boolean isChooseEmailClientTextPresent() {
         return utils.getText(CHOOSE_EMAIL_CLIENT).equals("Choose Email Client");
@@ -295,7 +252,7 @@ public class NotificationScreen implements CommonValues {
     }
 
     public boolean isContactSupportTextPresent() {
-        return utils.findElementByText(SETTINGS_TEXT, "Contact Support");
+        return utils.isElementByTextPresent(SETTINGS_TEXT, "Contact Support");
     }
 
 

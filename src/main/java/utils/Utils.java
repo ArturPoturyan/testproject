@@ -51,7 +51,7 @@ public class Utils {
                 .release().perform();
     }
 
-    public void clickIdButton(By buttonId) {
+    public void clickById(By buttonId) {
         driver.findElement(buttonId).click();
     }
 
@@ -101,7 +101,7 @@ public class Utils {
 
     }
 
-    public boolean findElementByText(By by, String text) {
+    public boolean isElementByTextPresent(By by, String text) {
         List<MobileElement> list = driver.findElements(by);
         for (MobileElement el : list) {
             if (el.getText().equals(text)) {
@@ -109,6 +109,11 @@ public class Utils {
             }
         }
         return false;
+    }
+
+    public boolean isElementByTextPresent(By by, int index, String text) {
+        MobileElement element = driver.findElements(by).get(index);
+        return element.getText().equals(text);
     }
 
 
@@ -121,6 +126,7 @@ public class Utils {
             }
         }
     }
+
 
     public void horizontalSwipeFromCenterToLeft(By by) {
         MobileElement element = driver.findElement(by);

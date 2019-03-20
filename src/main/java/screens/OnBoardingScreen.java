@@ -1,20 +1,27 @@
 package screens;
 
-import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 import utils.CommonValues;
 import utils.Utils;
 
-public class RegisterScreen implements CommonValues {
-    private AndroidDriver driver;
+public class OnBoardingScreen implements CommonValues {
+    private AppiumDriver driver;
     private Utils utils;
 
-    public RegisterScreen(AndroidDriver driver) {
+
+    public OnBoardingScreen(AppiumDriver driver) {
         this.driver = driver;
         utils = new Utils(this.driver);
+
     }
 
+
     //Buttons
+    private By SIGN_IN_BUTTON = By.id(APP_PACKAGE_NAME + ":id/sign_in_button");
+    private By USERNAME_FIELD = By.id(APP_PACKAGE_NAME + ":id/sign_in_username");
+    private By PASSWORD_FIELD = By.id(APP_PACKAGE_NAME + ":id/sign_in_password");
+    private By REGISTER_STEP_SIGN_IN_BUTTON = By.id(APP_PACKAGE_NAME + ":id/register_step_sign_in");
     private By NEXT_BUTTON = By.id(APP_PACKAGE_NAME + ":id/picsart_button_text");
     private By BIRTHDAY_SKIP_BUTTON = By.id(APP_PACKAGE_NAME + ":id/skip_button");
     private By SUBSCRIPTION_OFFER_CLOSE_BUTTON = By.className("android.widget.ImageButton");
@@ -24,12 +31,47 @@ public class RegisterScreen implements CommonValues {
     private By USERNAME_CHECK_POSITIVE_STATE = By.id(APP_PACKAGE_NAME + ":id/username_check_positive_state");
 
 
-    //PopupViews
+    //Views
+
+    private By POPUP_CANCEL_BUTTON = By.id("com.google.android.gms:id/cancel");
+    private By CONTINUE_WITH_EMAIL_POPUP = By.id("com.google.android.gms:id/credential_picker_layout");
     private By FORGOT_PROFILE_PHOTO_POPUP = By.id(APP_PACKAGE_NAME + ":id/pop_up_layout");
 
 
+    public boolean isSignInButtonPresent() {
+        return utils.isElementPresent(REGISTER_STEP_SIGN_IN_BUTTON);
+    }
+
+    public void registerStepSignInButton() {
+        utils.clickById(REGISTER_STEP_SIGN_IN_BUTTON);
+    }
+
+    public void clickPopUpCancelButton() {
+        utils.clickById(POPUP_CANCEL_BUTTON);
+
+    }
+
+    public void clickFinalSignInButton() {
+        utils.clickById(SIGN_IN_BUTTON);
+
+    }
+
+    public void typeSignInUsername() {
+        utils.typeText(USERNAME_FIELD, "kakao60");
+
+
+    }
+
+    public void typeSignInPassword() {
+        utils.typeText(PASSWORD_FIELD, "qwertya");
+    }
+
+    public boolean isContinueWithEmailPopupPresent() {
+        return utils.isElementPresent(CONTINUE_WITH_EMAIL_POPUP);
+    }
+
     public void clickNextButton() {
-        utils.clickIdButton(NEXT_BUTTON);
+        utils.clickById(NEXT_BUTTON);
 
     }
 
@@ -38,18 +80,18 @@ public class RegisterScreen implements CommonValues {
     }
 
     public void clickMaybeLaterButton() {
-        utils.clickIdButton(NEGATIVE_BUTTON);
+        utils.clickById(NEGATIVE_BUTTON);
 
     }
 
     public void clickBirthdaySkipButton() {
-        utils.clickIdButton(BIRTHDAY_SKIP_BUTTON);
+        utils.clickById(BIRTHDAY_SKIP_BUTTON);
 
     }
 
     public void clickSubscriptionOfferCloseButton() {
 
-        utils.clickIdButton(SUBSCRIPTION_OFFER_CLOSE_BUTTON);
+        utils.clickById(SUBSCRIPTION_OFFER_CLOSE_BUTTON);
 
     }
 
@@ -82,3 +124,5 @@ public class RegisterScreen implements CommonValues {
         return utils.isElementEnabled(NEXT_BUTTON);
     }
 }
+
+

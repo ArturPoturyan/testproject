@@ -3,9 +3,9 @@ package editortest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import screens.EditorScreen;
-import screens.LoginScreen;
+import screens.OnBoardingScreen;
 import steps.EditorSteps;
-import steps.LoginSteps;
+import steps.OnBoardingSteps;
 import utils.AppiumServerStartSession;
 
 import static org.testng.Assert.assertTrue;
@@ -14,18 +14,20 @@ public class EditorTest extends AppiumServerStartSession {
 
     private EditorScreen editorScreen;
     private EditorSteps editorSteps;
-    private LoginScreen loginScreen;
-    private LoginSteps loginSteps;
+    private OnBoardingScreen onboardingScreen;
+    private OnBoardingSteps onboardingSteps;
+
 
 
     @BeforeClass
     public void setup() {
         editorScreen = new EditorScreen(driver);
         editorSteps = new EditorSteps(driver);
-        loginScreen = new LoginScreen(driver);
-        loginSteps = new LoginSteps(driver);
-        if (loginScreen.isSignInButtonPresent()) {
-            loginSteps.signIn();
+        onboardingScreen = new OnBoardingScreen(driver);
+        onboardingSteps = new OnBoardingSteps(driver);
+
+        if (onboardingScreen.isSignInButtonPresent()) {
+            onboardingSteps.signIn();
         }
     }
 
@@ -54,7 +56,7 @@ public class EditorTest extends AppiumServerStartSession {
 
     //TODO Test Case 2 By Serg
     @Test
-    public void verifyFunctionalityArtisticAndBlurCategory()  {
+    public void verifyFunctionalityArtisticAndBlurCategory() {
         editorSteps.openEditorWithFreeToEditImage();
         editorSteps.skipGoldOfferScreen();
         editorScreen.clickEffectsButton();
