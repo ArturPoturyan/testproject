@@ -4,8 +4,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import screens.EditorScreen;
 import screens.OnBoardingScreen;
+import screens.ShareScreen;
 import steps.EditorSteps;
 import steps.OnBoardingSteps;
+import steps.ShopSteps;
 import utils.AppiumServerStartSession;
 
 import static org.testng.Assert.assertTrue;
@@ -16,6 +18,8 @@ public class EditorTest extends AppiumServerStartSession {
     private EditorSteps editorSteps;
     private OnBoardingScreen onboardingScreen;
     private OnBoardingSteps onboardingSteps;
+    private ShopSteps shopSteps;
+    private ShareScreen shareScreen;
 
 
     @BeforeClass
@@ -24,6 +28,8 @@ public class EditorTest extends AppiumServerStartSession {
         editorSteps = new EditorSteps(driver);
         onboardingScreen = new OnBoardingScreen(driver);
         onboardingSteps = new OnBoardingSteps(driver);
+        shopSteps = new ShopSteps(driver);
+        shareScreen = new ShareScreen(driver);
 
         if (onboardingScreen.isSignInButtonPresent()) {
             onboardingSteps.signIn();
@@ -49,7 +55,7 @@ public class EditorTest extends AppiumServerStartSession {
         editorScreen.swipeSeekBarToRight();
         editorScreen.clickApplyDoneButton();
         editorScreen.clickEditorNextButton();
-        assertTrue(editorScreen.isUploadShareButtonPresent(), "Upload share button is not present ");
+        assertTrue(shareScreen.isUploadShareButtonPresent(), "Upload share button is not present ");
 
     }
 
@@ -57,7 +63,7 @@ public class EditorTest extends AppiumServerStartSession {
     @Test
     public void verifyFunctionalityArtisticAndBlurCategory() {
         editorSteps.openEditorWithFreeToEditImage();
-        editorSteps.skipGoldOfferScreen();
+        shopSteps.skipGoldOfferScreen();
         editorScreen.clickEffectsButton();
         editorScreen.chooseArtisticCategoryByName();
         assertTrue(editorScreen.isOilPaintingEffectsNamePresent(), "Artistic effects category is not present");

@@ -18,16 +18,17 @@ public class DiscoverScreen implements CommonValues {
 
 
     //Buttons
-    private By DISCOVER_ARTISTS_TITLE = By.className("android.widget.TextView");
+//    private By DISCOVER_ARTISTS_TITLE = By.className("android.widget.TextView");
     private By PICS_ART_BUTTON_TEXT = By.id(APP_PACKAGE_NAME + ":id/picsart_button_text");
     private By SUGGESTED_FRIENDS_CONTAINER = By.id(APP_PACKAGE_NAME + ":id/coordinator_layout");
+    private By FOLLOW_BUTTON = By.id("com.picsart.studio:id/btn_follow");
 
 
     //Views
 
 
-    public boolean isDiscoverArtistsPresent() {
-        return utils.isElementByTextPresent(DISCOVER_ARTISTS_TITLE, "Discover Artists");
+    public boolean isDiscoverArtistsScreenPresent() {
+        return utils.isElementPresent(FOLLOW_BUTTON);
     }
 
 

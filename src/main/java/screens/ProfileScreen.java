@@ -14,12 +14,18 @@ public class ProfileScreen implements CommonValues {
         utils = new Utils(this.driver);
     }
 
-
     //Buttons
     private By PROFILE_TAB_BUTTON = By.id(APP_PACKAGE_NAME + ":id/tab_profile_id");
-    private By PROFILE_EDIT_BUTTON = By.id(APP_PACKAGE_NAME + ":id/cover_edit_profile");
+    private By USER_AVATAR = By.id(APP_PACKAGE_NAME + ":id/iv_avatar");
     private By DISCOVER_ARTISTS_BUTTON = By.id(APP_PACKAGE_NAME + ":id/profile_menu_discover_artists");
     private By SQUARE_IMAGE_ROOT_BUTTON = By.id(APP_PACKAGE_NAME + ":id/square_image_root_frame");
+    private By PROFILE_BACK_BUTTON = By.id(APP_PACKAGE_NAME+ ":id/profile_menu_back");
+    private By PROFILE_MENU_ICON_TOP = By.id(APP_PACKAGE_NAME+":id/profile_menu_icon_top");
+
+
+    public void clickProfileBackButton(){
+        utils.clickById(PROFILE_BACK_BUTTON);
+    }
 
 
     public void clickProfileImage() {
@@ -30,12 +36,12 @@ public class ProfileScreen implements CommonValues {
         utils.clickById(PROFILE_TAB_BUTTON);
     }
 
-    public boolean isProfileMoreButtonPresent() {
-        return utils.isElementPresent(PROFILE_EDIT_BUTTON);
+    public boolean isUserAvatarPresent() {
+        return utils.isElementPresent(USER_AVATAR);
     }
 
     public void clickProfileMoreButton() {
-        utils.clickById(PROFILE_EDIT_BUTTON);
+        utils.clickById(PROFILE_MENU_ICON_TOP);
     }
 
     public void clickDiscoverArtistsButton() {

@@ -40,7 +40,6 @@ public class NotificationScreen implements CommonValues {
     private By IMAGE_BROWSER_MAIN_IMAGE = By.id(APP_PACKAGE_NAME + ":id/image_browser_main_image");
     private By PROFILE_MENU_SETTINGS = By.id(APP_PACKAGE_NAME + ":id/profile_menu_settings");
     private By SETTINGS_TEXT = By.id("android:id/title");
-    private By GALLERY_COMMENT_BUTTON = By.id(APP_PACKAGE_NAME + ":id/gallery_item_comment_button");
     private By COMMENT_INPUT_FIELD = By.id(APP_PACKAGE_NAME + ":id/message_edit_text");
     private By SEND_BUTTON = By.id(APP_PACKAGE_NAME + ":id/send_btn");
     private By CHOOSE_EMAIL_CLIENT = By.id("android:id/title_default");
@@ -54,16 +53,24 @@ public class NotificationScreen implements CommonValues {
     private By HOME_PAGING_RECYCLER_VIEW = By.id(APP_PACKAGE_NAME + ":id/paging_recycler_view_id");
     private By SETTINGS_LIST = By.id("android:id/list");
     private By SWIPE_REFRESH = By.id(APP_PACKAGE_NAME + ":id/swipe_refresh");
+    private By NOTIFICATION_TAB = By.id(APP_PACKAGE_NAME + ":id/notification_tab_layout");
 
 
     public void clickFollowButton() {
         utils.clickById(FOLLOW_BUTTON);
     }
 
+    public boolean isNotificationScreenPresent() {
+        return utils.isElementPresent(NOTIFICATION_TAB);
+    }
 
     public boolean isSendButtonEnabled() {
         return utils.isElementEnabled(SEND_BUTTON);
 
+    }
+
+    public void clickOnRemixChatTab() {
+        utils.clickByIndex(NOTIFICATIONS_TAB_BAR, 0);
     }
 
     public boolean isProfileMoreButtonPresent() {
@@ -92,9 +99,6 @@ public class NotificationScreen implements CommonValues {
         utils.clearTextField(COMMENT_INPUT_FIELD);
     }
 
-    public void clickGalleryCommentButton() {
-        utils.clickById(GALLERY_COMMENT_BUTTON);
-    }
 
     public void clickCommentInputField() {
         utils.clickById(COMMENT_INPUT_FIELD);
@@ -153,21 +157,18 @@ public class NotificationScreen implements CommonValues {
     }
 
 
-
-
-
     public void clickEditorNextButton() {
         utils.clickById(EDITOR_NEXT_BUTTON);
 
     }
 
     public void swipeHomeImageToLeft() {
-        utils.horizontalSwipeFromCenterToLeft(IMAGE_BROWSER_MAIN_IMAGE, 0);
+        utils.horizontalSwipeFromCenterToLeft(IMAGE_BROWSER_MAIN_IMAGE);
 
     }
 
     public void swipeHomeImageToRight() {
-        utils.horizontalSwipeFromCenterToRight(IMAGE_BROWSER_MAIN_IMAGE, 0);
+        utils.horizontalSwipeFromCenterToRight(IMAGE_BROWSER_MAIN_IMAGE);
     }
 
     public void scrollHomeToUp() {
@@ -243,9 +244,6 @@ public class NotificationScreen implements CommonValues {
         return utils.getText(EMPTY_STATE_TEXT).equals("Find People to Follow");
     }
 
-    public boolean isGalleryCommentButtonPresent() {
-        return utils.isElementPresent(GALLERY_COMMENT_BUTTON);
-    }
 
     public boolean isYouHaveNoActivityTextPresent() {
         return utils.getText(EMPTY_STATE_TEXT).equals("You have no activity : (");

@@ -61,6 +61,7 @@ public class Utils {
 
     }
 
+
     public void clearTextField(By by) {
         driver.findElement(by).clear();
     }
@@ -88,6 +89,10 @@ public class Utils {
         driver.findElements(id).get(number).click();
     }
 
+    public void clickElementOfListIndex(By parent, By child, int index) {
+        driver.findElement(parent).findElements(child).get(index).click();
+    }
+
     public String getText(By by) {
 
         return driver.findElement(by).getText();
@@ -99,6 +104,10 @@ public class Utils {
         Random random = new Random();
         return random.nextInt(10000);
 
+    }
+
+    public void hideKeyboard() {
+        driver.hideKeyboard();
     }
 
     public boolean isElementByTextPresent(By by, String text) {

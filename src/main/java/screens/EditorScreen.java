@@ -22,21 +22,17 @@ public class EditorScreen implements CommonValues {
     //Buttons
 
 
-    private By NEGATIVE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_negative");
     private By EFFECTS_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_effect");
     private By CATEGORY_NAME = By.id(APP_PACKAGE_NAME + ":id/category_name");
     private By APPLY_DONE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/button_done");
     private By EDITOR_NEXT_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_share");
-    private By UPLOAD_SHARE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/share_in_bottom");
     private By CREATE_FLOW_PHOTOS_CATEGORY = By.id(APP_PACKAGE_NAME + ":id/image");
     private By DRAW_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_draw");
-    private By PICS_ART_DRAWING_BUTTON = By.id(APP_PACKAGE_NAME + ":id/open_picsart_drawing");
+    private By OPEN_PICS_ART_DRAWING_BUTTON = By.id(APP_PACKAGE_NAME + ":id/open_picsart_drawing");
     private By DRAW_BRUSH_BUTTON = By.id(APP_PACKAGE_NAME + ":id/mode_draw");
     private By DRAWING_BRUSH_ITEM = By.id(APP_PACKAGE_NAME + ":id/drawing_brush_normal");
     private By OK_BUTTON = By.id(APP_PACKAGE_NAME + ":id/ok");
     private By UNDO_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_undo");
-    private By SUBSCRIPTION_PAYMENT_BUTTON = By.id(APP_PACKAGE_NAME + ":id/subscription_payment_button_1");
-    private By SUBSCRIPTION_OFFER_CLOSE_BUTTON = By.className("android.widget.ImageButton");
     private By POSITIVE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_positive");
     private By ADD_OBJECT_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_add_objects");
     private By DRAWING_ADD_PHOTO_BUTTON = By.id(APP_PACKAGE_NAME + ":id/drawing_add_photoID");
@@ -44,6 +40,8 @@ public class EditorScreen implements CommonValues {
     private By BUTTON_STICKER = By.id(APP_PACKAGE_NAME + ":id/btn_sticker");
     private By ITEM_IMAGE = By.id(APP_PACKAGE_NAME + ":id/item_image");
     private By STICKER_IMAGE_PARENT_LAYOUT = By.id(APP_PACKAGE_NAME + ":id/stickerImageParentLayout");
+    private By CATEGORY_LIST = By.id(APP_PACKAGE_NAME + ":id/categories_list");
+    private By DONE_BTN = By.id(APP_PACKAGE_NAME + ":id/btn_done");
 
 
     //Views
@@ -61,13 +59,21 @@ public class EditorScreen implements CommonValues {
     private By CREATE_FLOW_SCREEN = By.id(APP_PACKAGE_NAME + ":id/recycler_view");
     private By BACK_IMAGE_BUTTON = By.className("android.widget.ImageButton");
     private By SHOP_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_shop");
+    private By FRAME_LAYOUT = By.className("android.widget.FrameLayout");
+
 
 
     public boolean isShopButtonPresent() {
         return utils.isElementPresent(SHOP_BUTTON);
     }
-    public void clickShopButton(){
+
+    public void clickShopButton() {
         utils.clickById(SHOP_BUTTON);
+    }
+
+
+    public void clickStickerApplyButton() {
+        utils.clickById(DONE_BTN);
     }
 
     public boolean isStickerButtonPresent() {
@@ -79,11 +85,24 @@ public class EditorScreen implements CommonValues {
 
     }
 
+    public void clickStickerCategoryByIndex() {
+        utils.clickElementOfListIndex(CATEGORY_LIST, FRAME_LAYOUT, 1);
+
+//        driver.findElement(CATEGORY_LIST).findElements((FRAME_LAYOUT)).get(index).click();//todo harcnel vonc karelia aaranzdnacnel
+
+//        utils.clickByIndex(CATEGORY_LIST, index);
+    }
+
+
+    public boolean isStickerCategoryListPresent() {
+        return utils.isElementPresent(CATEGORY_LIST);
+    }
+
     public boolean isRecentCategoryButtonPresent() {
         return utils.isElementByTextPresent(CATEGORY_NAME, "Recent");
     }
 
-    public boolean isDiscoverCaregoryButtonPresent() {
+    public boolean isDiscoverCategoryButtonPresent() {
         return utils.isElementByTextPresent(CATEGORY_NAME, "Discover");
     }
 
@@ -100,12 +119,11 @@ public class EditorScreen implements CommonValues {
         utils.clickByIndex(STICKER_IMAGE_PARENT_LAYOUT, 1);
     }
 
-    public void clickOnSticker() {
+    public void clickOnStickerInEditor() {
         if (isRecentCategoryButtonPresent()) {
             clickRecentCategoryButton();
             clickOnStickerFromRecentCategory();
-
-        } else if (isDiscoverCaregoryButtonPresent()) {
+        } else {//todo isDiscover not checking
             clickDiscoverCategoryButton();
             clickOnStickerFromDiscoverCategory();
         }
@@ -124,7 +142,6 @@ public class EditorScreen implements CommonValues {
     public boolean waitUntilProgressBarIsDisappear() {
         return utils.isElementPresent(SIMPLE_PROGRESS);
     }
-
 
 
     public void clickDrawingAddPhotoButton() {
@@ -182,9 +199,6 @@ public class EditorScreen implements CommonValues {
     }
 
 
-    public boolean isUploadShareButtonPresent() {
-        return utils.isElementPresent(UPLOAD_SHARE_BUTTON);
-    }
 
     public void clickUndoButton() {
         utils.clickById(UNDO_BUTTON);
@@ -211,7 +225,7 @@ public class EditorScreen implements CommonValues {
     }
 
     public void clickPicsArtDrawingButton() {
-        utils.clickById(PICS_ART_DRAWING_BUTTON);
+        utils.clickById(OPEN_PICS_ART_DRAWING_BUTTON);
     }
 
     public void clickCreateFlowImage() {
@@ -326,26 +340,8 @@ public class EditorScreen implements CommonValues {
         utils.clickById(DRAW_BUTTON);
     }
 
-    public void clickGoldPopupSkipButton() {
-        utils.clickById(NEGATIVE_BUTTON);
-    }
 
-    public boolean isPicsArtGoldPopupPresent() {
-        return utils.isElementPresent(NEGATIVE_BUTTON);
-    }
-
-    public boolean isSubscriptionOfferScreenPresent() {
-        return utils.isElementPresent(SUBSCRIPTION_PAYMENT_BUTTON);
-    }
-
-
-    public void clickXButtonInOfferScreen() {
-
-        utils.clickById(SUBSCRIPTION_OFFER_CLOSE_BUTTON);
-    }
-
-
-    public boolean isEditorScreenPresent() {//todo rename
+    public boolean isEditorScreenPresent() {
         return utils.isElementPresent(EDITOR_BOTTOM_PANEL);
     }
 

@@ -1,10 +1,7 @@
 package steps;
 
 import io.appium.java_client.AppiumDriver;
-import screens.CreateFlowScreen;
-import screens.EditorScreen;
-import screens.ExploreScreen;
-import screens.PhotoChooserScreen;
+import screens.*;
 import utils.Utils;
 
 public class EditorSteps {
@@ -18,6 +15,7 @@ public class EditorSteps {
     private PhotoChooserScreen photoChooserScreen;
     private PhotoChooserSteps photoChooserSteps;
     private ExploreScreen exploreScreen;
+    private ShopSteps shopSteps;
 
 
     public EditorSteps(AppiumDriver driver) {
@@ -29,31 +27,24 @@ public class EditorSteps {
         photoChooserScreen = new PhotoChooserScreen(driver);
         photoChooserSteps = new PhotoChooserSteps(driver);
         exploreScreen = new ExploreScreen(driver);
+        shopSteps = new ShopSteps(driver);
 
     }
 
-    public void skipGoldPopup() {//todo poxel
-        if (editorScreen.isPicsArtGoldPopupPresent()) {
-            editorScreen.clickGoldPopupSkipButton();
-        }
-    }
+
 
     public void openEditorWithFreeToEditImage() {
-        exploreScreen.clickFubButton();//todo poxel
+        exploreScreen.clickFubButton();
         createFlowSteps.accessPhotoPermission();
         createFlowScreen.clickAllPhotoButton();
         photoChooserScreen.clickArrowButton();
         photoChooserScreen.clickFreeToEditButton();
         photoChooserScreen.clickOnPhoto();
         photoChooserSteps.skipChooseImageSize();
-        skipGoldPopup();
+        shopSteps.skipGoldPopup();
     }
 
-    public void skipGoldOfferScreen() {//todo poxel
-        if (editorScreen.isSubscriptionOfferScreenPresent()) {
-            editorScreen.clickXButtonInOfferScreen();
-        }
-    }
+
 
     public void applyAllArtisticEffects() {
 
@@ -71,13 +62,12 @@ public class EditorSteps {
     }
 
     public void goToEditorScreenFromRecentImage() {
-        exploreScreen.clickFubButton(); //todo poxel
+        exploreScreen.clickFubButton();
         createFlowSteps.accessPhotoPermission();
         createFlowScreen.clickAllPhotoButton();
         photoChooserScreen.clickOnPhoto();
         photoChooserSteps.skipChooseImageSize();
-        skipGoldPopup();
-
+        shopSteps.skipGoldPopup();
     }
 
     public void goToDrawScreenFromCreateFlow() {

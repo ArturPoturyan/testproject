@@ -22,6 +22,7 @@ public class NotificationTest extends AppiumServerStartSession {
     private PhotoChooserScreen photoChooserScreen;
     private MyNetworkScreen myNetworkScreen;
     private ShareScreen shareScreen;
+    private ExploreScreen exploreScreen;
 
 
     @BeforeClass
@@ -36,6 +37,7 @@ public class NotificationTest extends AppiumServerStartSession {
         photoChooserScreen = new PhotoChooserScreen(driver);
         myNetworkScreen = new MyNetworkScreen(driver);
         shareScreen = new ShareScreen(driver);
+        exploreScreen = new ExploreScreen(driver);
         if (onboardingScreen.isSignInButtonPresent()) {
             onboardingSteps.signIn();
         }
@@ -85,7 +87,7 @@ public class NotificationTest extends AppiumServerStartSession {
         notificationSteps.skipGoldPopup();
         notificationScreen.clickEditorNextButton();
 //        shareScreen.clickUploadShareButton();
-        shareScreen.clickUploadDoneButton();
+        shareScreen.clickButtonDone();
         notificationScreen.clickProfileTab();
         assertTrue(notificationScreen.isProfileMoreButtonPresent(), "Profile more button is not present ");
         notificationScreen.pullToRefreshInProfilePage();
@@ -94,7 +96,7 @@ public class NotificationTest extends AppiumServerStartSession {
         notificationScreen.clickOnMeTab();
         assertTrue(notificationScreen.isFindPeopleToFollowTextPresent(), "Find People to Follow text is not present on the notification Me tab");
         notificationScreen.clickLetIsStartButton();
-        assertTrue(discoverScreen.isDiscoverArtistsPresent(), "Discover Artists title is not present on the discover screen");
+        assertTrue(discoverScreen.isDiscoverArtistsScreenPresent(), "Discover Artists title is not present on the discover screen");
 
     }
 
@@ -118,13 +120,13 @@ public class NotificationTest extends AppiumServerStartSession {
 
     @Test
     public void swipeLeftAndRight() {
-        notificationScreen.clickFeedsTab();
+        myNetworkScreen.clickMyNetworkButton();
         int repeat = 10;
         while (!myNetworkScreen.isZoomableItemPresent() && repeat > 0) {
             notificationScreen.scrollHomeToUp();
             repeat--;
         }
-        myNetworkScreen.clickImageMyNetworkTab();
+        myNetworkScreen.clickImageByIndexMyNetworkTab();
         assertTrue(notificationScreen.isUserAvatarIconPresent(), "actions panel is not present ");
         for (int i = 0; i < 5; i++) {
             notificationScreen.swipeHomeImageToLeft();
@@ -133,11 +135,11 @@ public class NotificationTest extends AppiumServerStartSession {
             notificationScreen.swipeHomeImageToRight();
         }
         int swipeTryes = 10;
-        while (!notificationScreen.isGalleryCommentButtonPresent() && swipeTryes > 0) {
+        while (!exploreScreen.isGalleryCommentButtonPresent() && swipeTryes > 0) {
             notificationScreen.swipeHomeImageToLeft();
             swipeTryes--;
         }
-        notificationScreen.clickGalleryCommentButton();
+        exploreScreen.clickGalleryCommentButton();
         notificationScreen.clickCommentInputField();
         notificationScreen.typeCommentText();
         assertTrue(notificationScreen.isSendButtonEnabled(), "Send button is not enabled ");
