@@ -191,20 +191,20 @@ public class LocalizationTest extends AppiumServerStartSession {
     //Verify search functionality of search
     @Test
     public void step_3_verifyFunctionalityOfSearch_part_1() {//todo not run
-//        searchSteps.goToSearchScreen();
-//        searchScreen.clickOnImagesTab();
-//        String typedText = "cr7";
-//        searchScreen.typeTextToSearchField(typedText);
-//        assertTrue(searchScreen.isXButtonPresentInSearchField(), "X button is not present in search field");
-//        assertTrue(searchScreen.getSuggestionNameText().contains(typedText), "the result of search keyword is not correspond");
-//
-//        searchScreen.clickSuggestionName();
-//        searchScreen.verticalScrollToUpSearchScreen();
-//        searchScreen.clickImage();
-//        assertTrue(exploreScreen.isGalleryCommentButtonPresent(), "An image is not opened in photo browser");
-//        while (!searchScreen.isTagPresent()) {
-//            searchScreen.verticalScrollToUpImageBrowser();
-//        }
+        searchSteps.goToSearchScreen();
+        searchScreen.clickOnImagesTab();
+        String typedText = "cr7";
+        searchScreen.typeTextToSearchField(typedText);
+        assertTrue(searchScreen.isXButtonPresentInSearchField(), "X button is not present in search field");
+        assertTrue(searchScreen.getSuggestionNameText().contains(typedText), "the result of search keyword is not correspond");
+
+        searchScreen.clickSuggestionName();
+        searchScreen.verticalScrollToUpSearchScreen();
+        searchScreen.clickImage();
+        assertTrue(exploreScreen.isGalleryCommentButtonPresent(), "An image is not opened in photo browser");
+        while (!searchScreen.isTagPresent()) {
+            searchScreen.verticalScrollToUpImageBrowser();
+        }
         searchScreen.clickOnTag();//todo im uzac tag@ chem karum click anem
         assertTrue(exploreScreen.isActionableFollowButtonPresent(), "the tag screen is not opened");
         exploreScreen.clickBackButtonInHashtagScreen();
@@ -249,15 +249,15 @@ public class LocalizationTest extends AppiumServerStartSession {
     //Explore: social navigations
     @Test
     public void step_4_verifyFunctionalityOfExploreSocialNavigation() {//todo not run
-//        myNetworkScreen.clickMyNetworkButton();
-//        myNetworkScreen.verticalScrollToUpMyNetworkScreen();
-//        int repeat = 10;
-//        while (!myNetworkScreen.isZoomableItemPresent() && repeat > 0) {
-//            myNetworkScreen.verticalScrollToUpMyNetworkScreen();
-//            repeat--;
-//        }
-//        myNetworkScreen.clickImageByIndexMyNetworkTab();
-//        myNetworkScreen.swipeImageHorizontalCenterToLeft();
+        myNetworkScreen.clickMyNetworkButton();
+        myNetworkScreen.verticalScrollToUpMyNetworkScreen();
+        int repeat = 10;
+        while (!myNetworkScreen.isZoomableItemPresent() && repeat > 0) {
+            myNetworkScreen.verticalScrollToUpMyNetworkScreen();
+            repeat--;
+        }
+        myNetworkScreen.clickImageByIndexMyNetworkTab();
+        myNetworkScreen.swipeImageHorizontalCenterToLeft();
         int again = 3;
         while (!myNetworkScreen.isLikeButtonPresent() && again > 0) {
             myNetworkScreen.scrollToUpImageBrowser();
@@ -283,13 +283,12 @@ public class LocalizationTest extends AppiumServerStartSession {
 
     @Test
     public void step_5_verifyFunctionalityOfSocialNavigation2() {
-//        myNetworkScreen.clickMyNetworkButton();
-//        int repeat = 10;
-//        while (!myNetworkScreen.isZoomableItemPresent() && repeat > 0) {
-//            myNetworkScreen.verticalScrollToUpMyNetworkScreen();
-//            repeat--;
-//        }
-
+        myNetworkScreen.clickMyNetworkButton();
+        int repeat = 10;
+        while (!myNetworkScreen.isZoomableItemPresent() && repeat > 0) {
+            myNetworkScreen.verticalScrollToUpMyNetworkScreen();
+            repeat--;
+        }
         myNetworkScreen.clickImageByIndexMyNetworkTab();
         for (int i = 0; i < 2; i++) {
             myNetworkScreen.clickLikeButton();//todo chi linum like i vra sxmel
@@ -398,39 +397,39 @@ public class LocalizationTest extends AppiumServerStartSession {
     //Remixes
     @Test
     public void step_7_verifyRemixFunctionality() {
-//        exploreScreen.clickExploreTab();
-//        exploreScreen.clickImageByIndexExploreTab();
-//        int repeat = 20;
-//        while (!exploreScreen.isRemixButtonPresent() && repeat > 0) {
-//            exploreScreen.swipeExploreImageToLeft();
-//            repeat--;
-//        }
-//        int scrollAgain = 5;
-//        while (!exploreScreen.isSimilarTitlePresent() && scrollAgain > 0) {
-//            exploreScreen.scrollToUpImageBrowser();
-//            scrollAgain--;
-//        }
-//        while (!exploreScreen.isRemixButtonPresent() && repeat > 0) {
-//            exploreScreen.scrollToDownImageBrowser();
-//            repeat--;
-//        }
-//        exploreScreen.clickRemixButton();
-//        photoChooserSteps.skipChooseImageSize();
-//        editorScreen.isEditorScreenPresent();
-//        int repeatAgain = 5;
-//
-//        while (!editorScreen.isStickerButtonPresent() && repeatAgain > 0) {
-//            editorScreen.swipeEditorPanelToRight();
-//            repeat--;
-//        }
-//        editorScreen.clickOnStickerInEditor();
-//        editorScreen.clickStickerApplyButton();
-//        assertTrue(editorScreen.isEditorScreenPresent(), "Editor screen is not present");
-//        editorScreen.clickEditorNextButton();
+        exploreScreen.clickExploreTab();
+        exploreScreen.clickImageByIndexExploreTab();
+        int repeat = 20;
+        while (!exploreScreen.isRemixButtonPresent() && repeat > 0) {
+            exploreScreen.swipeExploreImageToLeft();
+            repeat--;
+        }
+        int scrollAgain = 5;
+        while (!exploreScreen.isSimilarTitlePresent() && scrollAgain > 0) {
+            exploreScreen.scrollToUpImageBrowser();
+            scrollAgain--;
+        }
+        while (!exploreScreen.isRemixButtonPresent() && repeat > 0) {
+            exploreScreen.scrollToDownImageBrowser();
+            repeat--;
+        }
+        exploreScreen.clickRemixButton();
+        photoChooserSteps.skipChooseImageSize();
+        assertTrue(editorScreen.isEditorScreenPresent(), "Editor screen is not present");
+        int repeatAgain = 5;
+        while (!editorScreen.isStickerButtonPresent() && repeatAgain > 0) {
+            editorScreen.swipeEditorPanelToRight();
+            repeatAgain--;
+        }
+        editorScreen.clickStickerButton();
+        editorScreen.clickOnStickerInEditor();
+        editorScreen.clickStickerApplyButton();
+        editorScreen.clickEditorNextButton();
         assertTrue(shareScreen.isUploadShareButtonPresent(), "Upload share button is not present ");
         shareScreen.clickSaveButton();
         shareScreen.clickByIndexOnUploadPrivatelyButton();
         shareScreen.clickButtonDone();
+        //assert stugi private share exela te che
 
 
     }

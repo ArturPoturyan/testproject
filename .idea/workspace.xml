@@ -1,26 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f9962f0e-18a3-420b-abbb-afc3a92afaa8" name="Default Changelist" comment="test">
-      <change afterPath="$PROJECT_DIR$/src/main/java/screens/MessagingScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/screens/SearchScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/screens/ShopScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/steps/MessagingSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/steps/SearchSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/steps/ShopSteps.java" afterDir="false" />
+    <list default="true" id="f9962f0e-18a3-420b-abbb-afc3a92afaa8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/DiscoverScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/DiscoverScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/EditorScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/EditorScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/ExploreScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/ExploreScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/MyNetworkScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/MyNetworkScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/NotificationScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/NotificationScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/ProfileScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/ProfileScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/ShareScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/ShareScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/steps/EditorSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/steps/EditorSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/editor/EditorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/editor/EditorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/localization/LocalizationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/localization/LocalizationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/notification/NotificationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/notification/NotificationTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -77,8 +60,8 @@
           <entry key="class" value="1" />
           <entry key="dummy" value="203" />
           <entry key="gitignore" value="6" />
-          <entry key="java" value="57774" />
-          <entry key="txt" value="370" />
+          <entry key="java" value="57844" />
+          <entry key="txt" value="382" />
           <entry key="xml" value="238" />
         </counts>
       </usages-collector>
@@ -86,8 +69,8 @@
         <counts>
           <entry key="CLASS" value="1" />
           <entry key="Git file" value="6" />
-          <entry key="JAVA" value="57774" />
-          <entry key="PLAIN_TEXT" value="575" />
+          <entry key="JAVA" value="57844" />
+          <entry key="PLAIN_TEXT" value="587" />
           <entry key="XML" value="238" />
         </counts>
       </usages-collector>
@@ -126,20 +109,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/localization/LocalizationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="586">
-              <caret line="435" selection-start-line="435" selection-end-line="435" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+            <state relative-caret-position="762">
+              <caret line="431" column="49" lean-forward="true" selection-start-line="431" selection-start-column="49" selection-end-line="431" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -171,8 +145,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/screens/EditorScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="732">
-              <caret line="63" selection-start-line="63" selection-end-line="63" />
+            <state relative-caret-position="183">
+              <caret line="131" column="34" selection-start-line="131" selection-start-column="16" selection-end-line="131" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3239#3240#0" expanded="true" />
@@ -298,7 +272,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>index</find>
       <find>disc</find>
       <find>vertica</find>
       <find>gallery</find>
@@ -328,6 +301,7 @@
       <find>btn_share</find>
       <find>share</find>
       <find>:id/btn_done</find>
+      <find>:id/btn_sticker</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -397,9 +371,9 @@
         <option value="$PROJECT_DIR$/src/main/java/screens/SearchScreen.java" />
         <option value="$PROJECT_DIR$/src/main/java/screens/EditorScreen.java" />
         <option value="$PROJECT_DIR$/src/main/java/screens/ShareScreen.java" />
-        <option value="$PROJECT_DIR$/src/test/java/localization/LocalizationTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/notification/NotificationTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/editor/EditorTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/localization/LocalizationTest.java" />
       </list>
     </option>
   </component>
@@ -426,7 +400,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="x" value="-280" />
     <option name="y" value="-1080" />
     <option name="width" value="1920" />
@@ -532,7 +506,7 @@
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/arturpoturyan/IdeaProjects/TestPicsArt/src/main/java/screens/EditorScreen.java&#10;ed&#9;FILE&#9;file:///Users/arturpoturyan/IdeaProjects/TestPicsArt/src/main/java/screens/EditorScreen.java&#10;:id/category_item_parent&#9;null&#9;null&#10;ex&#9;FILE&#9;file:///Users/arturpoturyan/IdeaProjects/TestPicsArt/src/main/java/screens/ExploreScreen.java&#10;my&#9;FILE&#9;file:///Users/arturpoturyan/IdeaProjects/TestPicsArt/src/main/java/screens/MyNetworkScreen.java&#10;ut&#9;PSI&#9;JAVA://utils.Utils&#10;prof&#9;FILE&#9;file:///Users/arturpoturyan/IdeaProjects/TestPicsArt/src/main/java/screens/ProfileScreen.java&#10;:id/square_image_root_frame&#9;null&#9;null&#10;mes&#9;FILE&#9;file:///Users/arturpoturyan/IdeaProjects/TestPicsArt/src/main/java/screens/MessagingScreen.java&#10;no&#9;FILE&#9;file:///Users/arturpoturyan/IdeaProjects/TestPicsArt/src/main/java/screens/NotificationScreen.java&#10;m&#9;FILE&#9;file:///Users/arturpoturyan/IdeaProjects/TestPicsArt/src/main/java/screens/MyNetworkScreen.java&#10;profile&#9;FILE&#9;file:///Users/arturpoturyan/IdeaProjects/TestPicsArt/src/main/java/screens/ProfileScreen.java&#10;descrip&#9;PSI&#9;JAVA://screens.MyNetworkScreen#IMAGE_DESCRIPTION&#10;lo&#9;FILE&#9;file:///Users/arturpoturyan/IdeaProjects/TestPicsArt/src/test/java/localization/LocalizationTest.java&#10;localiza&#9;RUN_CONFIGURATION&#9;LocalizationTest.step_1_verifyFunctionalityOfFollowingArtistsOnDiscoverPage&#10;Local&#9;PSI&#9;JAVA://localisation.LocalisationTest&#10;scrollSettingsToUp&#9;PSI&#9;JAVA://screens.NotificationScreen#scrollSettingsToUp&#10;isChooseImageSizePopupPresent&#9;PSI&#9;JAVA://screens.EditorScreen#isChooseImageSizePopupPresent&#10;CREATE_NEW&#9;PSI&#9;JAVA://screens.EditorScreen#CREATE_NEW&#10;clickCreateNewButton&#9;PSI&#9;JAVA://screens.CreateFlowScreen#clickCreateNewButton&#10;clickOnPhoto&#9;PSI&#9;JAVA://screens.EditorScreen#clickOnPhoto&#10;clickAllPhotoButton&#9;PSI&#9;JAVA://screens.EditorScreen#clickAllPhotoButton&#10;Not&#9;FILE&#9;file:///Users/arturpoturyan/IdeaProjects/TestPicsArt/src/test/java/notificationtest/NotificationScreenTest.java&#10;plug&#9;ACTION&#9;WelcomeScreen.Plugins&#10;plugin&#9;ACTION&#9;WelcomeScreen.Plugins&#10;effect&#9;PSI&#9;JAVA://com.sun.scenario.effect.Effect&#10;util&#9;FILE&#9;file:///Users/arturpoturyan/IdeaProjects/TestPicsArt/src/main/java/utils/Utils.java&#10;not&#9;PSI&#9;JAVA://screens.NotificationScreen&#10;rand&#9;FILE&#9;file:///Users/arturpoturyan/IdeaProjects/TestPicsArt/src/main/java/utils/RandomGeneratingNumbers.java&#10;register&#9;FILE&#9;file:///Users/arturpoturyan/IdeaProjects/TestPicsArt/src/main/java/teststeps/RegisterSteps.java&#10;Des&#9;FILE&#9;jar:///Users/arturpoturyan/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/3.12.0/selenium-remote-driver-3.12.0-sources.jar!/org/openqa/selenium/remote/DesiredCapabilities.java&#10;driver&#9;FILE&#9;jar:///Users/arturpoturyan/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/3.12.0/selenium-remote-driver-3.12.0.jar!/org/openqa/selenium/remote/RemoteWebDriver.class&#10;Login&#9;FILE&#9;file:///Users/arturpoturyan/IdeaProjects/TestPicsArt/src/test/java/testlogin/LoginTest.java" />
     <property name="add_unversioned_files" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553616352497" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553671713743" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/java" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -798,25 +772,17 @@
       <option name="project" value="LOCAL" />
       <updated>1553090009910</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="some changes">
+      <created>1553616503070</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1553616503071</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LocalizationTest_step_7_verifyRemixFunctionality - 2019.03.26 at 16h 25m 56s.xml">
-      <configuration name="LocalizationTest.step_7_verifyRemixFunctionality" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="LocalizationTest_step_7_verifyRemixFunctionality - 2019.03.26 at 16h 34m 21s.xml">
-      <configuration name="LocalizationTest.step_7_verifyRemixFunctionality" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="LocalizationTest_step_7_verifyRemixFunctionality - 2019.03.26 at 16h 37m 13s.xml">
-      <configuration name="LocalizationTest.step_7_verifyRemixFunctionality" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="NotificationTest_swipeLeftAndRight - 2019.03.26 at 16h 43m 17s.xml">
-      <configuration name="NotificationTest.swipeLeftAndRight" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="LocalizationTest_step_7_verifyRemixFunctionality - 2019.03.26 at 16h 57m 45s.xml">
-      <configuration name="LocalizationTest.step_7_verifyRemixFunctionality" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="LocalizationTest_step_7_verifyRemixFunctionality - 2019.03.26 at 17h 02m 58s.xml">
       <configuration name="LocalizationTest.step_7_verifyRemixFunctionality" configurationId="TestNG" />
     </history-entry>
@@ -832,6 +798,21 @@
     <history-entry file="LocalizationTest_step_7_verifyRemixFunctionality - 2019.03.26 at 19h 53m 03s.xml">
       <configuration name="LocalizationTest.step_7_verifyRemixFunctionality" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="LocalizationTest_step_7_verifyRemixFunctionality - 2019.03.26 at 20h 16m 13s.xml">
+      <configuration name="LocalizationTest.step_7_verifyRemixFunctionality" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="LocalizationTest_step_7_verifyRemixFunctionality - 2019.03.26 at 20h 17m 06s.xml">
+      <configuration name="LocalizationTest.step_7_verifyRemixFunctionality" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="LocalizationTest_step_7_verifyRemixFunctionality - 2019.03.26 at 20h 19m 48s.xml">
+      <configuration name="LocalizationTest.step_7_verifyRemixFunctionality" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="LocalizationTest_step_7_verifyRemixFunctionality - 2019.03.26 at 20h 21m 01s.xml">
+      <configuration name="LocalizationTest.step_7_verifyRemixFunctionality" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="LocalizationTest_step_7_verifyRemixFunctionality - 2019.03.26 at 20h 25m 23s.xml">
+      <configuration name="LocalizationTest.step_7_verifyRemixFunctionality" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -843,10 +824,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-280" y="-1080" width="1920" height="1080" extended-state="0" />
-    <editor active="true" />
+    <frame x="-280" y="-1080" width="1920" height="1080" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4988864" visible="true" weight="0.17678382" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4988864" visible="true" weight="0.17678382" />
       <window_info id="Structure" order="1" sideWeight="0.50136983" side_tool="true" weight="0.27059773" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -857,7 +837,7 @@
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32531825" />
       <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49946752" weight="0.32117528" />
-      <window_info active="true" anchor="bottom" id="Debug" order="4" sideWeight="0.49946752" visible="true" weight="0.22391084" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.49946752" weight="0.22391084" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.3272543" />
@@ -875,24 +855,24 @@
       <window_info anchor="right" id="Coverage" order="8" sideWeight="0.502451" side_tool="true" weight="0.32956383" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4988864" visible="true" weight="0.2746365" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4988864" visible="true" weight="0.17678382" />
       <window_info id="Structure" order="1" sideWeight="0.50136983" side_tool="true" weight="0.27059773" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" sideWeight="0.5011136" side_tool="true" weight="0.27059773" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.32673267" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.32016212" />
       <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.3281471" />
-      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.062234797" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.3479491" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32531825" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.49946752" visible="true" weight="0.32117528" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.49946752" weight="0.22391084" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="7" weight="0.3281471" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3847242" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.12446959" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.3272543" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.38297874" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5005325" side_tool="true" weight="0.4397163" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.37183383" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24959612" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -900,7 +880,8 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Maven Projects" order="7" weight="0.32956383" />
+      <window_info anchor="right" id="Maven Projects" order="7" sideWeight="0.49754903" weight="0.32956383" />
+      <window_info anchor="right" id="Coverage" order="8" sideWeight="0.502451" side_tool="true" weight="0.32956383" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -948,9 +929,9 @@
     <MESSAGE value="deleted workspace" />
     <MESSAGE value="fixed apk file path" />
     <MESSAGE value="test some changes" />
-    <MESSAGE value="some changes" />
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="some changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="some changes" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -1485,36 +1466,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/screens/EditorScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="732">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3239#3240#0" expanded="true" />
-            <element signature="e#3297#3298#0" expanded="true" />
-            <element signature="e#3488#3489#0" expanded="true" />
-            <element signature="e#3532#3533#0" expanded="true" />
-            <element signature="e#3645#3646#0" expanded="true" />
-            <element signature="e#3686#3687#0" expanded="true" />
-            <element signature="e#3423#3424#0" expanded="true" />
-            <element signature="e#3484#3485#0" expanded="true" />
-            <element signature="e#3736#3737#0" expanded="true" />
-            <element signature="e#3796#3797#0" expanded="true" />
-            <element signature="e#3651#3652#0" expanded="true" />
-            <element signature="e#3727#3728#0" expanded="true" />
-            <element signature="e#3783#3784#0" expanded="true" />
-            <element signature="e#3861#3862#0" expanded="true" />
-            <element signature="e#4032#4033#0" expanded="true" />
-            <element signature="e#4081#4082#0" expanded="true" />
-            <element signature="e#4137#4138#0" expanded="true" />
-            <element signature="e#4203#4204#0" expanded="true" />
-            <element signature="e#10150#10151#0" expanded="true" />
-            <element signature="e#10229#10230#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/screens/ShareScreen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="449">
@@ -1552,17 +1503,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/localization/LocalizationTest.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="435" selection-start-line="435" selection-end-line="435" />
+        <state relative-caret-position="330">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/screens/EditorScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+        <state relative-caret-position="183">
+          <caret line="131" column="34" selection-start-line="131" selection-start-column="16" selection-end-line="131" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3239#3240#0" expanded="true" />
+            <element signature="e#3297#3298#0" expanded="true" />
+            <element signature="e#3488#3489#0" expanded="true" />
+            <element signature="e#3532#3533#0" expanded="true" />
+            <element signature="e#3645#3646#0" expanded="true" />
+            <element signature="e#3686#3687#0" expanded="true" />
+            <element signature="e#3423#3424#0" expanded="true" />
+            <element signature="e#3484#3485#0" expanded="true" />
+            <element signature="e#3736#3737#0" expanded="true" />
+            <element signature="e#3796#3797#0" expanded="true" />
+            <element signature="e#3651#3652#0" expanded="true" />
+            <element signature="e#3727#3728#0" expanded="true" />
+            <element signature="e#3783#3784#0" expanded="true" />
+            <element signature="e#3861#3862#0" expanded="true" />
+            <element signature="e#4032#4033#0" expanded="true" />
+            <element signature="e#4081#4082#0" expanded="true" />
+            <element signature="e#4137#4138#0" expanded="true" />
+            <element signature="e#4203#4204#0" expanded="true" />
+            <element signature="e#10150#10151#0" expanded="true" />
+            <element signature="e#10229#10230#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/localization/LocalizationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="762">
+          <caret line="431" column="49" lean-forward="true" selection-start-line="431" selection-start-column="49" selection-end-line="431" selection-end-column="49" />
         </state>
       </provider>
     </entry>
