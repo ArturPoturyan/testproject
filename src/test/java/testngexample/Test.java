@@ -2,6 +2,7 @@ package testngexample;
 
 import org.testng.annotations.*;
 
+
 public class Test {
 
     //-----------------------------------Suite Suite-----------------------------------
@@ -32,6 +33,7 @@ public class Test {
         System.out.println("@BeforeMethod has started.");
 
     }
+
 
     //-----------------------------------Tests-----------------------------------
     @org.testng.annotations.Test

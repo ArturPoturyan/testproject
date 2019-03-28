@@ -21,16 +21,34 @@ public class CreateFlowScreen implements CommonValues {
     private By PERMISSION_ALLOW_BUTTON = By.id("com.android.packageinstaller:id/permission_allow_button");
     private By BACK_IMAGE_BUTTON = By.className("android.widget.ImageButton");
     private By CREATE_FLOW_CARD_TEXT = By.id(APP_PACKAGE_NAME + ":id/card_text");
-    private By CREATE_NEW = By.id(APP_PACKAGE_NAME + ":id/description");
+    private By DESCRIPTION = By.id(APP_PACKAGE_NAME + ":id/description");
+    private By CREATE_FLOW_RECYCLER_VIEW = By.id(APP_PACKAGE_NAME + ":id/recycler_view");
+
 
     public void clickCreateNewButton() {
-        utils.clickElementByText(CREATE_NEW, "Create New");
+        utils.clickElementByText(DESCRIPTION, "Create New");
 
     }
+
+    public void scrollVerticalCreateFLowScreen() {
+        utils.scrollVerticalFromCenterToUp(CREATE_FLOW_RECYCLER_VIEW);
+
+    }
+
 
     public boolean isCreateNewButtonPresent() {
-        return utils.isElementByTextPresent(CREATE_NEW, "Create New");
+        return utils.isElementByTextPresent(DESCRIPTION, "Create New");
     }
+
+    public boolean isCameraButtonPresent() {
+        return utils.isElementByTextPresent(DESCRIPTION, "Camera");
+
+    }
+
+    public void clickCameraButton() {
+        utils.clickElementByText(DESCRIPTION, "Camera");
+    }
+
 
     public void clickAllPhotoButton() {
         utils.clickByIndex(CREATE_FLOW_CARD_TEXT, 0);

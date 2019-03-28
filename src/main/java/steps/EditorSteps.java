@@ -75,7 +75,7 @@ public class EditorSteps {
         createFlowSteps.accessPhotoPermission();
         int repeat = 4;
         while (!createFlowScreen.isCreateNewButtonPresent() && repeat > 0) {
-            editorScreen.scrollVerticalCreateFLowScreen();
+            createFlowScreen.scrollVerticalCreateFLowScreen();
             repeat--;
         }
         createFlowScreen.clickCreateNewButton();

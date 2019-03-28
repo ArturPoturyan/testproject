@@ -50,7 +50,6 @@ public class EditorScreen implements CommonValues {
     private By ADAPTER_TEXT_ID = By.id(APP_PACKAGE_NAME + ":id/adapter_text_id");
     private By DRAWING_LAYERS_CONTAINER = By.id(APP_PACKAGE_NAME + ":id/drawing_layers_container");
     private By EFFECTS_BOTTOM_PANEL = By.id(APP_PACKAGE_NAME + ":id/effects_category_list");
-    private By CREATE_FLOW_RECYCLER_VIEW = By.id(APP_PACKAGE_NAME + ":id/recycler_view");
     private By EFFECT_THUMBS_RECYCLER_VIEW = By.id(APP_PACKAGE_NAME + ":id/effects_thumbs_recycler_view");
     private By SIMPLE_PROGRESS = By.id(APP_PACKAGE_NAME + ":id/simple_progress");
     private By STORAGE_PERMISSION_POPUP = By.id(APP_PACKAGE_NAME + ":id/pop_up_layout");
@@ -178,10 +177,6 @@ public class EditorScreen implements CommonValues {
     }
 
 
-    public void scrollVerticalCreateFLowScreen() {
-        utils.scrollVerticalFromCenterToUp(CREATE_FLOW_RECYCLER_VIEW);
-
-    }
 
 
     public boolean isNoneTextPresent() {

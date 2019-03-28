@@ -433,4 +433,19 @@ public class LocalizationTest extends AppiumServerStartSession {
 
 
     }
+
+
+    //Verify  functionality of Camera
+
+    @Test
+    public void verifyFunctionalityOfCamera() {
+
+        exploreScreen.clickFubButton();
+        int repeat = 4;
+        while (!createFlowScreen.isCameraButtonPresent() && repeat > 0) {
+            createFlowScreen.scrollVerticalCreateFLowScreen();
+            repeat--;
+        }
+        createFlowScreen.clickCameraButton();
+    }
 }
