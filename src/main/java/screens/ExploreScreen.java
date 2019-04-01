@@ -33,7 +33,7 @@ public class ExploreScreen implements CommonValues {
 
 
     //Views
-    public void clickFubButton() {//todo rename
+    public void clickFubButton() {
         utils.clickById(FUB_BUTTON);
 
     }

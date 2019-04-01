@@ -12,12 +12,10 @@ public class CreateFlowSteps {
         createFlowScreen = new CreateFlowScreen(driver);
     }
 
-    public void accessPhotoPermission() {
-        if (createFlowScreen.isStoragePermissionPopupPresent()) {
-            createFlowScreen.clickPermissionLetIsGoButton();
-            createFlowScreen.clickPermissionAllowButton();
-            createFlowScreen.clickBackImageButton();
-        }
-    }
-
+//    public void accessPhotoPermission() {
+//        if (createFlowScreen.isStoragePermissionPopupPresent()) {
+//            createFlowScreen.clickPermissionLetIsGoButton();
+//            createFlowScreen.clickPermissionAllowButton();
+//        }
+//    }
 }

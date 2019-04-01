@@ -5,6 +5,7 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.interactions.touch.TouchActions;
 
 import java.time.Duration;
 import java.util.List;
@@ -61,6 +62,14 @@ public class Utils {
 
     }
 
+    public void doubleClick(By by) {//todo uzumey double tap sarqey
+        TouchActions action = new TouchActions(driver);
+        action.doubleTap(driver.findElement(by)).doubleClick();
+        action.perform();
+
+
+    }
+
 
     public void clearTextField(By by) {
         driver.findElement(by).clear();
@@ -71,6 +80,9 @@ public class Utils {
     }
 
     public boolean isElementSelected(By by) {
+        return driver.findElement(by).isSelected();
+    }
+    public boolean isElementSelected(By by,String text) {
         return driver.findElement(by).isSelected();
     }
 

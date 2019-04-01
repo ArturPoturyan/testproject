@@ -23,6 +23,7 @@ public class NotificationTest extends AppiumServerStartSession {
     private MyNetworkScreen myNetworkScreen;
     private ShareScreen shareScreen;
     private ExploreScreen exploreScreen;
+    private CreateFlowScreen createFlowScreen;
 
 
     @BeforeClass
@@ -38,6 +39,7 @@ public class NotificationTest extends AppiumServerStartSession {
         myNetworkScreen = new MyNetworkScreen(driver);
         shareScreen = new ShareScreen(driver);
         exploreScreen = new ExploreScreen(driver);
+        createFlowScreen = new CreateFlowScreen(driver);
         if (onboardingScreen.isSignInButtonPresent()) {
             onboardingSteps.signIn();
         }
@@ -49,7 +51,8 @@ public class NotificationTest extends AppiumServerStartSession {
     public void verifyAppearanceOfEmptyStateInFollowingTab() {
         notificationSteps.logOutFromPicsArt();
         onboardingSteps.registerNewUser();
-        createFlowSteps.accessPhotoPermission();
+//        createFlowSteps.accessPhotoPermission();
+        createFlowScreen.clickBackImageButton();
         notificationScreen.clickProfileTab();
         notificationScreen.clickFollowingsButton();
         notificationScreen.clickFollowButton();

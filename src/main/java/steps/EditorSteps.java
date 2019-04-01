@@ -35,7 +35,7 @@ public class EditorSteps {
 
     public void openEditorWithFreeToEditImage() {
         exploreScreen.clickFubButton();
-        createFlowSteps.accessPhotoPermission();
+//        createFlowSteps.accessPhotoPermission(); //todo harcnel toxnel mna esi te jnjem ?
         createFlowScreen.clickAllPhotoButton();
         photoChooserScreen.clickArrowButton();
         photoChooserScreen.clickFreeToEditButton();
@@ -63,7 +63,7 @@ public class EditorSteps {
 
     public void goToEditorScreenFromRecentImage() {
         exploreScreen.clickFubButton();
-        createFlowSteps.accessPhotoPermission();
+//        createFlowSteps.accessPhotoPermission();
         createFlowScreen.clickAllPhotoButton();
         photoChooserScreen.clickOnPhoto();
         photoChooserSteps.skipChooseImageSize();
@@ -72,10 +72,10 @@ public class EditorSteps {
 
     public void goToDrawScreenFromCreateFlow() {
         exploreScreen.clickFubButton();
-        createFlowSteps.accessPhotoPermission();
+//        createFlowSteps.accessPhotoPermission();
         int repeat = 4;
         while (!createFlowScreen.isCreateNewButtonPresent() && repeat > 0) {
-            createFlowScreen.scrollVerticalCreateFLowScreen();
+            createFlowScreen.scrollVerticalFromCenterToUpCreateFLowScreen();
             repeat--;
         }
         createFlowScreen.clickCreateNewButton();

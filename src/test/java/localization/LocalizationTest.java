@@ -28,6 +28,10 @@ public class LocalizationTest extends AppiumServerStartSession {
     private SearchSteps searchSteps;
     private NotificationScreen notificationScreen;
     private MessagingScreen messagingScreen;
+    private CameraSteps cameraSteps;
+    private CameraScreen cameraScreen;
+    private ChallengesScreen challengesScreen;
+    private ChallengesSteps challengesSteps;
 
     @BeforeClass
     public void setup() {
@@ -49,7 +53,12 @@ public class LocalizationTest extends AppiumServerStartSession {
         searchSteps = new SearchSteps(driver);
         notificationScreen = new NotificationScreen(driver);
         messagingScreen = new MessagingScreen(driver);
+        cameraSteps = new CameraSteps(driver);
+        cameraScreen = new CameraScreen(driver);
+        challengesScreen = new ChallengesScreen(driver);
+        challengesSteps = new ChallengesSteps(driver);
 
+//
 //        if (onboardingScreen.isSignInButtonPresent()) {
 //            onboardingSteps.signIn();
 //        }
@@ -58,7 +67,7 @@ public class LocalizationTest extends AppiumServerStartSession {
     // Verify the functionality of following artists on Discover artists page
     @Test
     public void step_1_verifyFunctionalityOfFollowingArtistsOnDiscoverPage() {
-        profileScreen.clickProfileTab();
+        profileScreen.clickProfileTabButton();
         assertTrue(profileScreen.isUserAvatarPresent(), "Profile tab is not open");
         profileScreen.clickProfileMoreButton();
         profileScreen.clickDiscoverArtistsButton();
@@ -74,8 +83,8 @@ public class LocalizationTest extends AppiumServerStartSession {
     @Test
     //Editor Share flow
     public void step_2_verifyFunctionalityEditorShareFlow_part_1() {
-        exploreScreen.clickFubButton(); //todo harcnel vor stepic karanq gren miangamic gna editor bayc test case um sax steper@ assert a uzum
-        createFlowSteps.accessPhotoPermission();
+        exploreScreen.clickFubButton();
+//        createFlowSteps.accessPhotoPermission();
         createFlowScreen.clickAllPhotoButton();
         assertTrue(photoChooserScreen.isPhotoChooserImageListPresent(), "Photo chooser is not present on the screen");
         photoChooserScreen.clickOnPhoto();
@@ -98,9 +107,9 @@ public class LocalizationTest extends AppiumServerStartSession {
     @Test
     public void step_2_verifyFunctionalityEditorShareFlow_part_2() {
         exploreScreen.clickFubButton();
-        createFlowSteps.accessPhotoPermission();
+//        createFlowSteps.accessPhotoPermission();
         createFlowScreen.clickAllPhotoButton();
-        assertTrue(photoChooserScreen.isPhotoChooserImageListPresent(), "Photo chooser is not present on the screen");
+        assertTrue(photoChooserScreen.isPhotoChooserImageListPresent(), "Photo chooser is not present on the screen");//todo karam chstugem vortev verev@ stuguma mi angam arden
         photoChooserScreen.clickOnPhoto();
         photoChooserSteps.skipChooseImageSize();
         shopSteps.skipGoldPopup();
@@ -125,7 +134,7 @@ public class LocalizationTest extends AppiumServerStartSession {
     @Test
     public void step_2_verifyFunctionalityEditorShareFlow_part_3() {
         exploreScreen.clickFubButton();
-        createFlowSteps.accessPhotoPermission();
+//        createFlowSteps.accessPhotoPermission();
         createFlowScreen.clickAllPhotoButton();
         assertTrue(photoChooserScreen.isPhotoChooserImageListPresent(), "Photo chooser is not present on the screen");
         photoChooserScreen.clickOnPhoto();
@@ -160,7 +169,7 @@ public class LocalizationTest extends AppiumServerStartSession {
     @Test
     public void step_2_verifyFunctionalityEditorShareFlow_part_4() {
         exploreScreen.clickFubButton();
-        createFlowSteps.accessPhotoPermission();
+//        createFlowSteps.accessPhotoPermission();
         createFlowScreen.clickAllPhotoButton();
         assertTrue(photoChooserScreen.isPhotoChooserImageListPresent(), "Photo chooser is not present on the screen");
         photoChooserScreen.clickOnPhoto();
@@ -172,9 +181,9 @@ public class LocalizationTest extends AppiumServerStartSession {
         assertTrue(shareScreen.isUploadShareButtonPresent(), "Share screen is not present");
         shareScreen.clickUploadShareButton();
         shareScreen.clickButtonDone();
-        profileScreen.clickProfileTab();
+        profileScreen.clickProfileTabButton();
         assertTrue(profileScreen.isUserAvatarPresent(), "Profile page is not open");
-        profileScreen.clickProfileImage();
+        profileScreen.clickProfileImageButton();
         myNetworkScreen.clickMoreButtonInImageBrowser();
         assertTrue(myNetworkScreen.isImageSettingsPresent(), "image settings is not present");
         myNetworkScreen.clickEditButton();
@@ -409,9 +418,10 @@ public class LocalizationTest extends AppiumServerStartSession {
             exploreScreen.scrollToUpImageBrowser();
             scrollAgain--;
         }
-        while (!exploreScreen.isRemixButtonPresent() && repeat > 0) {
+        int scroll = 5;
+        while (!exploreScreen.isRemixButtonPresent() && scroll > 0) {
             exploreScreen.scrollToDownImageBrowser();
-            repeat--;
+            scroll--;
         }
         exploreScreen.clickRemixButton();
         photoChooserSteps.skipChooseImageSize();
@@ -439,13 +449,55 @@ public class LocalizationTest extends AppiumServerStartSession {
 
     @Test
     public void verifyFunctionalityOfCamera() {
+        cameraSteps.goToCameraFromCreateFlow();//todo camera screen ic vochmi button click chi anum
+//        cameraSteps.accessCameraPermission();
+//        cameraScreen.clickFilterByIndex();
 
-        exploreScreen.clickFubButton();
-        int repeat = 4;
-        while (!createFlowScreen.isCameraButtonPresent() && repeat > 0) {
-            createFlowScreen.scrollVerticalCreateFLowScreen();
+//        cameraScreen.swap();
+
+    }
+
+    //Challenges
+    @Test
+    public void verifyChallengesFunctionality() {
+
+        challengesScreen.clickChallengesTabButton();
+        int repeat = 10;
+        while (!challengesScreen.isPhotographyChallengePresent() && repeat > 0) {
+            challengesScreen.scrollVerticalFromCenterToUpChallengesScreen();
             repeat--;
         }
-        createFlowScreen.clickCameraButton();
+        int repeatAgain = 10;
+        while (!challengesScreen.isFishingChallengeNamePresent() && repeatAgain > 0) {
+            challengesScreen.scrollVerticalFromCenterToUpChallengesScreen();
+            repeatAgain--;
+        }
+        challengesScreen.clickChallengeNameByText();
+        challengesScreen.clickParticipateButton();
+        photoChooserScreen.clickOnPhoto();
+        challengesScreen.clickSubmitButton();
+        challengesScreen.clickSubmitToChallengeButton();
+        assertTrue(challengesScreen.isSubmittedChallengeButtonPresent(), "Submitted text is not present");
+        challengesSteps.skipShareToInstagramPopup();
+        challengesScreen.clickVotingContest();
+        challengesScreen.clickStartVotingPhoto();
+        for (int i = 0; i < 4; i++) {
+            challengesScreen.clickChallengeVoteButton();
+            challengesScreen.horizontalSwipeFromCenterToRightVotingScreen();
+            assertTrue(challengesScreen.isVotedButtonPresent(), "Voted button is not present ");
+            challengesScreen.horizontalSwipeFromCenterToLeftVotingScreen();
+            //step 6 anhaskanalia :D
+        }
+        challengesScreen.clickBackButtonInVotingScreen();
+        challengesScreen.clickBackArrowButton();
+        challengesScreen.clickLeaderBoardButton();
+        challengesScreen.clickGlobalTab();
+//        assertTrue(challengesScreen.isNetworkTabPresent(),"not sleected");//todo chi linum stugel tab@ selected kam enabled da urish dzev chem kara stugem taber
+        challengesScreen.clickBackArrowButton();
+
+
+
+
+
     }
 }

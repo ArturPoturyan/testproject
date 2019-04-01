@@ -60,14 +60,13 @@ public class AppiumServerStartSession implements CommonValues {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         String baseDir = System.getProperty("project.base.dir");
         String apk = baseDir + "/src/main/resources/apk/picsart.apk";
-
         capabilities.setCapability(MobileCapabilityType.APP, apk);
         capabilities.setCapability(MobileCapabilityType.UDID, "410042ad44709101");
         capabilities.setCapability("deviceName", "Galaxy Note4");
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("platformVersion", "6.0.1");
+        capabilities.setCapability("autoGrantPermissions", true);
         capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
-//        capabilities.setCapability("autoGrantPermissions", true);
         capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, APP_PACKAGE_NAME);
         capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, APP_ACTIVITY_NAME);
         return capabilities;
@@ -79,7 +78,6 @@ public class AppiumServerStartSession implements CommonValues {
             throw new AppiumServerHasNotBeenStartedLocallyException("An appium server node is not started!");
         }
         service.start();
-
         return service.getUrl().toString();
     }
 

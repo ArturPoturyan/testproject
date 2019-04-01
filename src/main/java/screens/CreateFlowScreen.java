@@ -15,7 +15,7 @@ public class CreateFlowScreen implements CommonValues {
         utils = new Utils(this.driver);
     }
 
-    //Views
+    //Button
     private By STORAGE_PERMISSION_POPUP = By.id(APP_PACKAGE_NAME + ":id/pop_up_layout");
     private By POSITIVE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_positive");
     private By PERMISSION_ALLOW_BUTTON = By.id("com.android.packageinstaller:id/permission_allow_button");
@@ -25,12 +25,14 @@ public class CreateFlowScreen implements CommonValues {
     private By CREATE_FLOW_RECYCLER_VIEW = By.id(APP_PACKAGE_NAME + ":id/recycler_view");
 
 
+    //Views
+
     public void clickCreateNewButton() {
         utils.clickElementByText(DESCRIPTION, "Create New");
 
     }
 
-    public void scrollVerticalCreateFLowScreen() {
+    public void scrollVerticalFromCenterToUpCreateFLowScreen() {
         utils.scrollVerticalFromCenterToUp(CREATE_FLOW_RECYCLER_VIEW);
 
     }
