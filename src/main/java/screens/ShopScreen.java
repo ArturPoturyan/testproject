@@ -37,7 +37,7 @@ public class ShopScreen implements CommonValues {
         return utils.isElementPresent(SUBSCRIPTION_PAYMENT_BUTTON);
     }
 
-    public void clickXButtonInOfferScreen() {
+    public void clickOfferScreenXButton() {
 
         utils.clickById(SUBSCRIPTION_OFFER_CLOSE_BUTTON);
     }

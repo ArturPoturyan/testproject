@@ -31,8 +31,11 @@ public class ProfileScreen implements CommonValues {
     public void clickProfileImageButton() {
         utils.clickByIndex(SQUARE_IMAGE_ROOT_BUTTON, 0);
     }
+    public void clickProfileImageButton(int index) {
+        utils.clickByIndex(SQUARE_IMAGE_ROOT_BUTTON, index);
+    }
 
-    public void clickProfileTabButton() {
+    public void clickProfileTab() {
         utils.clickById(PROFILE_TAB_BUTTON);
     }
 

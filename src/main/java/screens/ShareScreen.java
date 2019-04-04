@@ -43,7 +43,7 @@ public class ShareScreen implements CommonValues {
 
     }
 
-    public void typeTextToTagField(String text) {
+    public void typeTextInTagField(String text) {
         utils.typeText(ET_DESCRIPTION, text);
     }
 
@@ -52,7 +52,7 @@ public class ShareScreen implements CommonValues {
         utils.clickById(NEXT_BUTTON);
     }
 
-    public void clickButtonDone() {
+    public void clickDoneButton() {
         utils.clickById(BTN_DONE);
     }
 

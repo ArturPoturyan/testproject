@@ -42,6 +42,8 @@ public class NotificationTest extends AppiumServerStartSession {
         createFlowScreen = new CreateFlowScreen(driver);
         if (onboardingScreen.isSignInButtonPresent()) {
             onboardingSteps.signIn();
+            createFlowSteps.clickFromCreateFlowScreenXbutton();
+
         }
     }
 
@@ -74,7 +76,7 @@ public class NotificationTest extends AppiumServerStartSession {
         notificationScreen.clickOnMeTab();
         assertTrue(notificationScreen.isYouHaveNoActivityTextPresent(), "You have no activity :( is not present on the notification me tab");
         notificationScreen.clickUploadImageButton();
-        assertTrue(photoChooserScreen.isPhotoChooserImageListPresent(), "Photo chooser is not present on the screen");
+        assertTrue(photoChooserScreen.isPhotoChooserPresent(), "Photo chooser is not present on the screen");
 
     }
 
@@ -90,7 +92,7 @@ public class NotificationTest extends AppiumServerStartSession {
         notificationSteps.skipGoldPopup();
         notificationScreen.clickEditorNextButton();
 //        shareScreen.clickUploadShareButton();
-        shareScreen.clickButtonDone();
+        shareScreen.clickDoneButton();
         notificationScreen.clickProfileTab();
         assertTrue(notificationScreen.isProfileMoreButtonPresent(), "Profile more button is not present ");
         notificationScreen.pullToRefreshInProfilePage();
@@ -123,13 +125,13 @@ public class NotificationTest extends AppiumServerStartSession {
 
     @Test
     public void swipeLeftAndRight() {
-        myNetworkScreen.clickMyNetworkButton();
+        myNetworkScreen.clickMyNetworkTab();
         int repeat = 10;
         while (!myNetworkScreen.isZoomableItemPresent() && repeat > 0) {
             notificationScreen.scrollHomeToUp();
             repeat--;
         }
-        myNetworkScreen.clickImageByIndexMyNetworkTab();
+        myNetworkScreen.clickImageFromMyNetworkTab();
         assertTrue(notificationScreen.isUserAvatarIconPresent(), "actions panel is not present ");
         for (int i = 0; i < 5; i++) {
             notificationScreen.swipeHomeImageToLeft();

@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import screens.EditorScreen;
 import screens.OnBoardingScreen;
 import screens.ShareScreen;
+import steps.CreateFlowSteps;
 import steps.EditorSteps;
 import steps.OnBoardingSteps;
 import steps.ShopSteps;
@@ -20,6 +21,7 @@ public class EditorTest extends AppiumServerStartSession {
     private OnBoardingSteps onboardingSteps;
     private ShopSteps shopSteps;
     private ShareScreen shareScreen;
+    private CreateFlowSteps createFlowSteps;
 
 
     @BeforeClass
@@ -33,6 +35,7 @@ public class EditorTest extends AppiumServerStartSession {
 
         if (onboardingScreen.isSignInButtonPresent()) {
             onboardingSteps.signIn();
+            createFlowSteps.clickFromCreateFlowScreenXbutton();
         }
     }
 
@@ -63,7 +66,6 @@ public class EditorTest extends AppiumServerStartSession {
     @Test
     public void verifyFunctionalityArtisticAndBlurCategory() {
         editorSteps.openEditorWithFreeToEditImage();
-        shopSteps.skipGoldOfferScreen();
         editorScreen.clickEffectsButton();
         editorScreen.chooseArtisticCategoryByName();
         assertTrue(editorScreen.isOilPaintingEffectsNamePresent(), "Artistic effects category is not present");

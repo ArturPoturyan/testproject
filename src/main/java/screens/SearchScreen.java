@@ -89,10 +89,6 @@ public class SearchScreen implements CommonValues {
     }
 
 
-
-
-
-
     public boolean isTagPresent() {
 
         String tag = "#freetoedit";
@@ -100,24 +96,15 @@ public class SearchScreen implements CommonValues {
     }
 
 
-
-
-    public void verticalScrollToUpImageBrowser() {
+    public void scrollToUpImageBrowser() {
         utils.scrollVerticalFromCenterToUp(IMAGE_BROWSER);
     }
 
 
-
-
-
     public void clickOnTag() {
         String tag = "#freetoedit";
-        utils.clickElementByText(IMAGE_DESCRIPTION,tag);
+        utils.clickElementByText(IMAGE_DESCRIPTION, tag);
     }
-
-
-
-
 
 
     public boolean isSearchScreenPresent() {
@@ -128,7 +115,7 @@ public class SearchScreen implements CommonValues {
         utils.hideKeyboard();
     }
 
-    public void verticalScrollToUpSearchScreen() {
+    public void scrollToUp() {
         utils.scrollVerticalFromCenterToUp(SWIPE_REFRESH);
     }
 
@@ -144,7 +131,7 @@ public class SearchScreen implements CommonValues {
         return utils.getText(SUGGESTION_NAME);
     }
 
-    public boolean isXButtonPresentInSearchField() {
+    public boolean isInSearchFiledXButtonPresent() {
         return utils.isElementPresent(SEARCH_CLOSE_BTN);
 
     }
@@ -154,7 +141,7 @@ public class SearchScreen implements CommonValues {
     }
 
 
-    public void clickSuggestionName() {
+    public void clickItemFromSuggested() {
         utils.clickByIndex(SUGGESTION_NAME, 2);
     }
 }

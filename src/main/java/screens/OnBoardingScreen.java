@@ -33,8 +33,7 @@ public class OnBoardingScreen implements CommonValues {
 
     //Views
 
-    private By POPUP_CANCEL_BUTTON = By.id("com.google.android.gms:id/cancel");
-    private By CONTINUE_WITH_EMAIL_POPUP = By.id("com.google.android.gms:id/credential_picker_layout");
+    private By CANCEL_BUTTON = By.id("com.google.android.gms:id/cancel");
     private By FORGOT_PROFILE_PHOTO_POPUP = By.id(APP_PACKAGE_NAME + ":id/pop_up_layout");
 
 
@@ -42,12 +41,12 @@ public class OnBoardingScreen implements CommonValues {
         return utils.isElementPresent(REGISTER_STEP_SIGN_IN_BUTTON);
     }
 
-    public void registerStepSignInButton() {
+    public void clickSignInButton() {
         utils.clickById(REGISTER_STEP_SIGN_IN_BUTTON);
     }
 
     public void clickPopUpCancelButton() {
-        utils.clickById(POPUP_CANCEL_BUTTON);
+        utils.clickById(CANCEL_BUTTON);
 
     }
 
@@ -56,18 +55,18 @@ public class OnBoardingScreen implements CommonValues {
 
     }
 
-    public void typeSignInUsername() {
-        utils.typeText(USERNAME_FIELD, "kakao60");
+    public void typeUsername(String username) {
+        utils.typeText(USERNAME_FIELD, username);
 
 
     }
 
-    public void typeSignInPassword() {
-        utils.typeText(PASSWORD_FIELD, "qwertya");
+    public void typeSignInPassword(String password) {
+        utils.typeText(PASSWORD_FIELD, password);
     }
 
     public boolean isContinueWithEmailPopupPresent() {
-        return utils.isElementPresent(CONTINUE_WITH_EMAIL_POPUP);
+        return utils.isElementPresent(CANCEL_BUTTON);
     }
 
     public void clickNextButton() {
@@ -95,7 +94,7 @@ public class OnBoardingScreen implements CommonValues {
 
     }
 
-    public void typeUserInfoEmailText() {
+    public void typeEmail() {
         utils.typeText(REGISTER_INPUT_FIELD, utils.randomNumber() + "asd@gmail.com");
 
     }
@@ -108,7 +107,7 @@ public class OnBoardingScreen implements CommonValues {
         utils.typeText(REGISTER_INPUT_FIELD, "asdafasds");
     }
 
-    public void typePassword() {
+    public void typeRegisterPassword() {
         utils.typeText(REGISTER_INPUT_FIELD, "asdasdasd");
     }
 

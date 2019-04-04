@@ -1,16 +1,15 @@
 package steps;
 
 import io.appium.java_client.AppiumDriver;
-import screens.*;
-import utils.Utils;
+import screens.CreateFlowScreen;
+import screens.EditorScreen;
+import screens.ExploreScreen;
+import screens.PhotoChooserScreen;
 
 public class EditorSteps {
 
 
-    private AppiumDriver driver;
     private EditorScreen editorScreen;
-    private Utils utils;
-    private CreateFlowSteps createFlowSteps;
     private CreateFlowScreen createFlowScreen;
     private PhotoChooserScreen photoChooserScreen;
     private PhotoChooserSteps photoChooserSteps;
@@ -19,29 +18,24 @@ public class EditorSteps {
 
 
     public EditorSteps(AppiumDriver driver) {
-        this.driver = driver;
         editorScreen = new EditorScreen(driver);
-        utils = new Utils(driver);
-        createFlowSteps = new CreateFlowSteps(driver);
         createFlowScreen = new CreateFlowScreen(driver);
         photoChooserScreen = new PhotoChooserScreen(driver);
         photoChooserSteps = new PhotoChooserSteps(driver);
         exploreScreen = new ExploreScreen(driver);
         shopSteps = new ShopSteps(driver);
-
     }
 
 
 
     public void openEditorWithFreeToEditImage() {
         exploreScreen.clickFubButton();
-//        createFlowSteps.accessPhotoPermission(); //todo harcnel toxnel mna esi te jnjem ?
         createFlowScreen.clickAllPhotoButton();
         photoChooserScreen.clickArrowButton();
         photoChooserScreen.clickFreeToEditButton();
         photoChooserScreen.clickOnPhoto();
         photoChooserSteps.skipChooseImageSize();
-        shopSteps.skipGoldPopup();
+        shopSteps.skipSubscriptionPopup();
     }
 
 
@@ -63,19 +57,17 @@ public class EditorSteps {
 
     public void goToEditorScreenFromRecentImage() {
         exploreScreen.clickFubButton();
-//        createFlowSteps.accessPhotoPermission();
         createFlowScreen.clickAllPhotoButton();
         photoChooserScreen.clickOnPhoto();
         photoChooserSteps.skipChooseImageSize();
-        shopSteps.skipGoldPopup();
+        shopSteps.skipSubscriptionPopup();
     }
 
     public void goToDrawScreenFromCreateFlow() {
         exploreScreen.clickFubButton();
-//        createFlowSteps.accessPhotoPermission();
         int repeat = 4;
         while (!createFlowScreen.isCreateNewButtonPresent() && repeat > 0) {
-            createFlowScreen.scrollVerticalFromCenterToUpCreateFLowScreen();
+            createFlowScreen.scrollToUp();
             repeat--;
         }
         createFlowScreen.clickCreateNewButton();

@@ -80,5 +80,4 @@ public class AppiumServerStartSession implements CommonValues {
         service.start();
         return service.getUrl().toString();
     }
-
 }

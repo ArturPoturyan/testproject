@@ -1,14 +1,14 @@
 package steps;
 
 import io.appium.java_client.AppiumDriver;
+import screens.DiscoverScreen;
 
 public class DiscoverSteps {
-
-    private AppiumDriver driver;
+    private DiscoverScreen discoverScreen;
 
 
     public DiscoverSteps(AppiumDriver driver) {
-        this.driver = driver;
+        discoverScreen = new DiscoverScreen(driver);
     }
 
 }

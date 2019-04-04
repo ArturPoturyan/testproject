@@ -25,10 +25,10 @@ public class RegisterTest extends AppiumServerStartSession {
     @Test
     public void verifyFunctionalityOfRegister() {
         onboardingScreen.clickNextButton();
-        onboardingScreen.typeUserInfoEmailText();
+        onboardingScreen.typeEmail();
         assertTrue(onboardingScreen.isNextButtonEnabled(), "User info email next button in not enable ");
         onboardingScreen.clickNextButton();
-        onboardingScreen.typePassword();
+        onboardingScreen.typeRegisterPassword();
         assertTrue(onboardingScreen.isNextButtonEnabled(), "password next button is not enable ");
         onboardingScreen.clickNextButton();
         onboardingScreen.clickNextButton();

@@ -23,6 +23,7 @@ public class CreateFlowScreen implements CommonValues {
     private By CREATE_FLOW_CARD_TEXT = By.id(APP_PACKAGE_NAME + ":id/card_text");
     private By DESCRIPTION = By.id(APP_PACKAGE_NAME + ":id/description");
     private By CREATE_FLOW_RECYCLER_VIEW = By.id(APP_PACKAGE_NAME + ":id/recycler_view");
+    private By CREATE_FLOW_SEARCH = By.id(APP_PACKAGE_NAME + ":id/menu_create_flow_search");
 
 
     //Views
@@ -32,7 +33,15 @@ public class CreateFlowScreen implements CommonValues {
 
     }
 
-    public void scrollVerticalFromCenterToUpCreateFLowScreen() {
+    public boolean isCreateFlowScreenPresent() {
+        return utils.isElementPresent(CREATE_FLOW_SEARCH);
+    }
+    public void clickBackImageButton() {
+        utils.clickById(BACK_IMAGE_BUTTON);
+    }
+
+
+    public void scrollToUp() {
         utils.scrollVerticalFromCenterToUp(CREATE_FLOW_RECYCLER_VIEW);
 
     }
@@ -69,8 +78,5 @@ public class CreateFlowScreen implements CommonValues {
         utils.clickById(PERMISSION_ALLOW_BUTTON);
     }
 
-    public void clickBackImageButton() {
-        utils.clickById(BACK_IMAGE_BUTTON);
-    }
 
 }

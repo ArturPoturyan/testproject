@@ -51,7 +51,7 @@ public class MyNetworkScreen implements CommonValues {
     }
 
 
-    public void clickBackButtonInCommentActivity() {
+    public void clickFromCommentActivityBackButton() {
         utils.clickById(IMAGE_BUTTON);
 
     }
@@ -64,7 +64,7 @@ public class MyNetworkScreen implements CommonValues {
         return utils.isElementByTextPresent(PICSART_BUTTON_TEXT, "REPOST");
     }
 
-    public void swipeImageHorizontalCenterToLeft() {
+    public void swipeImageToLeft() {
         utils.horizontalSwipeFromCenterToLeft(IMAGE_BROWSER_MAIN_IMAGE);
     }
 
@@ -73,10 +73,10 @@ public class MyNetworkScreen implements CommonValues {
     }
 
     public void typeCommentText() {
-        utils.typeText(COMMENT_INPUT_FIELD, "Nice photo :)");
+        utils.typeText(COMMENT_INPUT_FIELD, "oh");
     }
 
-    public void clickRepostButtonInMoreMenu() {
+    public void clickFromMoreMenuRepostButton() {
         utils.clickById(MORE_REPOST_BUTTON);
     }
 
@@ -97,7 +97,7 @@ public class MyNetworkScreen implements CommonValues {
     }
 
 
-    public void verticalScrollToUpMyNetworkScreen() {
+    public void scrollToUp() {
         utils.scrollVerticalFromCenterToUp(SWIPE_REFRESH);
     }
 
@@ -106,7 +106,7 @@ public class MyNetworkScreen implements CommonValues {
     }
 
 
-    public void clickMyNetworkButton() {
+    public void clickMyNetworkTab() {
         utils.clickById(MY_NETWORK_BUTTON);
     }
 
@@ -118,11 +118,11 @@ public class MyNetworkScreen implements CommonValues {
         utils.clickById(MENU_EDIT_BUTTON);
     }
 
-    public boolean isImageSettingsPresent() {
+    public boolean isImageSettingsPresent() {//todo rename
         return utils.isElementPresent(MENU_EDIT_BUTTON);
     }
 
-    public void clickMoreButtonInImageBrowser() {
+    public void clickImageBrowserMoreButton() {
         utils.clickById(MORE_BUTTON);
     }
 
@@ -131,7 +131,7 @@ public class MyNetworkScreen implements CommonValues {
     }
 
 
-    public void clickImageByIndexMyNetworkTab() {
+    public void clickImageFromMyNetworkTab() {
         utils.clickByIndex(ZOOMABLE_ITEM, 0);
 
     }

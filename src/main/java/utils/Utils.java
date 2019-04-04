@@ -82,7 +82,8 @@ public class Utils {
     public boolean isElementSelected(By by) {
         return driver.findElement(by).isSelected();
     }
-    public boolean isElementSelected(By by,String text) {
+
+    public boolean isElementSelected(By by, String text) {
         return driver.findElement(by).isSelected();
     }
 
@@ -158,7 +159,7 @@ public class Utils {
         int widthEnd = element.getLocation().getX() + 2;
         TouchAction swipe = new TouchAction(driver);
         swipe.press(point(width, height))
-                .waitAction(waitOptions(Duration.ofSeconds(1)))
+                .waitAction(waitOptions(Duration.ofSeconds(2)))
                 .moveTo(point(widthEnd, height))
                 .release().perform();
     }
@@ -195,7 +196,8 @@ public class Utils {
 
     }
 
-    public void horizontalSwipeFromCenterToRight(By by, int number) {
+
+    public void horizontalSwipeFromCenterToRight(By by, int number,int duration) {
         MobileElement element = driver.findElements(by).get(number);
         int widthX = element.getLocation().getX();
         int heightY = element.getLocation().getY();
@@ -206,7 +208,7 @@ public class Utils {
 
         TouchAction swipe = new TouchAction(driver);
         swipe.press(point(width, height))
-                .waitAction(waitOptions(Duration.ofSeconds(1)))
+                .waitAction(waitOptions(Duration.ofMillis(duration)))
                 .moveTo(point(widthEnd, height))
                 .release().perform();
     }

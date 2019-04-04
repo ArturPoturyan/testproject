@@ -26,7 +26,7 @@ public class PhotoChooserScreen implements CommonValues {
 
 
     //Views
-    public boolean isPhotoChooserImageListPresent() {
+    public boolean isPhotoChooserPresent() {//todo rename
         return utils.isElementPresent(GRID_IMAGE_ITEM);
     }
 

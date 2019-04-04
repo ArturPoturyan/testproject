@@ -32,7 +32,7 @@ public class DiscoverScreen implements CommonValues {
     }
 
 
-    public void verticalScrollToUpDiscoverArtistsScreen() {
+    public void verticalScrollToUp() {
         utils.scrollVerticalFromCenterToUp(SUGGESTED_FRIENDS_CONTAINER);
 
     }

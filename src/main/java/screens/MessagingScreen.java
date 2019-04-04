@@ -36,14 +36,20 @@ public class MessagingScreen implements CommonValues {
     private By ITEM_IMAGE = By.id(APP_PACKAGE_NAME + ":id/item_image");
     private By TITLES_LAYOUT = By.id(APP_PACKAGE_NAME + ":id/titles_layout");
     private By CHAT_CONFIG_DONE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/chat_config_done_button");
+    private By CATEGORIES_LIST = By.id(APP_PACKAGE_NAME + ":id/categories_list");
+    private By CATEGORY_ICON = By.id(APP_PACKAGE_NAME + ":id/category_icon");
 
 
     //Views
     private By PAGING_RECYLER_VIEW = By.id(APP_PACKAGE_NAME + ":id/paging_recycler_view_id");
     private By CONFIG_RENAME_EDIT_TEXT = By.id(APP_PACKAGE_NAME + ":id/config_rename_edit_text");
     private By CHAT_SYSTEM_NOT = By.id(APP_PACKAGE_NAME + ":id/chat_system_not");
+    private By FRAME_LAYOUT = By.className("android.widget.FrameLayout");
 
 
+    public void clickStickerCategory() {
+        utils.clickByIndex(CATEGORY_ICON, 3);
+    }
 
     public void clickChatConfigDoneButton() {
         utils.clickById(CHAT_CONFIG_DONE_BUTTON);
@@ -75,6 +81,10 @@ public class MessagingScreen implements CommonValues {
 
     }
 
+    public void clickStickerCategoryByIndex() {
+        utils.clickElementOfListIndex(CATEGORIES_LIST, FRAME_LAYOUT, 1);
+
+    }
 
 
     public boolean isGroupConversationPresent() {
@@ -103,7 +113,7 @@ public class MessagingScreen implements CommonValues {
     }
 
     public boolean isRemixChatUsernamePresent(String username) {
-        return utils.getText(CHANNEL_NAME).contains(username);
+        return utils.isElementByTextPresent(CHANNEL_NAME, username);
 
     }
 
@@ -155,12 +165,16 @@ public class MessagingScreen implements CommonValues {
         utils.scrollVerticalFromCenterToUp(PAGING_RECYLER_VIEW);
     }
 
-    public void verticalScrollToUpRemixChatScreen() {
+    public void scrollToUp() {
         utils.scrollVerticalFromCenterToUp(PAGING_RECYLER_VIEW);
     }
 
     public boolean isMessagingUsernamePresent(String username) {
         return utils.getText(MESSAGING_FOLLOWING_USERNAME).contains(username);
+    }
+
+    public boolean isStickerCategoryItemPresent() {
+        return utils.isElementPresent(CATEGORIES_LIST);
     }
 
     public boolean isMessagingTabPresent() {

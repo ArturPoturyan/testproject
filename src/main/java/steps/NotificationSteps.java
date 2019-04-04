@@ -8,10 +8,8 @@ import static org.testng.AssertJUnit.assertTrue;
 public class NotificationSteps {
 
     private NotificationScreen notificationScreen;
-    AndroidDriver driver;
 
     public NotificationSteps(AndroidDriver driver) {
-        this.driver = driver;
         notificationScreen = new NotificationScreen(driver);
     }
 

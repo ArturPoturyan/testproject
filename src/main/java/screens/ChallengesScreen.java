@@ -42,7 +42,7 @@ public class ChallengesScreen implements CommonValues {
     private By TEXT_VIEW = By.className("android.widget.TextView");
 
 
-    public void clickChallengesTabButton() {
+    public void clickChallengesTab() {
         utils.clickById(CHALLENGES_TAB);
     }
 
@@ -58,7 +58,7 @@ public class ChallengesScreen implements CommonValues {
         utils.clickById(ACTION_LEADER_BOARD);
     }
 
-    public void clickBackButtonInVotingScreen() {
+    public void clickFromVotingScreenBackButton() {
         utils.clickById(IMAGE_BUTTON);
     }
 
@@ -110,7 +110,7 @@ public class ChallengesScreen implements CommonValues {
         utils.clickById(NEGATIVE_BUTTON);
     }
 
-    public void scrollVerticalFromCenterToUpChallengesScreen() {
+    public void scrollToUp() {
         utils.scrollVerticalFromCenterToUp(FRAGMENT_CHALLENGES_RECYCLER_VIEW);
     }
 

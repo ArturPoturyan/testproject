@@ -4,24 +4,20 @@ import io.appium.java_client.AppiumDriver;
 import screens.ShopScreen;
 
 public class ShopSteps {
-    private AppiumDriver driver;
     private ShopScreen shopScreen;
 
     public ShopSteps(AppiumDriver driver) {
-        this.driver = driver;
         shopScreen = new ShopScreen(driver);
 
     }
 
 
-    public void skipGoldPopup() {
+    public void skipSubscriptionPopup() {
         if (shopScreen.isPicsArtGoldPopupPresent()) {
             shopScreen.clickGoldPopupSkipButton();
         }
-    }
-    public void skipGoldOfferScreen() {
         if (shopScreen.isSubscriptionOfferScreenPresent()) {
-            shopScreen.clickXButtonInOfferScreen();
+            shopScreen.clickOfferScreenXButton();
         }
     }
     public void skipContactUsScreen(){

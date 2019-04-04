@@ -1,11 +1,12 @@
 package steps;
 
 import io.appium.java_client.AppiumDriver;
+import screens.MessagingScreen;
 
 public class MessagingSteps {
-    private AppiumDriver driver;
+    private MessagingScreen messagingScreen;
 
     public MessagingSteps(AppiumDriver driver) {
-        this.driver = driver;
+        messagingScreen = new MessagingScreen(driver);
     }
 }
