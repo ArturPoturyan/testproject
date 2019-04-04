@@ -37,9 +37,6 @@ public class SearchScreen implements CommonValues {
     //Views
 
 
-    //    public boolean isFollowButtonPresentInArtistsTab() {
-//        return utils.isElementPresent(BTN_FOLLOW);
-//    }
     public boolean isClearSearchHistoryPopupPresent() {
         return utils.isElementPresent(SEARCH_HISTORY_BUTTON1);
     }

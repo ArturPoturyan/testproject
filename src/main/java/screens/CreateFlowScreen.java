@@ -36,6 +36,7 @@ public class CreateFlowScreen implements CommonValues {
     public boolean isCreateFlowScreenPresent() {
         return utils.isElementPresent(CREATE_FLOW_SEARCH);
     }
+
     public void clickBackImageButton() {
         utils.clickById(BACK_IMAGE_BUTTON);
     }
@@ -63,19 +64,6 @@ public class CreateFlowScreen implements CommonValues {
 
     public void clickAllPhotoButton() {
         utils.clickByIndex(CREATE_FLOW_CARD_TEXT, 0);
-    }
-
-    public boolean isStoragePermissionPopupPresent() {
-
-        return utils.isElementPresent(STORAGE_PERMISSION_POPUP);
-    }
-
-    public void clickPermissionLetIsGoButton() {
-        utils.clickById(POSITIVE_BUTTON);
-    }
-
-    public void clickPermissionAllowButton() {
-        utils.clickById(PERMISSION_ALLOW_BUTTON);
     }
 
 

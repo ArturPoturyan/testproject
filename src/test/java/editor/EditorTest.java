@@ -46,11 +46,7 @@ public class EditorTest extends AppiumServerStartSession {
     public void verifyFunctionalityOfImageSharedSuccessfully() {
         editorSteps.goToEditorScreenFromRecentImage();
         assertTrue(editorScreen.isEditorScreenPresent(), "Editor screen is not present");
-        int repeat = 5;
-        while (!editorScreen.isEffectsButtonPresent() && repeat > 0) {
-            editorScreen.swipeEditorPanelToLeft();
-            repeat--;
-        }
+        editorScreen.swipeTillItemAppear(editorScreen.EFFECTS_BUTTON, editorScreen.EDITOR_BOTTOM_PANEL, 5);
         editorScreen.clickEffectsButton();
         editorScreen.chooseBlurCategoryByName();
         editorScreen.clickBlurEffect();

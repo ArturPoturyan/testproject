@@ -20,12 +20,9 @@ public class NotificationScreen implements CommonValues {
 
     //Buttons
     private By NOTIFICATION_BUTTON = By.id(APP_PACKAGE_NAME + ":id/menu_main_notification");
-    private By POSITIVE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_positive");
-    private By PERMISSION_ALLOW_BUTTON = By.id("com.android.packageinstaller:id/permission_allow_button");
     private By BACK_IMAGE_BUTTON = By.className("android.widget.ImageButton");
     private By PRIMARY_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_primary");
     private By NOTIFICATIONS_TAB_BAR = By.className("android.support.v7.app.ActionBar$Tab");
-    private By NOTIFICATIONS_SCREEN_BACK_BUTTON = By.id(APP_PACKAGE_NAME + ":id/pa_upload_btn_back");
     private By NEGATIVE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_negative");
     private By EDITOR_NEXT_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_share");
     private By EMPTY_STATE_TEXT = By.id(APP_PACKAGE_NAME + ":id/tv_title");
@@ -35,7 +32,6 @@ public class NotificationScreen implements CommonValues {
     private By PROFILE_LOGOUT_BUTTON = By.id(APP_PACKAGE_NAME + ":id/profile_menu_logout");
     private By DIALOG_OK_BUTTON = By.id(APP_PACKAGE_NAME + ":id/dialog_ok_btn");
     private By PROFILE_FOLLOWINGS_BUTTON = By.id(APP_PACKAGE_NAME + ":id/tv_followings");
-    private By DISPLAY_NAME = By.id(APP_PACKAGE_NAME + ":id/display_name");
     private By FOLLOW_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_follow");
     private By IMAGE_BROWSER_MAIN_IMAGE = By.id(APP_PACKAGE_NAME + ":id/image_browser_main_image");
     private By PROFILE_MENU_SETTINGS = By.id(APP_PACKAGE_NAME + ":id/profile_menu_settings");
@@ -45,9 +41,6 @@ public class NotificationScreen implements CommonValues {
     private By CHOOSE_EMAIL_CLIENT = By.id("android:id/title_default");
 
     //Views
-    private By STORAGE_PERMISSION_POPUP = By.id(APP_PACKAGE_NAME + ":id/pop_up_layout");
-    private By PHOTO_ACCESS_PERMISSION_POPUP = By.id("com.android.packageinstaller:id/dialog_container");
-    private By CREATE_FLOW_SCREEN = By.id(APP_PACKAGE_NAME + ":id/recycler_view");
     private By TRY_GOLD_FOR_FREE = By.id(APP_PACKAGE_NAME + ":id/main_content");
     private By AVATAR_ICON = By.id(APP_PACKAGE_NAME + ":id/action_bar_avatar");
     private By HOME_PAGING_RECYCLER_VIEW = By.id(APP_PACKAGE_NAME + ":id/paging_recycler_view_id");
@@ -95,11 +88,6 @@ public class NotificationScreen implements CommonValues {
         utils.typeText(COMMENT_INPUT_FIELD, "I LOVE YOU!!!!!");
     }
 
-    public void clearCommentField() {
-        utils.clearTextField(COMMENT_INPUT_FIELD);
-    }
-
-
     public void clickCommentInputField() {
         utils.clickById(COMMENT_INPUT_FIELD);
     }
@@ -108,10 +96,6 @@ public class NotificationScreen implements CommonValues {
         utils.clickById(PROFILE_MENU_SETTINGS);
     }
 
-
-    public boolean isPicsArtUserPresent() {
-        return utils.getText(DISPLAY_NAME).equals("PicsArt");
-    }
 
     public void clickFollowingsButton() {
         utils.clickById(PROFILE_FOLLOWINGS_BUTTON);
@@ -127,10 +111,6 @@ public class NotificationScreen implements CommonValues {
 
     public void clickProfileMoreButton() {
         utils.clickById(PROFILE_MORE_BUTTON);
-    }
-
-    public boolean isMyNetworkPresent() {
-        return utils.isElementPresent(MY_NETWORK_BUTTON);
     }
 
     public boolean isProfileTabPresent() {
@@ -184,14 +164,6 @@ public class NotificationScreen implements CommonValues {
 
     }
 
-    public void clickPermissionLetIsGoButton() {
-        utils.clickById(POSITIVE_BUTTON);
-    }
-
-    public void clickPermissionAllowButton() {
-        utils.clickById(PERMISSION_ALLOW_BUTTON);
-    }
-
     public void clickBackImageButton() {
         utils.clickById(BACK_IMAGE_BUTTON);
     }
@@ -209,24 +181,6 @@ public class NotificationScreen implements CommonValues {
         utils.clickByIndex(NOTIFICATIONS_TAB_BAR, 2);
 
 
-    }
-
-    public void resetPicsArtAppData() {
-        utils.resetApp();
-    }
-
-    public boolean isCreateFlowScreenPresent() {
-        return utils.isElementPresent(CREATE_FLOW_SCREEN);
-    }
-
-
-    public boolean isDevicePhotosPermissionPopupPresent() {
-        return utils.isElementPresent(PHOTO_ACCESS_PERMISSION_POPUP);
-    }
-
-    public boolean isStoragePermissionPopupPresent() {
-
-        return utils.isElementPresent(STORAGE_PERMISSION_POPUP);
     }
 
 

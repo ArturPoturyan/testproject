@@ -41,10 +41,9 @@ public class MessagingScreen implements CommonValues {
 
 
     //Views
-    private By PAGING_RECYLER_VIEW = By.id(APP_PACKAGE_NAME + ":id/paging_recycler_view_id");
+    private By PAGING_RECYCLER_VIEW = By.id(APP_PACKAGE_NAME + ":id/paging_recycler_view_id");
     private By CONFIG_RENAME_EDIT_TEXT = By.id(APP_PACKAGE_NAME + ":id/config_rename_edit_text");
     private By CHAT_SYSTEM_NOT = By.id(APP_PACKAGE_NAME + ":id/chat_system_not");
-    private By FRAME_LAYOUT = By.className("android.widget.FrameLayout");
 
 
     public void clickStickerCategory() {
@@ -81,10 +80,6 @@ public class MessagingScreen implements CommonValues {
 
     }
 
-    public void clickStickerCategoryByIndex() {
-        utils.clickElementOfListIndex(CATEGORIES_LIST, FRAME_LAYOUT, 1);
-
-    }
 
 
     public boolean isGroupConversationPresent() {
@@ -162,11 +157,11 @@ public class MessagingScreen implements CommonValues {
     }
 
     public void verticalScrollToUpStartConversationScreen() {
-        utils.scrollVerticalFromCenterToUp(PAGING_RECYLER_VIEW);
+        utils.scrollVerticalFromCenterToUp(PAGING_RECYCLER_VIEW);
     }
 
     public void scrollToUp() {
-        utils.scrollVerticalFromCenterToUp(PAGING_RECYLER_VIEW);
+        utils.scrollVerticalFromCenterToUp(PAGING_RECYCLER_VIEW);
     }
 
     public boolean isMessagingUsernamePresent(String username) {

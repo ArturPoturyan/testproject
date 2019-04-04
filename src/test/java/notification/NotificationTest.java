@@ -53,7 +53,6 @@ public class NotificationTest extends AppiumServerStartSession {
     public void verifyAppearanceOfEmptyStateInFollowingTab() {
         notificationSteps.logOutFromPicsArt();
         onboardingSteps.registerNewUser();
-//        createFlowSteps.accessPhotoPermission();
         createFlowScreen.clickBackImageButton();
         notificationScreen.clickProfileTab();
         notificationScreen.clickFollowingsButton();
@@ -82,7 +81,7 @@ public class NotificationTest extends AppiumServerStartSession {
 
     //TODO PIA-53614,PIA-53620
     //[InApp_Notifications] verify appearance and functionality of let is start button
-    @Test(priority = 3, dependsOnMethods = {"verifyAppearanceOfEmptyStateInFollowingTab"})
+    @Test
     public void verifyAppearanceAndFunctionalityOfLetIsStartButton() {
         notificationScreen.clickFeedsTab();
         notificationScreen.clickNotificationButton();
@@ -91,7 +90,7 @@ public class NotificationTest extends AppiumServerStartSession {
         photoChooserScreen.clickOnPhoto();
         notificationSteps.skipGoldPopup();
         notificationScreen.clickEditorNextButton();
-//        shareScreen.clickUploadShareButton();
+        shareScreen.clickUploadShareButton();
         shareScreen.clickDoneButton();
         notificationScreen.clickProfileTab();
         assertTrue(notificationScreen.isProfileMoreButtonPresent(), "Profile more button is not present ");

@@ -26,18 +26,16 @@ public class EditorScreen implements CommonValues {
     private By CATEGORY_NAME = By.id(APP_PACKAGE_NAME + ":id/category_name");
     private By APPLY_DONE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/button_done");
     private By EDITOR_NEXT_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_share");
-    private By CREATE_FLOW_PHOTOS_CATEGORY = By.id(APP_PACKAGE_NAME + ":id/image");
-    private By DRAW_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_draw");
+    public By DRAW_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_draw");
     private By OPEN_PICS_ART_DRAWING_BUTTON = By.id(APP_PACKAGE_NAME + ":id/open_picsart_drawing");
     private By DRAW_BRUSH_BUTTON = By.id(APP_PACKAGE_NAME + ":id/mode_draw");
     private By DRAWING_BRUSH_ITEM = By.id(APP_PACKAGE_NAME + ":id/drawing_brush_normal");
     private By OK_BUTTON = By.id(APP_PACKAGE_NAME + ":id/ok");
     private By UNDO_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_undo");
-    private By POSITIVE_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_positive");
     private By ADD_OBJECT_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_add_objects");
     private By DRAWING_ADD_PHOTO_BUTTON = By.id(APP_PACKAGE_NAME + ":id/drawing_add_photoID");
     private By BTN_ACTION_DONE = By.id(APP_PACKAGE_NAME + ":id/btn_action_done");
-    private By BUTTON_STICKER = By.id(APP_PACKAGE_NAME + ":id/btn_sticker");
+    public By BUTTON_STICKER = By.id(APP_PACKAGE_NAME + ":id/btn_sticker");
     private By ITEM = By.id(APP_PACKAGE_NAME + ":id/zoomable_item_id");
     private By DONE_BTN = By.id(APP_PACKAGE_NAME + ":id/btn_done");
 
@@ -49,17 +47,12 @@ public class EditorScreen implements CommonValues {
     private By DRAWING_LAYERS_CONTAINER = By.id(APP_PACKAGE_NAME + ":id/drawing_layers_container");
     private By EFFECTS_BOTTOM_PANEL = By.id(APP_PACKAGE_NAME + ":id/effects_category_list");
     private By SIMPLE_PROGRESS = By.id(APP_PACKAGE_NAME + ":id/simple_progress");
-    private By STORAGE_PERMISSION_POPUP = By.id(APP_PACKAGE_NAME + ":id/pop_up_layout");
-    private By PHOTO_ACCESS_PERMISSION_POPUP = By.id("com.android.packageinstaller:id/dialog_container");
-    private By PERMISSION_ALLOW_BUTTON = By.id("com.android.packageinstaller:id/permission_allow_button");
     private By CREATE_FLOW_SCREEN = By.id(APP_PACKAGE_NAME + ":id/recycler_view");
     private By BACK_IMAGE_BUTTON = By.className("android.widget.ImageButton");
-    private By SHOP_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_shop");
+    public By SHOP_BUTTON = By.id(APP_PACKAGE_NAME + ":id/btn_shop");
+    private By ITEM_LIST = By.id(APP_PACKAGE_NAME + ":id/item_list");
+    private By PARENT_LAYOUT = By.id(APP_PACKAGE_NAME + ":id/parent_layout");
 
-
-    public boolean isShopButtonPresent() {
-        return utils.isElementPresent(SHOP_BUTTON);
-    }
 
     public void clickShopButton() {
         utils.clickById(SHOP_BUTTON);
@@ -74,20 +67,6 @@ public class EditorScreen implements CommonValues {
         return utils.isElementPresent(BUTTON_STICKER);
     }
 
-//    public void clickRecentCategoryButton() {
-//        utils.clickElementByText(CATEGORY_NAME, "Recent");
-//
-//    }
-
-
-//    public boolean isRecentCategoryButtonPresent() {
-//        return utils.isElementByTextPresent(CATEGORY_NAME, "Recent");
-//    }
-
-    public boolean isDiscoverCategoryButtonPresent() {
-        return utils.isElementByTextPresent(CATEGORY_NAME, "Discover");
-    }
-
     public void clickDiscoverCategoryButton() {
         utils.clickElementByText(CATEGORY_NAME, "Discover");
 
@@ -98,13 +77,8 @@ public class EditorScreen implements CommonValues {
 
     }
 
-
-//    public void clickOnStickerFromRecentCategory() {
-//        utils.clickByIndex(ITEM_IMAGE, 0);
-//    }
-
     public void clickOnStickerItem() {
-        utils.clickByIndex(ITEM, 1);
+        utils.clickElementOfListIndex(ITEM_LIST, PARENT_LAYOUT, 1);
     }
 
     public void clickStickerButton() {
@@ -130,22 +104,6 @@ public class EditorScreen implements CommonValues {
         utils.clickById(ADD_OBJECT_BUTTON);
     }
 
-    public boolean isStoragePermissionPopupPresent() {
-
-        return utils.isElementPresent(STORAGE_PERMISSION_POPUP);
-    }
-
-    public void clickPermissionLetIsGoButton() {
-        utils.clickById(POSITIVE_BUTTON);
-    }
-
-    public boolean isDevicePhotosPermissionPopupPresent() {
-        return utils.isElementPresent(PHOTO_ACCESS_PERMISSION_POPUP);
-    }
-
-    public void clickPermissionAllowButton() {
-        utils.clickById(PERMISSION_ALLOW_BUTTON);
-    }
 
     public boolean isCreateFlowScreenPresent() {
         return utils.isElementPresent(CREATE_FLOW_SCREEN);
@@ -197,10 +155,6 @@ public class EditorScreen implements CommonValues {
 
     public void clickPicsArtDrawingButton() {
         utils.clickById(OPEN_PICS_ART_DRAWING_BUTTON);
-    }
-
-    public void clickCreateFlowImage() {
-        utils.clickByIndex(CREATE_FLOW_PHOTOS_CATEGORY, 2);
     }
 
 
@@ -316,42 +270,22 @@ public class EditorScreen implements CommonValues {
         return utils.isElementPresent(EDITOR_BOTTOM_PANEL);
     }
 
-    public boolean isEffectsButtonPresent() {
-        return utils.isElementPresent(EFFECTS_BUTTON);
-
-    }
-
     public void swipeTillItemAppear(By by, By scrollableView, int repeat) {
         if (!utils.isElementPresent(by)) {
             for (int i = 0; i < 5; i++) {
                 utils.horizontalSwipeFromCenterToRight(scrollableView, 0, 400);
             }
-            //swipe amenacer@ by duration //scrollableView
             while (!utils.isElementPresent(by) && repeat > 0) {
-                //swipe normal //scrollableView
                 utils.horizontalSwipeFromCenterToLeft(scrollableView);
                 repeat--;
-
             }
         }
     }
 
-    public boolean isDrawButtonPresent() {
-        return utils.isElementPresent(DRAW_BUTTON);
-    }
-
-    public void swipeEditorPanelToLeft() {
-        utils.horizontalSwipeFromCenterToLeft(EDITOR_BOTTOM_PANEL);
-
-    }
 
     public void swipeEditorPanelToRight() {
         utils.horizontalSwipeFromCenterToRight(EDITOR_BOTTOM_PANEL);
     }
-//
-//    public void swipeEffectsThumbsToRight() {
-//        utils.horizontalSwipeFromCenterToRight(EFFECT_THUMBS_RECYCLER_VIEW, 0);
-//    }
 
     public void clickDrawingBrushItem(int index) {
         utils.clickByIndex(DRAWING_BRUSH_ITEM, index);

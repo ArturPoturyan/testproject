@@ -59,10 +59,11 @@ public class LocalizationTest extends AppiumServerStartSession {
         challengesScreen = new ChallengesScreen(driver);
         challengesSteps = new ChallengesSteps(driver);
         editorSteps = new EditorSteps(driver);
-//
-//        if (onboardingScreen.isSignInButtonPresent()) {
-//            onboardingSteps.signIn();
-//        }
+
+        if (onboardingScreen.isSignInButtonPresent()) {
+            onboardingSteps.signIn();
+            createFlowSteps.clickFromCreateFlowScreenXbutton();
+        }
     }
 
     // Verify the functionality of following artists on Discover artists page
@@ -102,11 +103,7 @@ public class LocalizationTest extends AppiumServerStartSession {
     @Test
     public void step_2_verifyFunctionalityEditorShareFlow_part_2() {
         editorSteps.goToEditorScreenFromRecentImage();
-        int repeat = 5;
-        while (!editorScreen.isDrawButtonPresent() && repeat > 0) {
-            editorScreen.swipeEditorPanelToLeft();
-            repeat--;
-        }
+        editorScreen.swipeTillItemAppear(editorScreen.DRAW_BUTTON, editorScreen.EDITOR_BOTTOM_PANEL, 5);
         editorScreen.clickDrawButton();
         editorScreen.clickPicsArtDrawingButton();
         editorScreen.clickAddPhotoButton();
@@ -121,21 +118,13 @@ public class LocalizationTest extends AppiumServerStartSession {
     @Test
     public void step_2_verifyFunctionalityEditorShareFlow_part_3() {
         editorSteps.goToEditorScreenFromRecentImage();
-        int repeat = 5;
-        while (!editorScreen.isStickerButtonPresent() && repeat > 0) {
-            editorScreen.swipeEditorPanelToRight();
-            repeat--;
-        }
+        editorScreen.swipeTillItemAppear(editorScreen.BUTTON_STICKER, editorScreen.EDITOR_BOTTOM_PANEL, 5);
         editorScreen.clickStickerButton();
         editorScreen.clickLoveCategoryButton();
         editorScreen.clickOnStickerItem();
         shareScreen.clickDoneButton();
         assertTrue(editorScreen.isEditorScreenPresent(), "Editor screen is not present");
-        repeat = 5;
-        while (!editorScreen.isShopButtonPresent() && repeat > 0) {
-            editorScreen.swipeEditorPanelToRight();
-            repeat--;
-        }
+        editorScreen.swipeTillItemAppear(editorScreen.SHOP_BUTTON, editorScreen.EDITOR_BOTTOM_PANEL, 5);
         editorScreen.clickShopButton();
         assertTrue(shopScreen.isSubscriptionOfferScreenPresent(), "Offer screen is not present");
         shopScreen.clickOfferScreenXButton();
@@ -172,22 +161,22 @@ public class LocalizationTest extends AppiumServerStartSession {
     //Verify search functionality of search
     @Test
     public void step_3_verifyFunctionalityOfSearch_part_1() {//todo not run
-//        searchSteps.goToSearch();
-//        searchScreen.clickOnImagesTab();
-//        String typedText = "cr7";
-//        searchScreen.typeTextToSearchField(typedText);
-//        assertTrue(searchScreen.isInSearchFiledXButtonPresent(), "X button is not present in search field");//todo rename
-//        String descriptionText = searchScreen.getSuggestionNameText();
-//        assertTrue(descriptionText.contains(typedText), "the result of search keyword is not correspond");//todo arandznacnel
-//        searchScreen.clickItemFromSuggested();
-//        searchScreen.scrollToUp();
-//        searchScreen.clickImage();
-//        assertTrue(exploreScreen.isGalleryCommentButtonPresent(), "An image is not opened in photo browser");
-//        int repeat = 5;
-//        while (!searchScreen.isTagPresent() && repeat > 0) {
-//            searchScreen.scrollToUpImageBrowser();//todo repeat (done)
-//            repeat--;
-//        }
+        searchSteps.goToSearch();
+        searchScreen.clickOnImagesTab();
+        String typedText = "cr7";
+        searchScreen.typeTextToSearchField(typedText);
+        assertTrue(searchScreen.isInSearchFiledXButtonPresent(), "X button is not present in search field");//todo rename
+        String descriptionText = searchScreen.getSuggestionNameText();
+        assertTrue(descriptionText.contains(typedText), "the result of search keyword is not correspond");//todo arandznacnel
+        searchScreen.clickItemFromSuggested();
+        searchScreen.scrollToUp();
+        searchScreen.clickImage();
+        assertTrue(exploreScreen.isGalleryCommentButtonPresent(), "An image is not opened in photo browser");
+        int repeat = 5;
+        while (!searchScreen.isTagPresent() && repeat > 0) {
+            searchScreen.scrollToUpImageBrowser();//todo repeat (done)
+            repeat--;
+        }
         searchScreen.clickOnTag();//todo im uzac tag@ chem karum click anem
         assertTrue(exploreScreen.isActionBarFromHashtagPresent(), "the tag screen is not opened");//todo poxel (done)
         exploreScreen.clickOnHashtagScreenBackButton();
