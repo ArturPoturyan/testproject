@@ -66,11 +66,11 @@ public class EditorScreen implements CommonValues {
     public boolean isStickerButtonPresent() {
         return utils.isElementPresent(BUTTON_STICKER);
     }
-
-    public void clickDiscoverCategoryButton() {
-        utils.clickElementByText(CATEGORY_NAME, "Discover");
-
-    }
+//
+//    public void clickDiscoverCategoryButton() {
+//        utils.clickElementByText(CATEGORY_NAME, "Discover");
+//
+//    }
 
     public void clickLoveCategoryButton() {
         utils.clickElementByText(CATEGORY_NAME, "Love");

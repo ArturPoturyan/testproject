@@ -138,7 +138,7 @@ public class SearchScreen implements CommonValues {
     }
 
 
-    public void clickItemFromSuggested() {
+    public void clickItemFromSuggestedList() {
         utils.clickByIndex(SUGGESTION_NAME, 2);
     }
 }

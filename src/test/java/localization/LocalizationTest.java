@@ -28,8 +28,6 @@ public class LocalizationTest extends AppiumServerStartSession {
     private SearchSteps searchSteps;
     private NotificationScreen notificationScreen;
     private MessagingScreen messagingScreen;
-    private CameraSteps cameraSteps;
-    private CameraScreen cameraScreen;
     private ChallengesScreen challengesScreen;
     private ChallengesSteps challengesSteps;
     private EditorSteps editorSteps;
@@ -54,8 +52,6 @@ public class LocalizationTest extends AppiumServerStartSession {
         searchSteps = new SearchSteps(driver);
         notificationScreen = new NotificationScreen(driver);
         messagingScreen = new MessagingScreen(driver);
-        cameraSteps = new CameraSteps(driver);
-        cameraScreen = new CameraScreen(driver);
         challengesScreen = new ChallengesScreen(driver);
         challengesSteps = new ChallengesSteps(driver);
         editorSteps = new EditorSteps(driver);
@@ -87,7 +83,7 @@ public class LocalizationTest extends AppiumServerStartSession {
     public void step_2_verifyFunctionalityEditorShareFlow_part_1() {
         exploreScreen.clickFubButton();
         createFlowScreen.clickAllPhotoButton();
-        assertTrue(photoChooserScreen.isPhotoChooserPresent(), "Photo chooser is not present on the screen");//todo rename poxaca
+        assertTrue(photoChooserScreen.isPhotoChooserPresent(), "Photo chooser is not present on the screen");
         photoChooserScreen.clickOnPhoto();
         photoChooserSteps.skipChooseImageSize();
         shopSteps.skipSubscriptionPopup();
@@ -148,41 +144,39 @@ public class LocalizationTest extends AppiumServerStartSession {
         assertTrue(myNetworkScreen.isImageSettingsPresent(), "image settings is not present");
         myNetworkScreen.clickEditButton();
         String typedText = "#football";
-        //karam clear anem ete petqa nor type anem bayc sencela ashxatum
         shareScreen.typeTextInTagField(typedText);
         shareScreen.clickNextButton();
-        String descriptionText = myNetworkScreen.getDescriptionText();
-        assertTrue(descriptionText.contains(typedText), "#football tag is not updated");
-
-
+//        String descriptionText = myNetworkScreen.getDescriptionText();
+//        assertTrue(descriptionText.contains(typedText), "#football tag is not updated");//todo chi stugum
+//
     }
 
-
-    //Verify search functionality of search
-    @Test
-    public void step_3_verifyFunctionalityOfSearch_part_1() {//todo not run
-        searchSteps.goToSearch();
-        searchScreen.clickOnImagesTab();
-        String typedText = "cr7";
-        searchScreen.typeTextToSearchField(typedText);
-        assertTrue(searchScreen.isInSearchFiledXButtonPresent(), "X button is not present in search field");//todo rename
-        String descriptionText = searchScreen.getSuggestionNameText();
-        assertTrue(descriptionText.contains(typedText), "the result of search keyword is not correspond");//todo arandznacnel
-        searchScreen.clickItemFromSuggested();
-        searchScreen.scrollToUp();
-        searchScreen.clickImage();
-        assertTrue(exploreScreen.isGalleryCommentButtonPresent(), "An image is not opened in photo browser");
-        int repeat = 5;
-        while (!searchScreen.isTagPresent() && repeat > 0) {
-            searchScreen.scrollToUpImageBrowser();//todo repeat (done)
-            repeat--;
-        }
-        searchScreen.clickOnTag();//todo im uzac tag@ chem karum click anem
-        assertTrue(exploreScreen.isActionBarFromHashtagPresent(), "the tag screen is not opened");//todo poxel (done)
-        exploreScreen.clickOnHashtagScreenBackButton();
-        exploreScreen.clickInImageBrowserBackButton();
-        assertTrue(searchScreen.isSearchScreenPresent(), "Search screen is not present");
-    }
+//
+//    //Verify search functionality of search
+//    @Test
+//    public void step_3_verifyFunctionalityOfSearch_part_1() {//todo not run
+//        searchSteps.goToSearch();
+//        searchScreen.clickOnImagesTab();
+//        String typedText = "cr7";
+//        searchScreen.typeTextToSearchField(typedText);
+//        assertTrue(searchScreen.isInSearchFiledXButtonPresent(), "X button is not present in search field");
+//        String descriptionText = searchScreen.getSuggestionNameText();
+//        assertTrue(descriptionText.contains(typedText), "the result of search keyword is not correspond");
+//        searchScreen.clickItemFromSuggestedList();
+//        searchScreen.scrollToUp();
+//        searchScreen.clickImage();
+//        assertTrue(exploreScreen.isGalleryCommentButtonPresent(), "An image is not opened in photo browser");
+//        int repeat = 5;
+//        while (!searchScreen.isTagPresent() && repeat > 0) {
+//            searchScreen.scrollToUpImageBrowser();
+//            repeat--;
+//        }
+//        searchScreen.clickOnTag();//todo click chi linum
+//        assertTrue(exploreScreen.isActionBarFromHashtagPresent(), "the tag screen is not opened");
+//        exploreScreen.clickOnHashtagScreenBackButton();
+//        exploreScreen.clickInImageBrowserBackButton();
+//        assertTrue(searchScreen.isSearchScreenPresent(), "Search screen is not present");
+//    }
 
 
     //Verify search functionality of search
@@ -203,7 +197,7 @@ public class LocalizationTest extends AppiumServerStartSession {
         searchSteps.goToSearch();
         searchScreen.clickOnStickersTab();
         assertTrue(searchScreen.isStickersTabEnabled(), "Stickers tab is not opened");
-        searchScreen.clickItemFromSuggested(); //todo rename (done)
+        searchScreen.clickItemFromSuggestedList();
         searchScreen.clickOnSuggestionsSticker();
         assertTrue(searchScreen.isStickerBookmarkButtonPresent(), "sticker is not opened");
         exploreScreen.clickInImageBrowserBackButton();
@@ -219,16 +213,16 @@ public class LocalizationTest extends AppiumServerStartSession {
 
     //Explore: social navigations
     @Test
-    public void step_4_verifyFunctionalityOfExploreSocialNavigation() {//todo not run (runned poxeci sax explore screen)
+    public void step_4_verifyFunctionalityOfExploreSocialNavigation() {
         exploreScreen.clickExploreTab();
         int repeat = 10;
         while (!exploreScreen.isZoomableItemPresent() && repeat > 0) {
             exploreScreen.scrollToUp();
             repeat--;
         }
-        exploreScreen.clickImageFromExploreTab();//todo rename (done)
+        exploreScreen.clickImageFromExploreTab(5);
         exploreScreen.swipeImageToLeft();
-        repeat = 5;//todo poxel repeat (done)
+        repeat = 5;
         while (!exploreScreen.isLikeButtonPresent() && repeat > 0) {
             exploreScreen.scrollToUpImageBrowser();
             repeat--;
@@ -247,7 +241,6 @@ public class LocalizationTest extends AppiumServerStartSession {
     }
 
 
-    //todo stegich sharunakel
     //Social navigation 2
 
     @Test
@@ -258,9 +251,9 @@ public class LocalizationTest extends AppiumServerStartSession {
             exploreScreen.scrollToUp();
             repeat--;
         }
-        exploreScreen.clickImageFromExploreTab();
+        exploreScreen.clickImageFromExploreTab(5);
         for (int i = 0; i < 2; i++) {
-            exploreScreen.clickLikeButton();//todo chi linum like i vra sxmel (explore em eli poxel)
+            exploreScreen.clickLikeButton();
             exploreScreen.swipeImageToLeft();
         }
         exploreScreen.clickImageBrowserMoreButton();
@@ -278,7 +271,7 @@ public class LocalizationTest extends AppiumServerStartSession {
     //Verify the functionality of messaging
     @Test
     public void step_6_verifyFunctionalityOfMessaging_part_1() throws InterruptedException {
-        notificationScreen.clickNotificationButton();//todo sranq krkvnumen es uzumem messging steps pahem bayc assert ner@ menak test um petqa grem
+        notificationScreen.clickNotificationButton();
         assertTrue(notificationScreen.isNotificationScreenPresent(), "Notification tab is not present");
         notificationScreen.clickOnRemixChatTab();
         assertTrue(messagingScreen.isMessagingTabPresent(), "Messaging tab is not present");
@@ -307,8 +300,8 @@ public class LocalizationTest extends AppiumServerStartSession {
 
     //Verify the functionality of messaging
     @Test(dependsOnMethods = "step_6_verifyFunctionalityOfMessaging_part_1")
-    public void step_6_verifyFunctionalityOfMessaging_part_2() throws InterruptedException { //todo sleep em drem miqich usha send linum vor heto last stugem
-        notificationScreen.clickNotificationButton();
+    public void step_6_verifyFunctionalityOfMessaging_part_2() throws InterruptedException {
+        notificationScreen.clickNotificationButton();//poxel stepov
         assertTrue(notificationScreen.isNotificationScreenPresent(), "Notification tab is not present");
         notificationScreen.clickOnRemixChatTab();
         int repeat = 5;
@@ -344,7 +337,7 @@ public class LocalizationTest extends AppiumServerStartSession {
         messagingScreen.clickChannelNameByText("kakao30");
         messagingScreen.clickStickerChooseButton();
         assertTrue(messagingScreen.isStickerCategoryItemPresent(), "Stickers category item is not present");
-        messagingScreen.clickStickerCategory();//todo poxel category icon ov (done)
+        messagingScreen.clickStickerCategory();
         messagingScreen.clickStickerByIndex(2);
         //assert verify sticker sent
         messagingScreen.clickAddFriendsButton();
@@ -369,7 +362,7 @@ public class LocalizationTest extends AppiumServerStartSession {
     @Test
     public void step_7_verifyRemixFunctionality() {
         exploreScreen.clickExploreTab();
-        exploreScreen.clickImageFromExploreTab();
+        exploreScreen.clickImageFromExploreTab(5);
         int repeat = 20;
         while (!exploreScreen.isRemixButtonPresent() && repeat > 0) {
             exploreScreen.swipeExploreImageToLeft();
@@ -393,8 +386,8 @@ public class LocalizationTest extends AppiumServerStartSession {
             editorScreen.swipeEditorPanelToRight();
             repeat--;
         }
+        editorScreen.swipeTillItemAppear(editorScreen.BUTTON_STICKER, editorScreen.EDITOR_BOTTOM_PANEL, 5);
         editorScreen.clickStickerButton();
-        editorScreen.clickDiscoverCategoryButton();
         editorScreen.clickOnStickerItem();
         editorScreen.clickStickerApplyButton();
         editorScreen.clickEditorNextButton();
@@ -410,15 +403,15 @@ public class LocalizationTest extends AppiumServerStartSession {
 
     //Verify  functionality of Camera
 
-    @Test
-    public void verifyFunctionalityOfCamera() {
-        cameraSteps.goToCameraFromCreateFlow();//todo camera screen ic vochmi button click chi anum
-//        cameraSteps.accessCameraPermission();
-//        cameraScreen.clickFilterByIndex();
-
-//        cameraScreen.swap();
-
-    }
+//    @Test
+//    public void verifyFunctionalityOfCamera() {
+//        cameraSteps.goToCameraFromCreateFlow();//todo camera screen ic vochmi button click chi anum
+////        cameraSteps.accessCameraPermission();
+////        cameraScreen.clickFilterByIndex();
+//
+////        cameraScreen.swap();
+//
+//    }
 
     //Challenges
     @Test

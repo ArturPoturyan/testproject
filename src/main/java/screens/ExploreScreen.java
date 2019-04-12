@@ -109,8 +109,8 @@ public class ExploreScreen implements CommonValues {
     }
 
 
-    public void clickImageFromExploreTab() {
-        utils.clickByIndex(ZOOMABLE_ITEM, 4);
+    public void clickImageFromExploreTab(int index) {
+        utils.clickByIndex(ZOOMABLE_ITEM, index);
     }
 
     public boolean isZoomableItemPresent() {
